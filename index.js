@@ -149,8 +149,3 @@ module.exports = {
     mdelete,
     m2valList, m2keyList
 }
-
-//Test
-//print($(lfoldr()(lfoldrRightMax))([0,1,0,2,1,0,1,3,2,1,2,1]))
-print(lfold()(lfoldKadane)([13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7]))
-//print(lfold()(lfoldKadane)([-1,-2,-3,-4]))

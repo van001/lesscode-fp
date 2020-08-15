@@ -1,0 +1,19 @@
+{
+  "name": "lccore",
+  "version": "1.0.0",
+  "description": "lc core functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/van001/lccore.git"
+  },
+  "author": "Neelesh Vaikhary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/van001/lccore/issues"
+  },
+  "homepage": "https://github.com/van001/lccore#readme"
+}

@@ -1,6 +1,7 @@
 // Generics
 const print = val => { console.log(val); return val } //print
 const trace = label => val => { print(label); print(val); print(' '); return val } // trace with label
+const hint = label => val => { print(label); return val }
 const $ = (...func) => (...args) => func.reduceRight((args, func) => [func(...args)], args)[0] // composition function
 const $P = (...f) => (...args) => f.map(fn => fn(...args))// Executes the functions in parallel and return the reuslt as List
 const $A = func => lst => { const $$A = func => lst => count => (count == lst.length -1)? func(lst[count]) : $$A(func(lst[count]))(lst)(count+1); return $$A(func)(lst)(0)} // applicative
@@ -126,7 +127,7 @@ const m2keyList = map => Object.keys(map) // Map to List (values)
 
 module.exports = {
     // Generic
-    print, trace, $, $P, $A, assert, memoize,                    // Generics
+    print, hint, trace, $, $P, $A, assert, memoize,              // Generics
     // // String
     blank, space, comma,                                         // String : Constants
     s2List,                                                      // Sring : Category changers

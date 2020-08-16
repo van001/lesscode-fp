@@ -79,8 +79,8 @@ const lzip = lst => lst[0].map((val, index) => [val, lst[1][index]]) // zip 2 co
 const lflat = lst => lst.reduce((acc, val) => val.reduce( (acc2, val) => lappend(acc2)([val]) , acc),[]) // flats one level
 
 // Category Changers - Generic
-const lfold = cat => func => lst => lst.reduce((cat, val, index, lst) => func(cat)(lst)(index)(val), (cat)? cat : []) // left reducer
-const lfoldr = cat => func => lst => lst.reduceRight((cat, val, index, lst) => func(cat)(lst)(index)(val), (cat)? cat : []) // right reducer 
+const lfold = cat => func => lst => lst.reduce((cat, val) => func(cat)(val), (cat)? cat : []) // left reducer
+const lfoldr = cat => func => lst => lst.reduceRight((cat, val) => func(cat)(val), (cat)? cat : []) // right reducer 
 // Preset Folders
 const lfoldLeftMax = acc => lst => index => val =>  lappend(acc)((index > 0) ? [max(val)(acc[index - 1])] : [val])  // uphill slope
 const lfoldrRightMax =  acc => lst => index => val =>  lappend((index < lst.length - 1) ? [max(val)(acc[0])] : [val])(acc) // downhill slope

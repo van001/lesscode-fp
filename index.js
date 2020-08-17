@@ -62,7 +62,7 @@ const lswap = pos1 => pos2 => lst => lst.slice(0, pos1). //slice to pos1
 
 // Mapper
 const lmapA = func => lst => lst.map((val, index, lst ) => func(lst)(index)(val)) //with arity
-const lmap = func => lst => lswap.map(func)
+const lmap = func => lst => lst.map(func)
 // Preset Mappers
 const lmapDelta = lst => index => val => (index === 0)? 0 : val - lst[index-1] // create delta List
 

@@ -61,7 +61,8 @@ const lswap = pos1 => pos2 => lst => lst.slice(0, pos1). //slice to pos1
                                     concat(lst.slice(pos2 + 1, lst.length)) // concat the remaining
 
 // Mapper
-const lmap = func => lst => lst.map((val, index, lst ) => func(lst)(index)(val))
+const lmapA = func => lst => lst.map((val, index, lst ) => func(lst)(index)(val)) //with arity
+const lmap = func => lst => lswap.map(func)
 // Preset Mappers
 const lmapDelta = lst => index => val => (index === 0)? 0 : val - lst[index-1] // create delta List
 
@@ -69,7 +70,7 @@ const lmapDelta = lst => index => val => (index === 0)? 0 : val - lst[index-1] /
 const lprepend = lst1 => lst2 => lst2.concat(lst1) // prepend lst2 to lst1
 const lappend = lst1 => lst2 => lst1.concat(lst2) // append lst2 to lst1
 const lallSubset = lst => lst.reduce((lst, val) => lappend(lst)( lst.map(lprepend([val]))),[[]])
-const lmapN2 = func => lst => lmap(val => lmap(func(val))(lst))(lst) // NXN map function - List to List of List
+const lmapN2 = func => lst => lmapA(val => lmapA(func(val))(lst))(lst) // NXN map function - List to List of List
 
 // Collapsers
 const lremove = index => lst => lst.slice(0,index).concat(lst.slice(index+1,lst.length))
@@ -138,7 +139,7 @@ module.exports = {
     leqEmpty,                                                    // List : Boolean
     lhead, ltail, lat,                                           // List : Positional
     lsort, lreverse, lswap ,                                     // List : Modifiers
-    lmap, lmapDelta,                                             // List : Mapper & Presets
+    lmap, lmapA, lmapDelta,                                      // List : Mapper & Presets
     lremove, lprepend, lappend, lallSubset, lmapN2,              // List : Expander
     lsliceHead, lsliceTail, lslice, lzip, lflat,                 // List : Collapsers                     
     lfold, lfoldr, lfoldLeftMax, lfoldrRightMax,                 // List : Folders & Presets

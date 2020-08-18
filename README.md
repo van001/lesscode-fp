@@ -1,2 +1,2 @@
 # Overview
-From my reseearch work on FP, this is the initial cut of FP core fucntions, that I will be using to build other projects.
+From my reseearch work on [FP](https://github.com/van001/lesscode), here is the draft of core FP fucntions. I will be using these functions and the FP principles to build other/ future projects. So stay tuned...

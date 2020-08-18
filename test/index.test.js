@@ -2,7 +2,7 @@ const {
     print, trace, hint, $, $P, $A, assert,
     space, blank, comma,
     l2String
-} = require('./index.js')
+} = require('../src/index.js')
 
 // Generics
 test('print', () => { expect(print('Neelesh Vaikhary')).toBe('Neelesh Vaikhary') })

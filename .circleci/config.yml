@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  test:
+  unit-test:
     executor:
       name: node/default
     steps:
@@ -11,10 +11,11 @@ jobs:
           steps:
             - run: npm install
             - run: npm run test
+     
 
 workflows:
   test-n-publish:
     jobs:
-      - test
+      - unit-test
   
           

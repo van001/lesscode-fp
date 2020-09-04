@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  unit-test:
+  test-n-publish:
     executor:
       name: node/default
     steps:
@@ -11,20 +11,16 @@ jobs:
           steps:
             - run: npm install
             - run: npm run test
-  publish:
-    steps:
-      - checkout
+      - run: 
+        name: Auth With NPM
+        command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
       - run:
           name: Publish to NPM
-          command: | 
-            npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-            npm publish
+          command: npm publish
 
 workflows:
   tests:
     jobs:
-      - unit-test
-  publish:
-    jobs:
-      - publish
+      - test-n-publish
+  
           

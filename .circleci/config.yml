@@ -25,5 +25,5 @@ workflows:
     jobs:
       - unit-test
       - publish
-        requires:
-          - unit-test
+          requires:
+            - unit-test

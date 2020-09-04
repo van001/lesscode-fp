@@ -18,5 +18,6 @@
   "homepage": "https://github.com/van001/lccore#readme",
   "devDependencies": {
     "jest": "^26.4.0"
-  }
+  },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }

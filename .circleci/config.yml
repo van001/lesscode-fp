@@ -16,15 +16,10 @@ jobs:
       - checkout
 
       - run: npm install
+      - run: npm install jest
       - run:
           name: Run tests
           command: npm test
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
       - persist_to_workspace:
           root: ~/repo
           paths: .
@@ -45,14 +40,7 @@ workflows:
   test-deploy:
     jobs:
       - test:
-          filters:
-            tags:
-              only: /^v.*/
       - deploy:
           requires:
             - test
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
+          

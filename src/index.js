@@ -130,6 +130,7 @@ const m2keyList = map => Object.keys(map) // Map to List (values)
 module.exports = {
     // Generic
     print, hint, trace, $, $M, $P, $A, assert, memoize,          // Generics
+    eq, eqNull, eqType,                                          // Equality
     // // String
     blank, space, comma,                                         // String : Constants
     shead, slen,                                                 // String : Positional                                                   

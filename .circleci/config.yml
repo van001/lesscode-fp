@@ -2,12 +2,13 @@
 #
 # Check {{ '/2.0/language-javascript/' | docs_url }} for more details
 #
-version: 2
+version: 2.1
+
+orbs:
+  node: circleci/node@1.1.6
 
 defaults: &defaults
   working_directory: ~/repo
-  docker:
-    - image: circleci/node:8.9.1
 
 jobs:
   test:

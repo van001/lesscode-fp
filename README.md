@@ -3,7 +3,7 @@ From my reseearch work on [FP](https://github.com/van001/lesscode), here is the 
 
 # Features
 The lesscode-fp library has :
-- Fewee category/ data structures - string, list n map.
+- Fewer category/ data structures - string, list n map.
 - It's built using point free style n currying.
 - It provides composable function for both pure and mondas.
 - It has many function to manipulate a given category.

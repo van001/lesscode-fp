@@ -6,5 +6,5 @@ The lesscode-fp library has :
 - Fewer category/ data structures - string, list n map.
 - It's built using point free style n currying.
 - It provides composable function for both pure and mondas.
-- It has many function to manipulate a given category.
+- It has functions to manipulate a given category.
 - It provide transformation functions to change category.

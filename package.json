@@ -1,6 +1,6 @@
 {
-  "name": "lccore",
-  "version": "1.0.5",
+  "name": "lesscode-fp",
+  "version": "1.0.0",
   "description": "lc core functions",
   "main": "./src/index.js",
   "scripts": {
@@ -8,18 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/van001/lccore.git"
+    "url": "git+https://github.com/van001/lc-core.git"
   },
   "author": "Neelesh Vaikhary",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/van001/lccore/issues"
+    "url": "https://github.com/van001/lc-core/issues"
   },
-  "homepage": "https://github.com/van001/lccore#readme",
+  "homepage": "https://github.com/van001/lc-core#readme",
   "devDependencies": {
     "jest": "^26.4.0"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://registry.npmjs.org/"
   }
 }

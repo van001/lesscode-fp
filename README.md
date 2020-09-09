@@ -5,6 +5,6 @@ Based my research work on [Functional Thinking](https://github.com/van001/lessco
 The lesscode-fp library has :
 - Fewer category/ data structures - string, list n map.
 - It's built using point free style n currying.
-- It provides composable function for both pure and mondas.
+- It provides composable function for both pure (no side effect) and monads (side effect).
 - It has functions to manipulate a given category.
 - It provide transformation functions to change category.

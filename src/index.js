@@ -18,6 +18,11 @@ const eq = a => b => {
     return (a === b)
 }
 
+// Mathematical functions
+const max = a => b => Math.max(a,b)
+const min = a => b => Math.min(a,b)
+const sum = a => b => a + b
+
 /** String **/
 // Constants
 const space = ' '
@@ -37,11 +42,6 @@ const sslice  = start => end => str => str.slice(start,end)
 
 // Category Changers
 const s2List = ptrn => str => str.split(ptrn)
-
-/** Math */
-const max = a => b => Math.max(a,b)
-const min = a => b => Math.min(a,b)
-const sum = a => b => a + b
 
 /** List **/
 // Creator
@@ -131,12 +131,17 @@ module.exports = {
     // Generic
     print, hint, trace, $, $M, $P, $A, assert, memoize,          // Generics
     eq, eqNull, eqType,                                          // Equality
-    // // String
-    blank, space, comma,                                         // String : Constants
-    shead, slen,                                                 // String : Positional                                                   
-    s2List,                                                      // Srting : Category changers
+    
     // Math
     max, min, sum,                                               // Math : Calculations
+    
+    // String
+    blank, space, comma,                                         // String : Constants
+    shead, slen,                                                 // String : Positional 
+    sappend, srepeat,                                            // String : Expanders
+    sslice,                                                      // String : Collapsers                                     
+    s2List,                                                      // Srting : Category changers
+    
     // List
     lcreate,                                                     // List : Creator
     leqEmpty,                                                    // List : Boolean
@@ -148,6 +153,7 @@ module.exports = {
     lfold, lfoldr, lfoldLeftMax, lfoldrRightMax,                 // List : Folders & Presets
     lfoldKadane,
     l2String, l2countMap, l2indexMap,                            // List : Category Changers
+    
     // Map
     mget, mlen, mheadKey, 
     mset, mincr,

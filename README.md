@@ -9,7 +9,7 @@ side effects (Monads). So anytime you are writing a function that is doing some 
 - The origin of functional programming (Lambda calculus) only allowed single input/ output. While it may not be practical always, try to adhere by it as much.
 If there is more than one input then make sure you adhere to data last principal. Any function you write has to accept some input which it uses/manipulate to generate an output, make them last. 
 
-- Use currying if your function takes more than one parameter. Currying allows you to partially apply data that you might need for multi paramter functions.
+- Use currying if your function takes more than one parameter. Currying allows you to partially apply data that you might need for multi parameter functions.
 
 - Programming in general is about composibility (re-useability). In FP, you live and die by it. You should be able to compose functions to produce more specific functions.
 

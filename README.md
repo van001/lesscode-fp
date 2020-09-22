@@ -1,7 +1,7 @@
 # Overview
 Based on my earlier work on [Functional Thinking](https://github.com/van001/lesscode), I propose the the following [functions](https://github.com/van001/lesscode-fp/blob/master/src/index.js). I will be using these functions and the FP principles to build other/ future projects. So stay tuned...
 
-- In pure functional programming langiages, you are either writing functions with no side effects (pure functions) or functions with 
+- In pure functional programming languages, you are either writing functions with no side effects (pure functions) or functions with 
 side effects (Monads). 
 
 - Pure functions have refrential integrity, , means you should be able to repalce with execution of a function with the value it will produce, anytime.

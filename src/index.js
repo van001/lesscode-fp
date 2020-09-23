@@ -53,6 +53,7 @@ const sslice  = start => end => str => str.slice(start,end)
 
 // Category Changers
 const s2List = ptrn => str => str.split(ptrn)
+const S2List = ptrn => async str => str.split(ptrn)
 
 /** List **/
 // Creator
@@ -121,12 +122,14 @@ const lfoldZ = cat => move => func => lst => {
 }
 
 // Category Changers
-const l2String = sep => lst => lst.reduce( (acc, val) => ''+acc + sep + val)
+const l2String = sep => lst => lst.join(sep)
+const L2String = sep => async lst => lst.join(sep)
 const l2countMap = lst => lst.reduce((map, val) => mincr(val)(map) ,{}) //histogram
 const l2indexMap = lst => lst.reduce ( (cat, val, index) => { (cat[val]) ? cat[val][index] = index : cat[val] = $(mset(index)(index))({}); return cat},{} ) // List to index Map - very helpful function to solve many problems
 // Map
 // Positional
 const mget = key => map => map[key] // retrieves the value for key
+const mgettwo = key1 => key2 => map => map[key1][key2]
 const mlen = map => map.size
 const mheadKey = map => (map.size > 0) ? map.keys().next()['value'] : undefined
 // Modifiers
@@ -154,19 +157,19 @@ module.exports = {
     // Generic
     print, Print, hint, Hint, trace, Trace, 
     $, $M, $P, $A, assert, 
-    memoize, Wait, exit, // Generics
-    eq, eqNull, eqType, // Equality
+    memoize, Wait, exit, 
+    eq, eqNull, eqType, 
     
     // Math
     max, min, sum, // Math : Calculations
     
     // String
     blank, space, comma, linebreak, utf8, newline, sha256,
-    md5,                                                        // String : Constants
+    md5,                                                         // String : Constants
     shead, slen,                                                 // String : Positional 
     sappend, srepeat,                                            // String : Expanders
     sslice,                                                      // String : Collapsers                                     
-    s2List,                                                      // Srting : Category changers
+    s2List, S2List,                                              // Srting : Category changers
     
     // List
     lcreate,                                                     // List : Creator
@@ -178,10 +181,10 @@ module.exports = {
     lsliceHead, lsliceTail, lslice, lzip, lflat,                 // List : Collapsers                     
     lfold, lfoldr, lfoldLeftMax, lfoldrRightMax,                 // List : Folders & Presets
     lfoldKadane,
-    l2String, l2countMap, l2indexMap,                            // List : Category Changers
+    l2String, L2String, l2countMap, l2indexMap,                            // List : Category Changers
     
     // Map
-    mget, mlen, mheadKey, 
+    mget, mgettwo, mlen, mheadKey, 
     mset, mincr,
     mdelete,
     m2valList, m2keyList,

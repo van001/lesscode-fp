@@ -1,13 +1,19 @@
 // Generics
 const print = val => { console.log(val); return val } //print
+const Print = async val => print(val)
 const trace = label => val => { print(label); print(val); print(' '); return val } // trace with label
+const Trace = label = async val => trace(label)(val)
 const hint = label => val => { print(label); return val }
+const Hint = label => async val => hint(label)(val) // monadic
 const $ = (...func) => (...args) => func.reduceRight((args, func) => [func(...args)], args)[0] // composition function
 const $M = (...ms) => (ms.reduce((f,g) => x => g(x)['then'](f)))
 const $P = (...f) => (...args) => f.map(fn => fn(...args))// Executes the functions in parallel and return the result as List
 const $A = func => lst => { const $$A = func => lst => count => (count == lst.length -1)? func(lst[count]) : $$A(func(lst[count]))(lst)(count+1); return $$A(func)(lst)(0)} // applicative
 const assert = input => output => msg => console.assert((typeof output === 'object' && output != null) ? input.join('') === output.join('') : input === output, msg)
 const memoize = f => { const cache = {}; return (...args) => { const argStr = args.join(''); return cache[argStr] = cache[argStr] || f(...args); } }
+const exit = msg =>  process.exit(0)
+const Wait = all => Promise.all(all)
+
 
 // Equality functions
 const eqNull = val => (val == null || val == undefined) ? true : false
@@ -28,6 +34,11 @@ const sum = a => b => a + b
 const space = ' '
 const blank = ''
 const comma = ','
+const linebreak = /\r?\n/
+const utf8 = 'utf8'
+const newline = '\n'
+const sha256 = 'sha256'
+const md5 = 'md5'
 
 // Positional
 const shead = str => str.charAt(0)
@@ -127,16 +138,31 @@ const mdelete = key => map => { map.delete(key); return map}
 const m2valList = map => { const lst = [];  Object.keys(map).forEach( key => lst.push(map[key]));  return lst} // Map to List (values)
 const m2keyList = map => Object.keys(map) // Map to List (values)
 
+/** Utilities */
+const crypto = require("crypto")
+const hash = cipher => data => crypto.createHash(cipher).update(data).digest("hex")
+const Hash = cipher => async data => hash(cipher)(data)
+
+const fs = require('fs')
+const FileRead = option => async name => fs.readFileSync(name, option);
+const FileWrite = option => name => async data => fs.writeFileSync(name, data, option)
+
+const axios = require('axios')
+const HttpGET = async url => await axios.get(url)
+
 module.exports = {
     // Generic
-    print, hint, trace, $, $M, $P, $A, assert, memoize,          // Generics
-    eq, eqNull, eqType,                                          // Equality
+    print, Print, hint, Hint, trace, Trace, 
+    $, $M, $P, $A, assert, 
+    memoize, Wait, exit, // Generics
+    eq, eqNull, eqType, // Equality
     
     // Math
-    max, min, sum,                                               // Math : Calculations
+    max, min, sum, // Math : Calculations
     
     // String
-    blank, space, comma,                                         // String : Constants
+    blank, space, comma, linebreak, utf8, newline, sha256,
+    md5,                                                        // String : Constants
     shead, slen,                                                 // String : Positional 
     sappend, srepeat,                                            // String : Expanders
     sslice,                                                      // String : Collapsers                                     
@@ -158,5 +184,11 @@ module.exports = {
     mget, mlen, mheadKey, 
     mset, mincr,
     mdelete,
-    m2valList, m2keyList
+    m2valList, m2keyList,
+
+    // Utilities
+    hash, Hash, 
+    FileRead, FileWrite,
+    HttpGET,
+    
 }

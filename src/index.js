@@ -75,7 +75,10 @@ const lswap = pos1 => pos2 => lst => lst.slice(0, pos1). //slice to pos1
 
 // Mapper
 const lmapA = func => lst => lst.map((val, index, lst ) => func(lst)(index)(val)) //with arity
+const LmapA = func => async lst => lmapA(func)(lst)
 const lmap = func => lst => lst.map(func)
+const Lmap = func => async lst => lmap(func)(lst)
+
 // Preset Mappers
 const lmapDelta = lst => index => val => (index === 0)? 0 : val - lst[index-1] // create delta List
 
@@ -96,18 +99,7 @@ const lflat = lst => lst.reduce((acc, val) => val.reduce( (acc2, val) => lappend
 // Category Changers - Generic
 const lfold = cat => func => lst => lst.reduce((cat, val) => func(cat)(val), (cat)? cat : []) // left reducer
 const lfoldr = cat => func => lst => lst.reduceRight((cat, val) => func(cat)(val), (cat)? cat : []) // right reducer 
-// Preset Folders
-const lfoldLeftMax = acc => lst => index => val =>  lappend(acc)((index > 0) ? [max(val)(acc[index - 1])] : [val])  // uphill slope
-const lfoldrRightMax =  acc => lst => index => val =>  lappend((index < lst.length - 1) ? [max(val)(acc[0])] : [val])(acc) // downhill slope
-const lfoldKadane = acc => lst => index => val => {
-    const sum = val + ((index === 0) ? 0 : acc.sum)
-    print(`${index} : ${sum} : ${val}`)
-    return (index === 0)  
-        ? print({  max : val , sum : val , start : 0, end : 0 , incr : 1}) 
-        : ( sum >= val) 
-            ? print({ max : max(acc.max)(sum), sum , start :  index, end : (acc.max > sum) ? acc.end : index , incr : (sum < 0) ? acc.incr+1 : acc.incr })
-            : print({ max : max(acc.max)(val), sum : val , start : acc.start, end : (acc.max > val) ? acc.end : index + acc.incr, incr : 1})// Kadane's algorithm
-}
+
 // folds the List based on move function which dictate the folding direction - zigzag
 // move :: cat => lst => j => i -> bool ; true move left pointer, false right
 const lfoldZ = cat => move => func => lst => {
@@ -176,12 +168,11 @@ module.exports = {
     leqEmpty,                                                    // List : Boolean
     lhead, ltail, lat,                                           // List : Positional
     lsort, lreverse, lswap ,                                     // List : Modifiers
-    lmap, lmapA, lmapDelta,                                      // List : Mapper & Presets
+    lmap, Lmap, lmapA,LmapA, lmapDelta,                          // List : Mapper & Presets
     lremove, lprepend, lappend, lallSubset, lmapN2,              // List : Expander
     lsliceHead, lsliceTail, lslice, lzip, lflat,                 // List : Collapsers                     
-    lfold, lfoldr, lfoldLeftMax, lfoldrRightMax,                 // List : Folders & Presets
-    lfoldKadane,
-    l2String, L2String, l2countMap, l2indexMap,                            // List : Category Changers
+    lfold, lfoldr, lfoldZ,                                       // List : Folders & Presets
+    l2String, L2String, l2countMap, l2indexMap,                  // List : Category Changers
     
     // Map
     mget, mgettwo, mlen, mheadKey, 

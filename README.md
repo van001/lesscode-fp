@@ -21,7 +21,7 @@ Currying allows you to partially apply other options (initialize) and dependenci
 Currying also allows you to create your own DSL (domain specifi language) by partially applying many generic functions and creating a new domain specfic one.
 
 - **Composition** : in FP, since there is no assignment you just compose functions to produce more specific functions/ solutions.
-We will be using $ / $M for pure functions / monadic composition (see examples below)
+We will be using $ / $M for pure functions / monadic composition (see [examples](https://github.com/van001/lesscode-fp#examples) below)
 
 # Features
 - Fewer category / data structures - string, list/tuple n map (read only).

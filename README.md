@@ -51,6 +51,6 @@ output.txt
 
 **[File Streaming](https://github.com/van001/lesscode-fp/tree/master/examples/file-streaming)**
 
-Streams context of a text file and converts it into uppecase. 
+Streams context of a text file and converts it into uppercase. 
 
 

@@ -1,7 +1,7 @@
 
 // Lesscode-fp
 const { 
-    $, $M, hint, Hint, print, hash, Lmap, Wait, mget, exit, mgettwo, 
+    $, $M, Trace, print, hash, Lmap, Wait, mget, exit, mgettwo, 
     linebreak, utf8, newline,  
     L2String, S2List, 
     FileRead, FileWrite,
@@ -11,7 +11,6 @@ const {
 // 1. DO inititial sanitaztion
 const inputFile = process.argv[2]
 const outputFile = process.argv[3]
-const Trace = label => async val => { print(label); print(val); print(' '); return val } 
 
 // processFile :: String -> String
 const processURL = name => {

@@ -51,6 +51,10 @@ output.txt
 
 **[File Streaming](https://github.com/van001/lesscode-fp/tree/master/examples/file-streaming)**
 
-Streams context of a text file and converts it into uppercase. 
+Streams content of a text file, converts to uppercase then write back to another stream (output file).
+```
+ File Stream In ( File Stream Out <<= 2 UpperCase )
+```
+
 
 

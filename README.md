@@ -37,7 +37,7 @@ We will be using $ / $M for pure functions / monadic composition (see examples b
 ## Algorithms
 
 ## Complex ##
-**[Image Download](https://github.com/van001/lesscode-fp/tree/master/examples/image-download)**
+**[Image Download](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/image-download)**
 
 Download list of images specified in a file and write metadata(url, size, hash) to the specified output file.
 
@@ -57,7 +57,7 @@ File Read <input>           // Read the file
 ```
 **'<<='**  indicate bind / join (feed output of one monad to another)
 
-**[File Streaming](https://github.com/van001/lesscode-fp/tree/master/examples/file-streaming)**
+**[File Streaming](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/file-streaming)**
 
 Streams content of a text file, converts to uppercase then write back to another stream (output file).
 

@@ -37,8 +37,11 @@ If there is more than one input then make sure you adhere to **data last** princ
 **[Image Download](https://github.com/van001/lesscode-fp/tree/master/examples/image-download)**
 
 Download list of images specified in a file and write metadata to the specified output file.
+
+Read bottom to top, right to left
 ```
-output.txt <<= FileWrite <<= <<= List 2 String <<= Wait <<= Map () <<= String 2 List <<= FileRead <<= inpit.txt
+output.txt <<= FileWrite <<= <<= List 2 String 
+<<= Wait <<= Map () <<= String 2 List <<= FileRead <<= input.txt
 ```
 **'>>='**  is borrowed from haskell to indicate bind, or feed output of one monad to another.
 

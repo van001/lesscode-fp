@@ -22,7 +22,7 @@ If there is more than one input then make sure you adhere to data last principle
 - Built using point free style n currying.
 - Provides composable function for both pure (no side effect) and monads (side effect).
 - Functions to manipulate a given category.
-- Functions to expand, collapse a given gcategory. 
+- Functions to expand, collapse a given category. 
 - Functions to transform one category to another.
 - Built-in Monads to handle side-effects (http, file etc)
 

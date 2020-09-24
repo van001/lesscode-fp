@@ -35,12 +35,12 @@ If there is more than one input then make sure you adhere to **data last** princ
 
 ## Complex ##
 **[Image Download](https://github.com/van001/lesscode-fp/tree/master/examples/image-download)**
-```
-FileRead >>= String 2 List >>=  Map () >>= Wait >>= List 2 String >>= FileWrite
-```
-**'>>='**  is borrowed from haskell to indicate bind, or feed output of one monad to another.
 
 Download list of images specified in a file and write metadata to the specified output file.
+```
+output.txt <<= FileWrite <<= <<= List 2 String <<= Wait <<= Map () <<= String 2 List <<= FileRead <<= inpit.txt
+```
+**'>>='**  is borrowed from haskell to indicate bind, or feed output of one monad to another.
 
 **[File Streaming](https://github.com/van001/lesscode-fp/tree/master/examples/file-streaming)**
 

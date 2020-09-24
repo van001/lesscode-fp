@@ -47,7 +47,7 @@ output.txt
 <<= String 2 List <<= File Read   // Read and convert to List
 <<= input.txt                     // input file
 ```
-**'<<='**  indicate binds/ join (feed output of one monad to another)
+**'<<='**  indicate bind / join (feed output of one monad to another)
 
 **[File Streaming](https://github.com/van001/lesscode-fp/tree/master/examples/file-streaming)**
 

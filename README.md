@@ -4,21 +4,21 @@
 - In pure functional programming languages, you are either writing functions with no side effects (pure functions) or functions with 
 side effects (Monads). 
 
-- Pure functions (no side-effect) are time independent & have referential integrity, which means you can replace the function with the value it will produce, anytime.
+- **Pure functions** (no side-effect) are time independent & have referential integrity, which means you can replace the function with the value it will produce, anytime.
 
-- Monads (functions with side-effects) lets you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence (one after another).
+- **Monads** (functions with side-effects) lets you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence (one after another).
 
-- In pure FP you have fewer categories (data structures). e.g list, tuple, map (non mutable). 
+- In pure FP you have **fewer categories** (data structures). e.g list, tuple, map (non mutable). 
 
-- In pure FP your data is immutable and there is technically no assignment. You are either naming your
+- In pure FP your data is **immutable** and there is technically no assignment. You are either naming your
 data and functions or composing them.
 
-- The origin of functional programming, Lambda calculus, only allowed single input/ output. While it may not be always practical, try to adhere by it as much.
-If there is more than one input then make sure you adhere to data last principle. Any function you write has to accept some input which it uses/manipulate to generate an output, make them last. 
+- The origin of functional programming, Lambda calculus, only allowed **single input/ output**. While it may not be always practical, try to adhere by it as much.
+If there is more than one input then make sure you adhere to **data last** principle. Any function you write has to accept some input which it uses/manipulate to generate an output, make them last. 
 
-- Use currying if your function takes more than one parameter. Currying allows you to partially apply data that you might need for multi parameter functions. Currying allows you to create your own DSL (domain specifi language) by partially applying many generic functions.
+- Use **currying** if your function takes more than one parameter. Currying allows you to partially apply data that you might need for multi parameter functions. Currying allows you to create your own DSL (domain specifi language) by partially applying many generic functions.
 
-- Programming in general is about composibility (re-useability). In FP, you live and die by it. You should be able to compose functions to produce more specific functions.
+- Programming in general is about **composibility** (re-useability). In FP, you live and die by it. You should be able to compose functions to produce more specific functions.
 
 # Features
 - Fewer category/ data structures - string, list n map (read only).

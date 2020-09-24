@@ -40,5 +40,6 @@ Download list of images specified in a file and write metadata to the specified 
 
 **[File Streaming](https://github.com/van001/lesscode-fp/tree/master/examples/file-streaming)**
 
-Streams context of a text file and converts it into uppecase. |
+Streams context of a text file and converts it into uppecase. 
+
 

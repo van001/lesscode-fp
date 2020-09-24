@@ -23,7 +23,7 @@ If there is more than one input then make sure you adhere to **data last** princ
 # Features
 - Fewer category/ data structures - string, list n map (read only).
 - Built using point free style n currying.
-- Provides composable function ($(...)/SM(...)) for both pure (no side effect) and monads (side effect).
+- Composable function ($(...)/SM(...)) for both pure (no side effect) and monads (side effect).
 - Functions to manipulate a given category.
 - Functions to expand, collapse a given category. 
 - Functions to transform one category to another.

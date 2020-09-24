@@ -42,12 +42,12 @@ Download list of images specified in a file and write metadata to the specified 
 
 Read bottom to top, right to left
 ```
-File Write              // Write to file
-<<= List 2 String       // Convert List to String
-<<= Wait                // Wait till everything is done.
-<<= Map ()              // Parallelly, transform to List containing results.
-<<= String 2 List       // Convert to List.
-<<= File Read           // Read the file
+File Write          <<=     // Write to file
+List 2 String       <<=     // Convert List to String
+Wait                <<=     // Wait till everything is done.
+Map ()              <<=     // Parallelly, transform to List containing results.
+String 2 List       <<=     // Convert to List.
+File Read                   // Read the file
 
 ```
 **'<<='**  indicate bind / join (feed output of one monad to another)

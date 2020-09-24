@@ -48,10 +48,10 @@ Read bottom to top, right to left
 ```
                     
 File Write <output>  <<=    // Write to file
-List 2 String       <<=     // Convert List to String
-Wait                <<=     // Wait till everything is done.
-Map ()              <<=     // Parallelly, transform to List containing results.
-String 2 List       <<=     // Convert to List.
+List 2 String        <<=     // Convert List to String
+Wait                 <<=     // Wait till everything is done.
+Map ()               <<=     // Parallelly, transform to List containing results.
+String 2 List        <<=     // Convert to List.
 File Read <input>           // Read the file
 
 ```

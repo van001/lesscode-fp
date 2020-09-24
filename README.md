@@ -40,8 +40,12 @@ Download list of images specified in a file and write metadata to the specified 
 
 Read bottom to top, right to left
 ```
-output.txt <<= FileWrite <<= <<= List 2 String 
-<<= Wait <<= Map () <<= String 2 List <<= FileRead <<= input.txt
+output.txt 
+<<= FileWrite <<= List 2 String  // Convert the list back to String and write to an output file
+<<= Wait                         // Wait till every thing is done.
+<<= Map ()                       // Transform the List to Another list, containint the result
+<<= String 2 List <<= FileRead   // Read and convert to List
+<<= input.txt                    // input file
 ```
 **'>>='**  is borrowed from haskell to indicate bind, or feed output of one monad to another.
 

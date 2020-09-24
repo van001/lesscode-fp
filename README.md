@@ -38,9 +38,7 @@ If there is more than one input then make sure you adhere to **data last** princ
 
 Download list of images specified in a file and write metadata to the specified output file.
 
-Here  you are doing bunch thing concurrently, waiting for the result and then doing something else. 
-This pipeline is fine as long as you are feeding it with a limited data. 
-If  data is large, you will have to stream it (see example below...)
+**Parallel**, here you are doing bunch things parallely, waiting for the result and then doing something else. 
 
 Read bottom to top, right to left
 ```

@@ -4,11 +4,8 @@ const {
     $, $M, hint, Hint, print, hash, Lmap, Wait, mget, exit, mgettwo, 
     linebreak, utf8, newline,  
     L2String, S2List, 
-    FileRead,
+    FileRead, FileWrite,
     HttpGET } = require('lesscode-fp')
-
-    const fs = require('fs').promises
-const FileWrite = option => name => async data => fs.writeFile(name, data, option)
 
 //TO DO : 
 // 1. DO inititial sanitaztion

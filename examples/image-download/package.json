@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "node .",
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.20.0",
-    "lesscode-fp": "^1.0.7"
+    "lesscode-fp": "^1.0.8"
   }
 }

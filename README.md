@@ -20,7 +20,7 @@ side effects (Monads).
 Currying allows you to partially apply other options (initialize) and dependencies (injection) that you might need for multi parameter functions.
 Currying also allows you to create your own DSL (domain specifi language) by partially applying many generic functions and creating a new domain specfic one.
 
-- **Composition** : in FP, you live and die by it. You should be able to compose functions to produce more specific functions. 
+- **Composition** : in FP, since there is no assignment you just compose functions to produce more specific functions/ solutions.
 We will be using $ / $M for pure functions / monadic composition (see examples below)
 
 # Features

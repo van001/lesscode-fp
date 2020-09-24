@@ -139,8 +139,14 @@ const hash = cipher => data => crypto.createHash(cipher).update(data).digest("he
 const Hash = cipher => async data => hash(cipher)(data)
 
 const fs = require('fs').promises
-const FileRead = option => async name => fs.readFile(name, option);
-const FileWrite = option => name => async data => fs.writeFile(name, data, option)
+const FileStreamIn  = option => func => async file => fs.createReadStream(file, option).on('data', func); 
+const FileStreamOut = option => file => async buffer => fs.createWriteStream(file,option).write(print(buffer))
+
+
+const fsp = fs.promises
+const FileRead = option => async name => fsp.readFile(name, option);
+const FileWrite = option => name => async data => fsp.writeFile(name, data, option)
+
 
 const axios = require('axios')
 const HttpGET = async url => await axios.get(url)
@@ -182,7 +188,7 @@ module.exports = {
 
     // Utilities
     hash, Hash, 
-    FileRead, FileWrite,
+    FileStreamIn, FileStreamOut, FileRead, FileWrite,
     HttpGET,
     
 }

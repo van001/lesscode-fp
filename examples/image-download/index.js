@@ -1,19 +1,17 @@
-const config = require('./config.json')
 
-
-// My FP library
-
+// Lesscode-fp
 const { 
     $, $M, hint, Hint, print, hash, Lmap, Wait, mget, exit, mgettwo, 
     linebreak, utf8, newline,  
     L2String, S2List, 
-    FileRead, FileWrite,
+    FileRead,
     HttpGET } = require('lesscode-fp')
+
+    const fs = require('fs').promises
+const FileWrite = option => name => async data => fs.writeFile(name, data, option)
 
 //TO DO : 
 // 1. DO inititial sanitaztion
-// 2. Introduce cache.
-
 const inputFile = process.argv[2]
 const outputFile = process.argv[3]
 const Trace = label => async val => { print(label); print(val); print(' '); return val } 

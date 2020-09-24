@@ -138,9 +138,9 @@ const crypto = require("crypto")
 const hash = cipher => data => crypto.createHash(cipher).update(data).digest("hex")
 const Hash = cipher => async data => hash(cipher)(data)
 
-const fs = require('fs')
-const FileRead = option => async name => fs.readFileSync(name, option);
-const FileWrite = option => name => async data => fs.writeFileSync(name, data, option)
+const fs = require('fs').promises
+const FileRead = option => async name => fs.readFile(name, option);
+const FileWrite = option => name => async data => fs.writeFile(name, data, option)
 
 const axios = require('axios')
 const HttpGET = async url => await axios.get(url)

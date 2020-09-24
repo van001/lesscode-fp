@@ -47,7 +47,7 @@ output.txt
 <<= String 2 List <<= File Read   // Read and convert to List
 <<= input.txt                     // input file
 ```
-**'>>='**  is borrowed from haskell to indicate bind, or feed output of one monad to another.
+**'<<='**  indicate binds/ join (feed output of one monad to another)
 
 **[File Streaming](https://github.com/van001/lesscode-fp/tree/master/examples/file-streaming)**
 

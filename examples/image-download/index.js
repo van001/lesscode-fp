@@ -7,8 +7,7 @@ const {
     FileRead, FileWrite,
     HttpGET } = require('lesscode-fp')
 
-//TO DO : 
-// 1. DO inititial sanitaztion
+
 const inputFile = process.argv[2]
 const outputFile = process.argv[3]
 
@@ -32,6 +31,3 @@ $M(
     Trace('Converted to List...................'), S2List(linebreak), 
     Trace('Read input file.....................'), FileRead(utf8))(inputFile)
 .catch($(exit, print))
-
-//HttpGETs = async urls => lmap(HttpGET)(urls)
-//$M(Wait,HttpGETs)(['http://i.imgur.com/KxyEGOn.jpg','http://i.imgur.com/vPae8qL.jpg']).then(print)

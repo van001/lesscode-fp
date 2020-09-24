@@ -18,7 +18,8 @@ If there is more than one input then make sure you adhere to **data last** princ
 
 - Use **currying** if your function takes more than one parameter. Currying allows you to partially apply data that you might need for multi parameter functions. Currying allows you to create your own DSL (domain specifi language) by partially applying many generic functions.
 
-- Programming in general is about **composibility** (re-useability). In FP, you live and die by it. You should be able to compose functions to produce more specific functions.
+- Programming in general is about **composibility** (re-useability). In FP, you live and die by it. You should be able to compose functions to produce more specific functions. 
+We will be using $ / $M for pure functions / monadic composition (see examples below)
 
 # Features
 - Fewer category/ data structures - string, list n map (read only).

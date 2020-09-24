@@ -1,7 +1,7 @@
 
 // Lesscode-fp
 const { 
-    $, $M, Trace, print, hash, Lmap, Wait, mget, exit, mgettwo, 
+    $, $M, Hint, Trace, print, hash, Lmap, Wait, mget, exit, mgettwo, 
     linebreak, utf8, newline,  
     L2String, S2List, 
     FileRead, FileWrite,
@@ -18,8 +18,9 @@ const processURL = name => {
     const LogData = name => async data => `${name} ${contentLen(data)} ${computeHash(data)}`
     const LogErorr = name =>  async err => `${name} 0  ${escape(err)}`
     return $M(
-        Trace(`[Pass] : ${name}................`), LogData(name), HttpGET)(name)
-        .catch($(Trace(`[Fail] : ${name}.......`), LogErorr(name)))
+        Trace(`Extracted metadata...............`), LogData(name),
+        Hint(`Downloaded ${name}................`), HttpGET)(name)
+        .catch($(Trace(`[Fail] : ${name}........`), LogErorr(name)))
 }
 
 // Pipeline

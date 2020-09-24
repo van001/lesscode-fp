@@ -138,7 +138,7 @@ const crypto = require("crypto")
 const hash = cipher => data => crypto.createHash(cipher).update(data).digest("hex")
 const Hash = cipher => async data => hash(cipher)(data)
 
-const fs = require('fs').promises
+const fs = require('fs')
 const FileStreamIn  = option => func => async file => fs.createReadStream(file, option).on('data', func); 
 const FileStreamOut = option => file => async buffer => fs.createWriteStream(file,option).write(print(buffer))
 

@@ -24,6 +24,7 @@ If there is more than one input then make sure you adhere to data last principle
 - Functions to manipulate a given category.
 - Functions to expand, collapse a given gcategory. 
 - Functions to transform one category to another.
+- Built-in Monads to handle side-effects (http, file etc)
 
 # Examples
 

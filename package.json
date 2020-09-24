@@ -2,9 +2,9 @@
   "name": "lesscode-fp",
   "version": "1.0.11",
   "description": "lc core functions",
-  "main": "./src/index.js",
+  "main": "./lesscode/src/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest ./lesscode/."
   },
   "repository": {
     "type": "git",

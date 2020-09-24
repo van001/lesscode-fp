@@ -1,5 +1,5 @@
 # Overview
-![Lego Kids](lego-kid.jpeg) Based on my earlier work on [Functional Thinking](https://github.com/van001/lesscode), I propose the following [functions](https://github.com/van001/lesscode-fp/blob/master/src/index.js). I will be using these functions and the FP principles to build other/ future projects. So stay tuned...
+![Lego Kids](lego-kid.jpeg) Based on my earlier work on [Functional Thinking](https://github.com/van001/lesscode), I propose the following [functions](https://github.com/van001/lesscode-fp/blob/master/src/index.js) (subject to change). I will be using these functions and the FP principles to build other/ future projects. So stay tuned...
 
 - In pure functional programming languages, you are either writing functions with no side effects (pure functions) or functions with 
 side effects (Monads). 

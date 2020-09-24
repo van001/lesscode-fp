@@ -41,7 +41,7 @@ We will be using $ / $M for pure functions / monadic composition (see examples b
 
 Download list of images specified in a file and write metadata(url, size, hash) to the specified output file.
 
-Doing bunch of things in **Parallel**, waiting for the result and then doing something else. 
+**Parallel** : doing bunch of things in parallel, waiting for the result and then doing something else. 
 Also tolerating the failures instead of aborting on any error (if a file download fails it is ok, just write the error).
 
 Read bottom to top, right to left
@@ -61,7 +61,7 @@ File Read <input>           // Read the file
 
 Streams content of a text file, converts to uppercase then write back to another stream (output file).
 
-Sometimes input is a **streams** or too large handle in parallel.
+**Streaming** : sometimes, input is a **stream** or too big / time consuming to handle in parallel.
 ```
  File Stream In ( File Stream Out <<= 2 UpperCase ) <input>
 ```

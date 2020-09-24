@@ -42,13 +42,13 @@ Download list of images specified in a file and write metadata to the specified 
 
 Read bottom to top, right to left
 ```
-                    <out>
-File Write          <<=     // Write to file
+                    
+File Write <output>  <<=    // Write to file
 List 2 String       <<=     // Convert List to String
 Wait                <<=     // Wait till everything is done.
 Map ()              <<=     // Parallelly, transform to List containing results.
 String 2 List       <<=     // Convert to List.
-File Read           <in>    // Read the file
+File Read <input>           // Read the file
 
 ```
 **'<<='**  indicate bind / join (feed output of one monad to another)
@@ -57,7 +57,7 @@ File Read           <in>    // Read the file
 
 Streams content of a text file, converts to uppercase then write back to another stream (output file).
 ```
- File Stream In ( File Stream Out <<= 2 UpperCase )
+ File Stream In ( File Stream Out <<= 2 UpperCase ) <input>
 ```
 
 

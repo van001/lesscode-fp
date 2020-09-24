@@ -36,7 +36,7 @@ We will be using $ / $M for pure functions / monadic composition (see examples b
 
 ## Algorithms
 
-## Real-world##
+## Real-world 
 **[Image Download](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/image-download)**
 
 Download list of images specified in a file and write metadata(url, size, hash) to the specified output file.

@@ -4,7 +4,7 @@
 - In pure functional programming languages, you are either writing functions with no side effects (pure functions) or functions with 
 side effects (Monads). 
 
-- Pure functions have refrential integrity, , means you should be able to repalce with execution of a function with the value it will produce, anytime.
+- Pure functions have referential integrity, which means you can replace the function with the value it will produce, anytime.
 
 - Monads lets you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence (one after another).
 

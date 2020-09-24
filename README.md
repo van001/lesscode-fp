@@ -39,7 +39,7 @@ We will be using $ / $M for pure functions / monadic composition (see examples b
 ## Complex ##
 **[Image Download](https://github.com/van001/lesscode-fp/tree/master/examples/image-download)**
 
-Download list of images specified in a file and write metadata to the specified output file.
+Download list of images specified in a file and write metadata(url, size, hash) to the specified output file.
 
 Doing bunch of things in **Parallel**, waiting for the result and then doing something else. 
 Also tolerating the failures instead of aborting on any error (if a file download fails it is ok, just write the error).

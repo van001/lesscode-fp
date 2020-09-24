@@ -38,7 +38,8 @@ If there is more than one input then make sure you adhere to **data last** princ
 
 Download list of images specified in a file and write metadata to the specified output file.
 
-**Parallel**, here you are doing bunch things parallelly, waiting for the result and then doing something else. 
+Doing bunch of things in **Parallel**, waiting for the result and then doing something else. 
+Also tolerating the failures instead of aborting on any error (if a file download fails it is ok, just write the error).
 
 Read bottom to top, right to left
 ```
@@ -56,6 +57,8 @@ File Read <input>           // Read the file
 **[File Streaming](https://github.com/van001/lesscode-fp/tree/master/examples/file-streaming)**
 
 Streams content of a text file, converts to uppercase then write back to another stream (output file).
+
+Sometimes inputput comes as **streams** or too large handle in parallel.
 ```
  File Stream In ( File Stream Out <<= 2 UpperCase ) <input>
 ```

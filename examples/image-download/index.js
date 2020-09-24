@@ -18,9 +18,9 @@ const processURL = name => {
     const LogData = name => async data => `${name} ${contentLen(data)} ${computeHash(data)}`
     const LogErorr = name =>  async err => `${name} 0  ${escape(err)}`
     return $M(
-        Trace(`Extracted metadata...............`), LogData(name),
+        Trace(`Extracted metadata...............`), LogData(name),      // Success
         Hint(`Downloaded ${name}................`), HttpGET)(name)
-        .catch($(Trace(`[Fail] : ${name}........`), LogErorr(name)))
+        .catch($(Trace(`[Fail] : ${name}........`), LogErorr(name)))    // Failure
 }
 
 // Pipeline

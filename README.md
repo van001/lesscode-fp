@@ -34,9 +34,9 @@ If there is more than one input then make sure you adhere to **data last** princ
 ## Algorithms
 
 ## Complex ##
-**[Image Download]**(https://github.com/van001/lesscode-fp/tree/master/examples/image-download)
+**[Image Download](https://github.com/van001/lesscode-fp/tree/master/examples/image-download)**
 Download list of images specified in a file and write metadata to the specified output file.
 
-**[File Streaming]**(https://github.com/van001/lesscode-fp/tree/master/examples/file-streaming)
+**[File Streaming](https://github.com/van001/lesscode-fp/tree/master/examples/file-streaming)**
 Streams context of a text file and converts it into uppecase. |
 

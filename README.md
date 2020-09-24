@@ -58,7 +58,7 @@ File Read <input>           // Read the file
 
 Streams content of a text file, converts to uppercase then write back to another stream (output file).
 
-Sometimes inputput comes as **streams** or too large handle in parallel.
+Sometimes input is a **streams** or too large handle in parallel.
 ```
  File Stream In ( File Stream Out <<= 2 UpperCase ) <input>
 ```

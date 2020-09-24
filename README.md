@@ -1,24 +1,26 @@
 # Overview
 ![Lego Kids](lego-kid.jpeg) Based on my earlier work on [Functional Thinking](https://github.com/van001/lesscode), I propose the following [functions](https://github.com/van001/lesscode-fp/blob/master/src/index.js) (subject to change). I will be using these functions and the FP principles to build other/ future projects. So stay tuned...
 
-- In pure functional programming languages, you are either writing functions with no side effects (pure functions) or functions with 
+In pure functional programming languages, you are either writing functions with no side effects (pure functions) or functions with 
 side effects (Monads). 
 
-- **Pure functions** (no side-effect) are time independent & have referential integrity, which means you can replace the function with the value it produces, anytime.
+- **Pure function** : have no side-effects, are time independent & have referential integrity, which means you can replace the function with the value it produces, anytime.
 
-- **Monads** (functions with side-effects) lets you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence (one after another).
+- **Monads** : functions with side-effects, let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence (one after another).
 
-- In pure FP you have **fewer categories** (data structures). e.g list, tuple, map (non mutable). 
+- **Fewer categories** :  e.g list, tuple, map (non mutable). 
 
-- In pure FP your data is **immutable** and there is technically no assignment. You are either naming your
-data and functions or composing them.
+- **Immutable** : data is immutable. 
 
-- The origin of functional programming, Lambda calculus, only allowed **single input/ output**. While it may not be always practical, try to adhere by it as much.
-If there is more than one input then make sure you adhere to **data last** principle. Any function you write has to accept some input which it uses/manipulate to generate an output, make them last. 
+- **Single input/ output** : the origin of functional programming, ***lambda calculus***, only allowed single input/ ouput. While it may not be always practical, try to adhere by it as much.
 
-- Use **currying** if your function takes more than one parameter. Currying allows you to partially apply data that you might need for multi parameter functions. Currying allows you to create your own DSL (domain specifi language) by partially applying many generic functions.
+- **Data Last** : functions that take more than one parameter,  should accept data as the last parameter.
 
-- Programming in general is about **composibility** (re-useability). In FP, you live and die by it. You should be able to compose functions to produce more specific functions. 
+- **Currying** : function that takes more than one parameter, curry  them (f(a, b) => f(a) -> f(b)). 
+Currying allows you to partially apply other options (initialize) and dependencies (injection) that you might need for multi parameter functions.
+Currying also allows you to create your own DSL (domain specifi language) by partially applying many generic functions and creating a new domain specfic one.
+
+- **Composing** : in FP, you live and die by it. You should be able to compose functions to produce more specific functions. 
 We will be using $ / $M for pure functions / monadic composition (see examples below)
 
 # Features

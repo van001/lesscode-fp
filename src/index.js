@@ -140,7 +140,7 @@ const Hash = cipher => async data => hash(cipher)(data)
 
 const fs = require('fs')
 const FileStreamIn  = option => func => async file => fs.createReadStream(file, option).on('data', func); 
-const FileStreamOut = option => file => async buffer => fs.createWriteStream(file,option).write(print(buffer))
+const FileStreamOut = option => file => async buffer => fs.createWriteStream(file,option).write(buffer)
 
 
 const fsp = fs.promises

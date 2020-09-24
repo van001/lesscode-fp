@@ -8,7 +8,10 @@ side effects (Monads).
 
 - Monads (functions with side-effects) lets you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence (one after another).
 
-- In pure FP you have fewer categories (data structures). e.g Primitives like numbers/ characters, list, tuple, map (non mutable). In a nutshell your data is immutable.
+- In pure FP you have fewer categories (data structures). e.g list, tuple, map (non mutable). 
+
+- In pure FP your data is immutable and there is technically no assignment. You are either naming your
+data and functions or composing them.
 
 - The origin of functional programming, Lambda calculus, only allowed single input/ output. While it may not be practical always, try to adhere by it as much.
 If there is more than one input then make sure you adhere to data last principle. Any function you write has to accept some input which it uses/manipulate to generate an output, make them last. 

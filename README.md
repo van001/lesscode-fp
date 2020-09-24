@@ -13,7 +13,7 @@ side effects (Monads).
 - In pure FP your data is immutable and there is technically no assignment. You are either naming your
 data and functions or composing them.
 
-- The origin of functional programming, Lambda calculus, only allowed single input/ output. While it may not be practical always, try to adhere by it as much.
+- The origin of functional programming, Lambda calculus, only allowed single input/ output. While it may not be always practical, try to adhere by it as much.
 If there is more than one input then make sure you adhere to data last principle. Any function you write has to accept some input which it uses/manipulate to generate an output, make them last. 
 
 - Use currying if your function takes more than one parameter. Currying allows you to partially apply data that you might need for multi parameter functions. Currying allows you to create your own DSL (domain specifi language) by partially applying many generic functions.

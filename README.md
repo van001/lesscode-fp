@@ -35,6 +35,7 @@ We will be using $ / $M for pure functions / monadic composition (see [examples]
 # Examples
 
 ## Algorithms
+Coming soon...
 
 ## Real-world 
 **[Image Download](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/image-download)**

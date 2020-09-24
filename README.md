@@ -24,7 +24,7 @@ Currying also allows you to create your own DSL (domain specifi language) by par
 We will be using $ / $M for pure functions / monadic composition (see examples below)
 
 # Features
-- Fewer category/ data structures - string, list n map (read only).
+- Fewer category / data structures - string, list/tuple n map (read only).
 - Built using point free style n currying.
 - Composable function ($(...)/SM(...)) for both pure (no side effect) and monads (side effect).
 - Functions to manipulate a given category.

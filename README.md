@@ -38,16 +38,17 @@ If there is more than one input then make sure you adhere to **data last** princ
 
 Download list of images specified in a file and write metadata to the specified output file.
 
-**Parallel**, here you are doing bunch things parallely, waiting for the result and then doing something else. 
+**Parallel**, here you are doing bunch things parallelly, waiting for the result and then doing something else. 
 
 Read bottom to top, right to left
 ```
-output.txt 
-<<= File Write <<= List 2 String  // Convert the list to String and write to file
-<<= Wait                          // Wait till every thing is done.
-<<= Map ()                        // Transform the List to List containing result
-<<= String 2 List <<= File Read   // Read and convert to List
-<<= input.txt                     // input file
+File Write              // Write to file
+<<= List 2 String       // Convert List to String
+<<= Wait                // Wait till everything is done.
+<<= Map ()              // Parallelly, transform to List containing results.
+<<= String 2 List       // Convert to List.
+<<= File Read           // Read the file
+
 ```
 **'<<='**  indicate bind / join (feed output of one monad to another)
 

@@ -28,4 +28,4 @@ If there is more than one input then make sure you adhere to data last principle
 
 # Examples
 
-- [Image Download](https://github.com/van001/lesscode-fp/tree/master/examples/image-download) : Download list of images and generate metadata.
+- [Image Download](https://github.com/van001/lesscode-fp/tree/master/examples/image-download) : Download list of images specified in a file and write metadata to the specified output file.

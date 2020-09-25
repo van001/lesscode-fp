@@ -8,7 +8,7 @@ When I started this journey few months back, my goal was simple -
 
 # Overview
 
-In pure functional programming languages, you are either writing functions with **no** [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) (pure functions) or functions with 
+In pure functional programming languages, you are either write functions with **no** [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) (pure functions) or functions with 
 side-effects. Also in FP, you do not assign anything, you just compose functions to produce a desired outcome.
 
 Lesscode-fp, libarary is designed using functional programming principles :

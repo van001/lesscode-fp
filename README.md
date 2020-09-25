@@ -30,7 +30,13 @@ const sappend = str1 => str2 => str1 + str2
 ```
 
 ### Single input/ output ### 
-The origin of functional programming, ***[lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus)***, only allowed single input/ ouput. While it may not be always practical, try to adhere by it as much.
+The origin of functional programming, ***[lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus)***, only allowed single input/ ouput. While it may not be seem practical, currying (see below) will allow you to do so.
+
+```
+// sappend takes a string as 1st parameter and using currying. returns a function that takes aother string as a parameter
+// sappend = str1 => ( (str2) => str1 + str2 )
+const sappend = str1 => str2 => str1 + str2 
+```
 
 ### Data Last ###
 Functions that take more than one parameter,  should accept data as the last parameter.

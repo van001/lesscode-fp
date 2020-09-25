@@ -3,7 +3,7 @@
 const { 
     $, $M, Hint, Trace, print, hash, Lmap, Wait, mget, exit, mgettwo, 
     linebreak, utf8, newline,  
-    L2String, S2List, l2String,
+    L2String, S2List,
     FileRead, FileWrite,
     HttpGET } = require('lesscode-fp')
 

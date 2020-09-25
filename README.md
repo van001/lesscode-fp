@@ -17,7 +17,7 @@ Have no side-effects, are time independent & have [referential transparency](htt
 which means you can replace the function with it's return value, anytime. 
 Think them as a mathematical function, which for a given input will awlays return the same output.
 ```
-// appends string to another string and returns a new string
+// appends String to another String and returns a new String
 const sappend = str1 => str2 => str1 + str2 
 
 // checks if a value is null or not?
@@ -31,7 +31,7 @@ const max = a => b => Math.max(a,b)
 In functional programming you do not mutate data, instead you compute a new.
 
 ```
-// appends string to another string and returns a new string
+// appends String to another String and returns a new String
 const sappend = str1 => str2 => str1 + str2 
 ```
 
@@ -39,8 +39,11 @@ const sappend = str1 => str2 => str1 + str2
 The origin of functional programming, ***[lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus)***, only allowed single input/ ouput. While it may not seem practical, currying (see below)  allows you to do so. Functional programming treats functions as a 1st class citizen, so you can pass a function as a parameter and return a function as a result.
 
 ```
-// sappend takes a string as 1st parameter and using currying , 
-// returns a function that takes aother string as a parameter
+// reverses a String
+const lreverse = lst => lst.reduce((acc, val) => lappend([val])(acc), [])
+
+// sappend takes a String as 1st parameter and using currying , 
+// returns a function that takes another String as a parameter
 // sappend = str1 => ( (str2) => str1 + str2 )
 const sappend = str1 => str2 => str1 + str2 
 ```
@@ -75,7 +78,7 @@ whitspace2List('This is cool')
 ```
 
 ### Categories ### 
-Fewer categories - string, list / tuple, map / object (non mutable). Functions to manipulate those categories. Also functions to change from one category to another.
+Fewer categories - String, List / Tuple, Map / Object (non mutable). Functions to manipulate those categories. Also functions to change from one category to another.
 
 ```
 ```

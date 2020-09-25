@@ -13,8 +13,9 @@ side-effects. Also in FP, you do not assign anything, you just compose functions
 Lesscode-fp, libarary is designed using functional programming principles :
 
 ### Pure functions ### 
-Have no side-effects, are time independent & have referential integrity, which means you can replace the function with it's return value, anytime. Think them
-as a mathematical function, which for a given input will awlays produce the same output.
+Have no side-effects, are time independent & have [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), 
+which means you can replace the function with it's return value, anytime. 
+Think them as a mathematical function, which for a given input will awlays produce the same output.
 ```
 // appends string to another string and returns a new string
 const sappend = str1 => str2 => str1 + str2 

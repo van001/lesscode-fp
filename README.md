@@ -4,8 +4,6 @@
 - Instead of writing tonnes of imperative code can we just compose functions and build a solution?
 - Can we build a generic functional library / construct to solve any algorithm or real-world problem? 
 
-I
-
 # Overview
 
 I propose the following [functions](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js) (subject to change). I will be using these functions and the FP principles to build other/ future projects. So stay tuned...

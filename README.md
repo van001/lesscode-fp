@@ -41,7 +41,7 @@ Coming soon...
 
 ### Parallel ###
 
-![Parallel([parallel.png])] Doing bunch of things in parallel, waiting for the result and then doing something else. 
+![Parallel](parallel.png) Doing bunch of things in parallel, waiting for the result and then doing something else. 
 Also tolerating the failures instead of aborting on any error (if a file download fails it is ok, just write the error).
 
 **[Image Download](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/image-download)**

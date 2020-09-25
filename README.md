@@ -1,7 +1,7 @@
 # Motivation
 
 Going back in time when Alan Turing built state machine (Turing machine) to perform computation, Alanzo Chruch designed Lambda Calculus to
-mathematically compute anything by composing lambda functions. Soon world got filled with programming languages in both the paradigm and many languages start borrowing each other's concept to only become bloated and un-manageable. 
+mathematically compute anything by composing lambda functions. Soon world got filled with programming languages in both the paradigm and many languages start borrowing each other's concept (sounds familiar?) to only become bloated and un-manageable. 
 
 John Bakus's ["Can programming be liberated from von nuemann style?"](https://github.com/van001/lesscode/blob/master/can-programming-be-liberated.pdf) put it very rightly.
 

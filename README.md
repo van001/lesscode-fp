@@ -16,12 +16,13 @@ without being caught in the programming lanugage nuances, syntax or even nomencl
 # Overview
 
 In pure functional programming languages, you either write functions with **no** [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) (pure functions) or functions with 
-side-effects. Also in FP, you do not assign anything, you just compose functions to produce a desired outcome.
+side-effects. Also in FP, you do not assign anything, you just compose functions to produce a desired outcome. FP languanges
+treat functions as a 1st class citizen and so you can pass / return a function to / from another function.
 
 [lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), libarary is designed using the functional programming principles :
 
 ### Pure functions ### 
-Have no side-effects, are time independent & have [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), 
+Functions with no side-effects, are time independent & have [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), 
 which means you can replace the function with it's return value, anytime. 
 Think them as a mathematical function, which for a given input will awlays return the same output.
 ```

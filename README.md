@@ -8,7 +8,7 @@ When I started this journey few months back, my goal was simple -
 # Overview
 
 In pure functional programming languages, you are either writing functions with **no** [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) (pure functions) or functions with 
-side-effects (Monads). Also in FP, you do not assign anything, you just compose functions to produce a desired outcome.
+side-effects. Also in FP, you do not assign anything, you just compose functions to produce a desired outcome.
 
 Lesscode-fp, libarary is designed using functional programming principles :
 
@@ -79,8 +79,10 @@ string list, tuple, map (non mutable). Functions to manipulate those categories.
 ```
 ```
 
-### Monads ### 
-Functions with side-effects. Let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence. Lesscode implement monads using promise/ async. It also provides a monadic version of all the pure fucntion, so that you can seamlessly use it with [monadic composition](https://github.com/van001/lesscode-fp#Composition). 
+### Monad ### 
+Real-world functions have side-effects. Monad, lets you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence. 
+
+Lesscode implement monads using promise/ async. It also provide a monadic version of all the pure fucntions, so that you can seamlessly use them in [monadic composition](https://github.com/van001/lesscode-fp#Composition). 
 
 ```
 // Read content of a file. 

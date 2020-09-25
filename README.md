@@ -4,7 +4,7 @@
 [Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus) to mathematically compute anything by composing lambda functions. 
 Soon world got filled with programming languages in both the paradigm and many languages start borrowing each other's concept (sounds familiar?) to only become bloated and un-manageable. 
 
-Fast forward 1997, John Bakus's paper, ["Can programming be liberated from von nuemann style?"](https://github.com/van001/lesscode/blob/master/can-programming-be-liberated.pdf) put it very rightly.
+Fast forward 1977, John Bakus's paper, ["Can programming be liberated from von nuemann style?"](https://github.com/van001/lesscode/blob/master/can-programming-be-liberated.pdf) put it very rightly.
 
 The above article forced me to dive deep into programming paradigm concepts, specially functional programming and really understand it from the work of those 2 greats. So begin the journey of [Functional Thinking](https://github.com/van001/lesscode), with few very simple goals in mind - 
 

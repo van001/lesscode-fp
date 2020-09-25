@@ -2,7 +2,7 @@
 ![Lego Kids](lego-kid.jpeg) [Functional Thinking](https://github.com/van001/lesscode), when I started this journey few months back, my goal was simple - 
 
 - To deeply understand the motivation and concepts behind the functional programming, 
-without being caught in the programming langage nuances, syntax or even nomenclature. 
+without being caught in the programming lanugage nuances, syntax or even nomenclature. 
 
 - To apply the learned knowledge and solve the real-world problems - APIs, IOs etc
 

@@ -4,33 +4,26 @@
 In pure functional programming languages, you are either writing functions with no side effects (pure functions) or functions with 
 side effects (Monads). 
 
-- **Pure functions** : have no side-effects, are time independent & have referential integrity, which means you can replace the function with the value it produces, anytime.
+# Features
 
-- **Monads** : functions with side-effects, let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence (one after another).
+**Pure functions** : have no side-effects, are time independent & have referential integrity, which means you can replace the function with the value it produces, anytime.
 
-- **Fewer categories** :  e.g list, tuple, map (non mutable). 
+**Monads** : functions with side-effects, let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence (one after another).
 
-- **Immutable** : data is immutable. 
+**Fewer categories** :  e.g list, tuple, map (non mutable). 
 
-- **Single input/ output** : the origin of functional programming, ***lambda calculus***, only allowed single input/ ouput. While it may not be always practical, try to adhere by it as much.
+**Immutable** : data is immutable. 
 
-- **Data Last** : functions that take more than one parameter,  should accept data as the last parameter.
+**Single input/ output** : the origin of functional programming, ***lambda calculus***, only allowed single input/ ouput. While it may not be always practical, try to adhere by it as much.
 
-- **Currying** : function that takes more than one parameter, curry  them (f(a, b) => f(a) -> f(b)). 
+**Data Last** : functions that take more than one parameter,  should accept data as the last parameter.
+
+**Currying** : function that takes more than one parameter, curry  them (f(a, b) => f(a) -> f(b)). 
 Currying allows you to partially apply other options (initialize) and dependencies (injection) that you might need for multi parameter functions.
 Currying also allows you to create your own DSL (domain specifi language) by partially applying many generic functions and creating a new domain specfic one.
 
-- **Composition** : in FP, since there is no assignment you just compose functions to produce more specific functions/ solutions.
+**Composition** : in FP, since there is no assignment you just compose functions to produce more specific functions/ solutions.
 We will be using $ / $M for pure functions / monadic composition (see [examples](https://github.com/van001/lesscode-fp#examples) below)
-
-# Features
-- Fewer category / data structures - string, list/tuple n map (read only).
-- Built using point free style n currying.
-- Composable function ($(...)/SM(...)) for both pure (no side effect) and monads (side effect).
-- Functions to manipulate a given category.
-- Functions to expand, collapse a given category. 
-- Functions to transform one category to another.
-- Built-in Monads to handle side-effects (http, file etc)
 
 # Examples
 

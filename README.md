@@ -1,15 +1,17 @@
 # Motivation
 ![Lego Kids](lego-kid.jpeg) [Functional Thinking](https://github.com/van001/lesscode), when I started this journey few months back, my goal was simple - 
 
-- Instead of writing tonnes of imperative code can we just compose functions and build a solution?
-- Can we build a generic functional library / construct to solve any algorithm or real-world problem? 
+- To depply understand the motivation and concepts behind the functional programming, 
+without being caught in the programming langage nuances, syntax or even nomenclature. 
+
+- To apply the learned knowledge and solve the real-world problems - APIs, IOs etc
 
 # Overview
 
 In pure functional programming languages, you are either write functions with **no** [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) (pure functions) or functions with 
 side-effects. Also in FP, you do not assign anything, you just compose functions to produce a desired outcome.
 
-[Lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), libarary is designed using functional programming principles :
+[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), libarary is designed using functional programming principles :
 
 ### Pure functions ### 
 Have no side-effects, are time independent & have [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), 

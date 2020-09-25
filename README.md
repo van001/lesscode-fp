@@ -39,12 +39,12 @@ Coming soon...
 
 ## Real-world 
 
-###Parallel###
+### Parallel ###
 
 Doing bunch of things in parallel, waiting for the result and then doing something else. 
 Also tolerating the failures instead of aborting on any error (if a file download fails it is ok, just write the error).
 
-***[Image Download](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/image-download)***
+**[Image Download](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/image-download)**
 
 Download list of images specified in a file and write metadata(url, size, hash) to the specified output file.
 
@@ -102,11 +102,11 @@ $M(
 .catch($(exit, print))
 
 ```
-###Streaming###
+### Streaming ###
 
 Sometimes, input is a **stream** or needs to be handled in chunk.
 
-***[File Streaming](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/file-streaming)***
+**[File Streaming](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/file-streaming)**
 
 Streams content of a text file, converts to uppercase then write back to another stream (output file).
 

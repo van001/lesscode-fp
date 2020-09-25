@@ -14,6 +14,8 @@ without being caught in the programming lanugage nuances, syntax or even nomencl
 
 - Apply the learned knowledge to solve the real-world problems - APIs, IOs etc
 
+This repo is about the 2nd goal - Application.
+
 # Overview
 
 In functional programming languages :
@@ -24,7 +26,8 @@ In functional programming languages :
 
 - functions are treated as a 1st class citizen and so you can pass / return a function to / from another function.
 
-[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), libarary is designed using the functional programming principles :
+[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), libarary is designed using the following 
+functional programming principles :
 
 ### Pure functions ### 
 Functions with no side-effects, are time independent & have [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), 

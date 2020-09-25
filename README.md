@@ -7,6 +7,11 @@ side effects (Monads).
 # Features
 
 **Pure functions** : have no side-effects, are time independent & have referential integrity, which means you can replace the function with the value it produces, anytime.
+```
+const sappend = str1 => str2 => str1 + str2 // appends string to another string and returns a new string
+const eqNull = val => (val == null || val == undefined) ? true : false // checks is a value is null or not?
+
+```
 
 **Monads** : functions with side-effects. Let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence (one after another e.g. promise).
 

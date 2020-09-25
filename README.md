@@ -48,21 +48,6 @@ const lreverse = lst => lst.reduce((acc, val) => lappend([val])(acc), [])
 const sappend = str1 => str2 => str1 + str2 
 ```
 
-### Data-Last ###
-Functions that take more than one parameter,  should accept data as the last parameter. If you are coming from imperative programming paradigm, this might be new to you.
-In imperative programming you pass data 1st & options (default values - ring the bell?) later.  Or in the case of object oriented programming (still imperative), 
-you manipulate the encapsulated data with function(s), which take additional options. 
-
-In FP, data and functions are separate, hence you build functional library to work with your data.  
-
-Data last principle also allows you to [compose](https://github.com/van001/lesscode-fp#Composition) functions to produce more functions.
-
-```
-// l2String converts, List to String. 
-// it takes List (which it will convert to String) as a last parameter.
-const l2String = sep => lst => lst.join(sep)
-```
-
 ### Currying ### 
 Function that takes more than one parameter, [curry](https://en.wikipedia.org/wiki/Currying)  them (f(a, b) => f(a)(b)). 
 Currying allows you to partially apply other options (initializion) and dependencies (injection) that you might need for multi-parameter functions.
@@ -77,6 +62,21 @@ const whitspace2List = s2List(space)
 
 // will break String into List on every whitespace.
 whitspace2List('This is cool') 
+```
+
+### Data-Last ###
+Functions that take more than one parameter,  should accept data as the last parameter. If you are coming from imperative programming paradigm, this might be new to you.
+In imperative programming you pass data 1st & options (default values - ring the bell?) later.  Or in the case of object oriented programming (still imperative), 
+you manipulate the encapsulated data with function(s), which take additional options. 
+
+In FP, data and functions are separate, hence you build functional library to work with your data.  
+
+Data last principle also allows you to [compose](https://github.com/van001/lesscode-fp#Composition) functions to produce more functions.
+
+```
+// l2String converts, List to String. 
+// it takes List (which it will convert to String) as a last parameter.
+const l2String = sep => lst => lst.join(sep)
 ```
 
 ### Categories ### 

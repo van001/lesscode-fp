@@ -7,7 +7,7 @@ Soon world got filled with programming languages in both the paradigm and many l
 
 Fast forward 1977, John Bakus's paper, ["Can programming be liberated from von nuemann style?"](https://github.com/van001/lesscode/blob/master/can-programming-be-liberated.pdf) put it very rightly.
 
-The above article forced me to dive deep into programming paradigm concepts, specially functional programming and really understand it from the work of those 2 greats. So begin the journey of [Functional Thinking](https://github.com/van001/lesscode), with few very simple goals in mind - 
+The above article influenced me to dive deep into programming paradigm concepts, specially functional programming and really understand it from the work of those 2 greats. So begin the journey of [Functional Thinking](https://github.com/van001/lesscode), with few very simple goals in mind - 
 
 - Seek deep understanding of motivation and concepts behind the functional programming, 
 without being caught in the programming lanugage nuances, syntax or even nomenclature. 

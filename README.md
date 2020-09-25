@@ -30,7 +30,7 @@ const sappend = str1 => str2 => str1 + str2
 ```
 
 ### Single input/ output ### 
-The origin of functional programming, ***lambda calculus***, only allowed single input/ ouput. While it may not be always practical, try to adhere by it as much.
+The origin of functional programming, ***[lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus)***, only allowed single input/ ouput. While it may not be always practical, try to adhere by it as much.
 
 ### Data Last ###
 Functions that take more than one parameter,  should accept data as the last parameter.

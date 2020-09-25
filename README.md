@@ -6,7 +6,8 @@ side effects (Monads).
 
 # Features
 
-**Pure functions** : have no side-effects, are time independent & have referential integrity, which means you can replace the function with the value it produces, anytime.
+###Pure functions### : have no side-effects, are time independent & have referential integrity, which means you can replace the function with the value it produces, anytime. Think them
+as a mathematical function, which for a given input will awlays produce the same output.
 ```
 // appends string to another string and returns a new string
 const sappend = str1 => str2 => str1 + str2 
@@ -14,33 +15,35 @@ const sappend = str1 => str2 => str1 + str2
 // checks is a value is null or not?
 const eqNull = val => (val == null || undefined) ? true : false 
 
-// lets you map over List
-const lmap = func => lst => lst.map(func)
+// Find the max of 2 munmers
+const max = a => b => Math.max(a,b)
 ```
 
-**Monads** : functions with side-effects. Let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence (one after another e.g. promise).
+###Monads### : functions with side-effects. Let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence. Lesscode implement monads using promise/ async. It also provides a monadic version of all the pure fucntion, so that you can seamlessly use it with [monadic composition]((https://github.com/van001/lesscode-fp#Composition))
 
 ```
+// Read content of a file. 
+const FileRead = option => async name => fsp.readFile(name, option);
 ```
 
-**Fewer categories** :  e.g string list, tuple, map (non mutable). Functions to manipulate those categories. Also functions to change from one category to another.
-
-```
-```
-**Immutable** : data is immutable. 
+###Fewer categories### :  e.g string list, tuple, map (non mutable). Functions to manipulate those categories. Also functions to change from one category to another.
 
 ```
 ```
+###Immutable### : data is immutable. 
 
-**Single input/ output** : the origin of functional programming, ***lambda calculus***, only allowed single input/ ouput. While it may not be always practical, try to adhere by it as much.
+```
+```
 
-**Data Last** : functions that take more than one parameter,  should accept data as the last parameter.
+###Single input/ output### : the origin of functional programming, ***lambda calculus***, only allowed single input/ ouput. While it may not be always practical, try to adhere by it as much.
 
-**Currying** : function that takes more than one parameter, curry  them (f(a, b) => f(a) -> f(b)). 
+###Data Last### : functions that take more than one parameter,  should accept data as the last parameter.
+
+###Currying### : function that takes more than one parameter, curry  them (f(a, b) => f(a) -> f(b)). 
 Currying allows you to partially apply other options (initialize) and dependencies (injection) that you might need for multi parameter functions.
 Currying also allows you to create your own DSL (domain specifi language) by partially applying many generic functions and creating a new domain specfic one.
 
-**Composition** : in FP, since there is no assignment you just compose functions to produce more specific functions/ solutions.
+###Composition### : in FP, since there is no assignment you just compose functions to produce more specific functions/ solutions.
 We will be using $ / $M for pure functions / monadic composition (see [examples](https://github.com/van001/lesscode-fp#examples) below)
 
 # Examples

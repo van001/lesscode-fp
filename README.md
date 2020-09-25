@@ -53,9 +53,12 @@ const l2String = sep => lst => lst.join(sep)
 ```
 
 ### Currying ### 
-Function that takes more than one parameter, curry  them (f(a, b) => f(a) -> f(b)). 
+Function that takes more than one parameter, [curry](https://en.wikipedia.org/wiki/Currying)  them (f(a, b) => f(a) -> f(b)). 
 Currying allows you to partially apply other options (initialize) and dependencies (injection) that you might need for multi parameter functions.
 Currying also allows you to create your own DSL (domain specifi language) by partially applying many generic functions and creating a new domain specfic one.
+
+```
+```
 
 ### Fewer categories ### 
 string list, tuple, map (non mutable). Functions to manipulate those categories. Also functions to change from one category to another.
@@ -74,6 +77,9 @@ const FileRead = option => async name => fsp.readFile(name, option);
 ### Composition ### 
 In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions.
 We will be using $ / $M for pure functions / monadic composition (see [examples](https://github.com/van001/lesscode-fp#examples) below)
+
+```
+```
 
 # Examples
 

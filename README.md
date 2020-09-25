@@ -6,8 +6,6 @@
 
 # Overview
 
-I propose the following [functions](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js) (subject to change). I will be using these functions and the FP principles to build other/ future projects. So stay tuned...
-
 In pure functional programming languages, you are either write functions with **no** [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) (pure functions) or functions with 
 side-effects. Also in FP, you do not assign anything, you just compose functions to produce a desired outcome.
 
@@ -106,6 +104,10 @@ I used  '$' coz it has a very small foot-print and can be easily spotted to show
 
 ```
 ```
+
+Based on the above principle, I propose the following [functions](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js) (subject to change).
+I will be using these functions and the FP principles to build other/ future projects. So stay tuned...
+
 
 # Examples
 

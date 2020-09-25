@@ -8,8 +8,10 @@ side effects (Monads).
 
 **Pure functions** : have no side-effects, are time independent & have referential integrity, which means you can replace the function with the value it produces, anytime.
 ```
-const sappend = str1 => str2 => str1 + str2 // appends string to another string and returns a new string
-const eqNull = val => (val == null || val == undefined) ? true : false // checks is a value is null or not?
+// appends string to another string and returns a new string
+const sappend = str1 => str2 => str1 + str2 
+// checks is a value is null or not?
+const eqNull = val => (val == null || undefined) ? true : false 
 
 ```
 

@@ -20,9 +20,17 @@ const lmap = func => lst => lst.map(func)
 
 **Monads** : functions with side-effects. Let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence (one after another e.g. promise).
 
-**Fewer categories** :  e.g list, tuple, map (non mutable). 
+```
+```
 
+**Fewer categories** :  e.g string list, tuple, map (non mutable). Functions to manipulate those categories. Also functions to change from one category to another.
+
+```
+```
 **Immutable** : data is immutable. 
+
+```
+```
 
 **Single input/ output** : the origin of functional programming, ***lambda calculus***, only allowed single input/ ouput. While it may not be always practical, try to adhere by it as much.
 

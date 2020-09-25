@@ -104,7 +104,7 @@ Streams content of a text file, converts to uppercase then write back to another
 
 **Streaming** : sometimes, input is a **stream** or too big / time consuming to handle in parallel.
 
-input.txt
+input.txt (the real file may be huge...)
 ```
 this text is all lowercase. please turn it into to uppercase case.
 ```

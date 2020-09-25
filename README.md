@@ -13,12 +13,14 @@ Have no side-effects, are time independent & have referential integrity, which m
 as a mathematical function, which for a given input will awlays produce the same output.
 ```
 // appends string to another string and returns a new string
+
 const sappend = str1 => str2 => str1 + str2 
 
 // checks if a value is null or not?
 const eqNull = val => (val == null || undefined) ? true : false 
 
 // Find the max of 2 munmers
+
 const max = a => b => Math.max(a,b)
 ```
 
@@ -27,6 +29,7 @@ In functional programming you do not mutate data, instead you compute a new.
 
 ```
 // appends string to another string and returns a new string
+
 const sappend = str1 => str2 => str1 + str2 
 
 ```
@@ -38,6 +41,7 @@ The origin of functional programming, ***[lambda calculus](https://en.wikipedia.
 // sappend takes a string as 1st parameter and using currying , 
 // returns a function that takes aother string as a parameter
 // sappend = str1 => ( (str2) => str1 + str2 )
+
 const sappend = str1 => str2 => str1 + str2 
 ```
 
@@ -47,7 +51,9 @@ In imperative programming you either pass data 1st (options later), or as in the
 functions to manipulte them. In FP, data and functions are separate, hence you build functional library to work with your data.  
 
 ```
-// l2String converts, List to String. It takes List (which it will convert to String) as a last parameter.
+// l2String converts, List to String. 
+// It takes List (which it will convert to String) as a last parameter.
+
 const l2String = sep => lst => lst.join(sep)
 ```
 

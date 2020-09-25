@@ -46,6 +46,8 @@ Functions that take more than one parameter,  should accept data as the last par
 In imperative programming you either pass data 1st (options later), or as in the case of object oriented programming, objects already encapsulate data, so you provide
 functions to manipulte them. In FP, data and functions are separate, hence you build functional library to work with your data.  
 
+Data last principle, also allows you to compose functions to produce more functions.
+
 ```
 // l2String converts, List to String. 
 // It takes List (which it will convert to String) as a last parameter.

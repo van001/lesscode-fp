@@ -60,7 +60,7 @@ const l2String = sep => lst => lst.join(sep)
 ### Currying ### 
 Function that takes more than one parameter, [curry](https://en.wikipedia.org/wiki/Currying)  them (f(a, b) => f(a)(b)). 
 Currying allows you to partially apply other options (initializion) and dependencies (injection) that you might need for multi-parameter functions.
-Currying also allows you to create your own DSL (domain specifi language) by partially applying many generic functions and creating a new domain specfic one.
+Currying also allows you to create your own DSL (domain specific language) by partially applying many generic functions and creating a new domain specfic one.
 
 ```
 // s2List is a curried function. 

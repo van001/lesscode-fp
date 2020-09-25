@@ -103,6 +103,17 @@ $M(
 Streams content of a text file, converts to uppercase then write back to another stream (output file).
 
 **Streaming** : sometimes, input is a **stream** or too big / time consuming to handle in parallel.
+
+input.txt
+```
+this text is all lowercase. please turn it into to uppercase case.
+```
+
+output.txt
+```
+THIS TEXT IS ALL LOWERCASE. PLEASE TURN IT INTO TO UPPERCASE CASE.
+```
+
 ```
 const { $M, print, utf8, FileStreamIn, FileStreamOut} = require('lesscode-fp')
 

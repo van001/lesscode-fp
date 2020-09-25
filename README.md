@@ -28,7 +28,6 @@ In functional programming you do not mutate data, instead you compute a new.
 ```
 // appends string to another string and returns a new string
 const sappend = str1 => str2 => str1 + str2 
-
 ```
 
 ### Single input/ output ### 

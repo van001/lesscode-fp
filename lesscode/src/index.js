@@ -79,14 +79,9 @@ const LmapA = func => async lst => lmapA(func)(lst)
 const lmap = func => lst => lst.map(func)
 const Lmap = func => async lst => lmap(func)(lst)
 
-// Preset Mappers
-const lmapDelta = lst => index => val => (index === 0)? 0 : val - lst[index-1] // create delta List
-
 // Expander
 const lprepend = lst1 => lst2 => lst2.concat(lst1) // prepend lst2 to lst1
 const lappend = lst1 => lst2 => lst1.concat(lst2) // append lst2 to lst1
-const lallSubset = lst => lst.reduce((lst, val) => lappend(lst)( lst.map(lprepend([val]))),[[]])
-const lmapN2 = func => lst => lmapA(val => lmapA(func(val))(lst))(lst) // NXN map function - List to List of List
 
 // Collapsers
 const lremove = index => lst => lst.slice(0,index).concat(lst.slice(index+1,lst.length))
@@ -118,17 +113,21 @@ const l2String = sep => lst => lst.join(sep)
 const L2String = sep => async lst => lst.join(sep)
 const l2countMap = lst => lst.reduce((map, val) => mincr(val)(map) ,{}) //histogram
 const l2indexMap = lst => lst.reduce ( (cat, val, index) => { (cat[val]) ? cat[val][index] = index : cat[val] = $(mset(index)(index))({}); return cat},{} ) // List to index Map - very helpful function to solve many problems
+
 // Map
 // Positional
 const mget = key => map => map[key] // retrieves the value for key
 const mgettwo = key1 => key2 => map => map[key1][key2]
 const mlen = map => map.size
 const mheadKey = map => (map.size > 0) ? map.keys().next()['value'] : undefined
+
 // Modifiers
 const mset = key => val => map => { map[key] = val; return map } // set the specified key / value
 const mincr = key => map => (map[key] == null)? mset(key)(1)(map) : mset(key)(mval(key)(map) +1 )(map) // incr the key value
+
 // Compacters
 const mdelete = key => map => { map.delete(key); return map}
+
 // Category Changers
 const m2valList = map => { const lst = [];  Object.keys(map).forEach( key => lst.push(map[key]));  return lst} // Map to List (values)
 const m2keyList = map => Object.keys(map) // Map to List (values)
@@ -174,8 +173,8 @@ module.exports = {
     leqEmpty,                                                    // List : Boolean
     lhead, ltail, lat,                                           // List : Positional
     lsort, lreverse, lswap ,                                     // List : Modifiers
-    lmap, Lmap, lmapA,LmapA, lmapDelta,                          // List : Mapper & Presets
-    lremove, lprepend, lappend, lallSubset, lmapN2,              // List : Expander
+    lmap, Lmap, lmapA,LmapA,                                     // List : Mapper & Presets
+    lremove, lprepend, lappend,                                  // List : Expander
     lsliceHead, lsliceTail, lslice, lzip, lflat,                 // List : Collapsers                     
     lfold, lfoldr, lfoldZ,                                       // List : Folders & Presets
     l2String, L2String, l2countMap, l2indexMap,                  // List : Category Changers

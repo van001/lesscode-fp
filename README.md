@@ -18,9 +18,9 @@ without being caught in the programming lanugage nuances, syntax or even nomencl
 
 In functional programming languages :
 
-- you either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) or functions with side-effects. 
+- you either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects. 
 
-- you do not assign anything, you just compose functions to produce a desired outcome. F
+- you do not assign anything, you just compose functions to produce a desired outcome.
 
 - functions are treated as a 1st class citizen and so you can pass / return a function to / from another function.
 

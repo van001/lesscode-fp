@@ -104,7 +104,13 @@ Streams content of a text file, converts to uppercase then write back to another
 
 **Streaming** : sometimes, input is a **stream** or too big / time consuming to handle in parallel.
 ```
- File Stream In ( File Stream Out <<= 2 UpperCase ) <input>
+const { $M, print, utf8, FileStreamIn, FileStreamOut} = require('lesscode-fp')
+
+const Uppercase = async str => str.toUpperCase()
+const SaveFile = name => FileStreamOut(utf8)(name)
+
+// Pipeline
+FileStreamIn(utf8)($M(SaveFile(process.argv[3]),Uppercase))(process.argv[2]).catch(print)
 ```
 
 

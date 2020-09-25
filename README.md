@@ -38,12 +38,15 @@ We will be using $ / $M for pure functions / monadic composition (see [examples]
 Coming soon...
 
 ## Real-world 
-**[Image Download](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/image-download)**
-
-Download list of images specified in a file and write metadata(url, size, hash) to the specified output file.
 
 **Parallel** : doing bunch of things in parallel, waiting for the result and then doing something else. 
 Also tolerating the failures instead of aborting on any error (if a file download fails it is ok, just write the error).
+
+***[Image Download](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/image-download)***
+
+Download list of images specified in a file and write metadata(url, size, hash) to the specified output file.
+
+
 
 input.txt
 ```
@@ -97,12 +100,13 @@ $M(
 .catch($(exit, print))
 
 ```
+**Streaming** : sometimes, input is a **stream** or too big / time consuming to handle in parallel.
 
-**[File Streaming](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/file-streaming)**
+***[File Streaming](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/file-streaming)***
 
 Streams content of a text file, converts to uppercase then write back to another stream (output file).
 
-**Streaming** : sometimes, input is a **stream** or too big / time consuming to handle in parallel.
+
 
 input.txt (the real file may be huge...)
 ```

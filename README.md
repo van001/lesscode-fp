@@ -10,10 +10,10 @@ The above article forced me to dive deep into programming paradigm concepts and 
 
 ![Lego Kids](lego-kid.jpeg) [Functional Thinking](https://github.com/van001/lesscode), when I started this journey few months back, my goal was simple - 
 
-- To deeply understand the motivation and concepts behind the functional programming, 
+- Seek deep understanding of motivation and concepts behind the functional programming, 
 without being caught in the programming lanugage nuances, syntax or even nomenclature. 
 
-- To apply the learned knowledge and solve the real-world problems - APIs, IOs etc
+- Apply the learned knowledge to solve the real-world problems - APIs, IOs etc
 
 # Overview
 

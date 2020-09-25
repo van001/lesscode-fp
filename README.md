@@ -42,7 +42,14 @@ const sappend = str1 => str2 => str1 + str2
 ```
 
 ### Data Last ###
-Functions that take more than one parameter,  should accept data as the last parameter.
+Functions that take more than one parameter,  should accept data as the last parameter. If you are coming from imperative programming paradigm, this might be new to you.
+In imperative programming you either pass data 1st (options later), or as in the case of object oriented programming, objects already encapsulate data, so you provide
+functions to manipulte them. In FP, data and functions are separate, hence you build functional library to work with your data.  
+
+```
+// l2String converts, List to String. It takes List (which it will convert to String) as a last parameter.
+const l2String = sep => lst => lst.join(sep)
+```
 
 ### Currying ### 
 Function that takes more than one parameter, curry  them (f(a, b) => f(a) -> f(b)). 

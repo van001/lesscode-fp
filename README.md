@@ -39,7 +39,9 @@ Coming soon...
 
 ## Real-world 
 
-**Parallel** : doing bunch of things in parallel, waiting for the result and then doing something else. 
+###Parallel###
+
+Doing bunch of things in parallel, waiting for the result and then doing something else. 
 Also tolerating the failures instead of aborting on any error (if a file download fails it is ok, just write the error).
 
 ***[Image Download](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/image-download)***
@@ -100,7 +102,9 @@ $M(
 .catch($(exit, print))
 
 ```
-**Streaming** : sometimes, input is a **stream** or too big / time consuming to handle in parallel.
+###Streaming###
+
+Sometimes, input is a **stream** or needs to be handled in chunk.
 
 ***[File Streaming](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/file-streaming)***
 

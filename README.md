@@ -45,18 +45,54 @@ Download list of images specified in a file and write metadata(url, size, hash) 
 **Parallel** : doing bunch of things in parallel, waiting for the result and then doing something else. 
 Also tolerating the failures instead of aborting on any error (if a file download fails it is ok, just write the error).
 
-Read bottom to top, right to left
+Main pipeline : read bottom to top, right to left
 ```
                     
-File Write <output>  <<=    // Write to file
+File Write <output>  <<=      // Write to file
 List 2 String        <<=     // Convert List to String
 Wait                 <<=     // Wait till everything is done.
-Map ()               <<=     // Parallelly, transform to List containing results.
+Map (sub-pipeline)   <<=     // Parallelly, transform to List containing results.
 String 2 List        <<=     // Convert to List.
-File Read <input>           // Read the file
-
+File Read <input>            // Read the file
 ```
 **'<<='**  indicate bind / join (feed output of one monad to another)
+```
+
+// Lesscode-fp
+const { 
+    $, $M, Hint, Trace, print, hash, Lmap, Wait, mget, exit, mgettwo, 
+    linebreak, utf8, newline,  
+    L2String, S2List, 
+    FileRead, FileWrite,
+    HttpGET } = require('lesscode-fp')
+
+
+const inputFile = process.argv[2]
+const outputFile = process.argv[3]
+
+// processFile :: String -> String
+const processURL = name => {
+    const computeHash = $(hash('sha256'), mget('data'))
+    const contentLen = mgettwo('headers')('content-length')
+    const LogData = name => async data => `${name} ${contentLen(data)} ${computeHash(data)}`
+    const LogErorr = name =>  async err => `${name} 0  ${escape(err)}`
+    return $M(
+        Trace(`Extracted metadata...............`), LogData(name),      // Success
+        Hint(`Downloaded ${name}................`), HttpGET)(name)
+        .catch($(Trace(`[Fail] : ${name}........`), LogErorr(name)))    // Failure
+}
+
+// Pipeline
+$M(
+    Trace('Write to output file................'), FileWrite(utf8)(outputFile), 
+    Trace('Convert List 2 String...............'), L2String(newline), 
+    Trace('Wait................................'), Wait, 
+    Trace('Processed URLs......................'), Lmap(processURL), 
+    Trace('Converted to List...................'), S2List(linebreak), 
+    Trace('Read input file.....................'), FileRead(utf8))(inputFile)
+.catch($(exit, print))
+
+```
 
 **[File Streaming](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/file-streaming)**
 

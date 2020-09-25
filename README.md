@@ -79,7 +79,7 @@ Functions that take more than one parameter,  should accept data as the last par
 In imperative programming you pass data 1st & options (default values - ring the bell?) later.  Or in the case of object oriented programming (still imperative), 
 you manipulate the encapsulated data with function(s), which take additional options. 
 
-In FP, data and functions are separate, hence you build functional library to work with your data.  
+In FP, data and functions are separate, hence you build library of functions to work with your data.  
 
 Data last principle also allows you to [compose](https://github.com/van001/lesscode-fp#Composition) functions to produce more functions.
 
@@ -93,6 +93,18 @@ const l2String = sep => lst => lst.join(sep)
 Fewer categories - String, List / Tuple, Map / Object (non mutable). Functions to manipulate those categories. Also functions to change from one category to another.
 
 ```
+
+// slices String at the specified position
+const sslice  = start => end => str => str.slice(start,end)
+
+// converts Sting to List, by breaking it with supplied pattern
+const s2List = ptrn => str => str.split(ptrn)
+
+// sorts a List
+const lsort = lst => lst.sort()
+
+// gets the value from a specified key form the Map / Object
+const mget = key => map => map[key] // retrieves the value for key
 ```
 
 ### Monad ### 

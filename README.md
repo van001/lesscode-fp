@@ -2,7 +2,9 @@
 ![Lego Kids](lego-kid.jpeg) Based on my earlier work on [Functional Thinking](https://github.com/van001/lesscode), I propose the following [functions](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js) (subject to change). I will be using these functions and the FP principles to build other/ future projects. So stay tuned...
 
 In pure functional programming languages, you are either writing functions with no side effects (pure functions) or functions with 
-side effects (Monads). 
+side effects (Monads). Also if FP, you do not assign anything, but just compose functions to produce a desired outcome.
+
+Lesscode-fp, libarary is designed using functional programming principles ([see below]((https://github.com/van001/lesscode-fp#Features))).
 
 # Features
 
@@ -21,7 +23,7 @@ const max = a => b => Math.max(a,b)
 ```
 
 ### Immutable ###
-In functional programming you do not mutate data, instead you compute a new
+In functional programming you do not mutate data, instead you compute a new.
 
 ```
 // appends string to another string and returns a new string
@@ -54,7 +56,7 @@ string list, tuple, map (non mutable). Functions to manipulate those categories.
 ```
 
 ### Monads ### 
-Functions with side-effects. Let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence. Lesscode implement monads using promise/ async. It also provides a monadic version of all the pure fucntion, so that you can seamlessly use it with [monadic composition]((https://github.com/van001/lesscode-fp#Composition)). 
+Functions with side-effects. Let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence. Lesscode implement monads using promise/ async. It also provides a monadic version of all the pure fucntion, so that you can seamlessly use it with [monadic composition](https://github.com/van001/lesscode-fp#Composition). 
 
 ```
 // Read content of a file. 

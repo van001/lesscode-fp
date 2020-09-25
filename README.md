@@ -4,7 +4,7 @@
 In pure functional programming languages, you are either writing functions with no side effects (pure functions) or functions with 
 side effects (Monads). Also if FP, you do not assign anything, but just compose functions to produce a desired outcome.
 
-Lesscode-fp, libarary is designed using functional programming principles ([see below]((https://github.com/van001/lesscode-fp#Features))).
+Lesscode-fp, libarary is designed using functional programming principles ([see below](https://github.com/van001/lesscode-fp#Features)).
 
 # Features
 

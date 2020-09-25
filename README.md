@@ -45,19 +45,7 @@ Download list of images specified in a file and write metadata(url, size, hash) 
 **Parallel** : doing bunch of things in parallel, waiting for the result and then doing something else. 
 Also tolerating the failures instead of aborting on any error (if a file download fails it is ok, just write the error).
 
-Main pipeline : read bottom to top, right to left
 ```
-                    
-File Write <output>  <<=      // Write to file
-List 2 String        <<=     // Convert List to String
-Wait                 <<=     // Wait till everything is done.
-Map (sub-pipeline)   <<=     // Parallelly, transform to List containing results.
-String 2 List        <<=     // Convert to List.
-File Read <input>            // Read the file
-```
-**'<<='**  indicate bind / join (feed output of one monad to another)
-```
-
 // Lesscode-fp
 const { 
     $, $M, Hint, Trace, print, hash, Lmap, Wait, mget, exit, mgettwo, 

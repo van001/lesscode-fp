@@ -9,7 +9,7 @@
 In pure functional programming languages, you are either write functions with **no** [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) (pure functions) or functions with 
 side-effects. Also in FP, you do not assign anything, you just compose functions to produce a desired outcome.
 
-[Lesscode-fp]([functions](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js)), libarary is designed using functional programming principles :
+[Lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), libarary is designed using functional programming principles :
 
 ### Pure functions ### 
 Have no side-effects, are time independent & have [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), 

@@ -44,7 +44,7 @@ The origin of functional programming, ***[lambda calculus](https://en.wikipedia.
 const sappend = str1 => str2 => str1 + str2 
 ```
 
-### Data Last ###
+### Data-Last ###
 Functions that take more than one parameter,  should accept data as the last parameter. If you are coming from imperative programming paradigm, this might be new to you.
 In imperative programming you either pass data 1st (options later), or as in the case of object oriented programming, objects already encapsulate data, so you provide
 functions to manipulte them. In FP, data and functions are separate, hence you build functional library to work with your data.  
@@ -73,8 +73,8 @@ const whitspace2List = s2List(space)
 whitspace2List('This is cool') 
 ```
 
-### Fewer categories ### 
-string list, tuple, map (non mutable). Functions to manipulate those categories. Also functions to change from one category to another.
+### Categories ### 
+Fewer categories - string, list / tuple, map / object (non mutable). Functions to manipulate those categories. Also functions to change from one category to another.
 
 ```
 ```
@@ -90,8 +90,10 @@ const FileRead = option => async name => fsp.readFile(name, option);
 ```
 
 ### Composition ### 
-In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions.
-We will be using $ / $M for pure functions / monadic composition (see [examples](https://github.com/van001/lesscode-fp#examples) below)
+Crux of any programming paradigm - composition. In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions.
+We will be using **$(...)** for pure functions & **$M(...)** for monadic composition (see [examples](https://github.com/van001/lesscode-fp#examples) below). 
+
+I used  '$' coz it has a very small foot-print and can be easily spotted to show the composition.
 
 ```
 ```

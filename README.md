@@ -51,7 +51,9 @@ const sappend = str1 => str2 => str1 + str2
 ### Data-Last ###
 Functions that take more than one parameter,  should accept data as the last parameter. If you are coming from imperative programming paradigm, this might be new to you.
 In imperative programming you pass data 1st & options (default values - ring the bell?) later.  Or in the case of object oriented programming (still imperative), 
-you manipulate the encapsulated data with function(s), which take additional options. In FP, data and functions are separate, hence you build functional library to work with your data.  
+you manipulate the encapsulated data with function(s), which take additional options. 
+
+In FP, data and functions are separate, hence you build functional library to work with your data.  
 
 Data last principle also allows you to [compose](https://github.com/van001/lesscode-fp#Composition) functions to produce more functions.
 

@@ -1,4 +1,13 @@
 # Motivation
+
+Going back in time when Alan Turing used state machine (turing machine) to perform computation, Alanzo Chruch designed Lambda Calculus to
+mathematically compute anything by composing lambda functions. Soon world got filled with programming languages in both the paradigm and many languages start borrowing each other's concept to only become bloated and un-manageable. 
+
+John Bakus's ["Can programming be liberated from von nuemann style?"](https://github.com/van001/lesscode/blob/master/can-programming-be-liberated.pdf) put it very rightly.
+
+The above article forced me to dive deep into programming paradigm concepts and really understand the concepts from the work of those
+2 greats. 
+
 ![Lego Kids](lego-kid.jpeg) [Functional Thinking](https://github.com/van001/lesscode), when I started this journey few months back, my goal was simple - 
 
 - To deeply understand the motivation and concepts behind the functional programming, 
@@ -11,7 +20,7 @@ without being caught in the programming lanugage nuances, syntax or even nomencl
 In pure functional programming languages, you either write functions with **no** [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) (pure functions) or functions with 
 side-effects. Also in FP, you do not assign anything, you just compose functions to produce a desired outcome.
 
-[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), libarary is designed using functional programming principles :
+[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), libarary is designed using the functional programming principles :
 
 ### Pure functions ### 
 Have no side-effects, are time independent & have [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), 

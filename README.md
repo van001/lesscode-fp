@@ -1,6 +1,7 @@
 # Motivation
 
-![Lego Kids](lego-kid.jpeg) Going back in time when Alan Turing built state machine (Turing machine) to perform computation, Alanzo Chruch designed 
+![Lego Kids](lego-kid.jpeg) Going back in time when Alan Turing built state machine 
+[(Turing machine)](https://en.wikipedia.org/wiki/Turing_machine) to perform computation, Alanzo Chruch designed 
 [Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus) to mathematically compute anything by composing lambda functions. 
 Soon world got filled with programming languages in both the paradigm and many languages start borrowing each other's concept (sounds familiar?) to only become bloated and un-manageable. 
 

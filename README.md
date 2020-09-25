@@ -90,7 +90,9 @@ const FileRead = option => async name => fsp.readFile(name, option);
 ```
 
 ### Composition ### 
-Crux of any programming paradigm - composition. In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions.
+Crux of any programming paradigm is composition. Composition, allows you to re-use the code (less-code ;))
+
+In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions.
 We will be using **$(...)** for pure functions & **$M(...)** for monadic composition (see [examples](https://github.com/van001/lesscode-fp#examples) below). 
 
 I used  '$' coz it has a very small foot-print and can be easily spotted to show the composition.

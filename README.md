@@ -8,7 +8,7 @@ side effects (Monads).
 
 **Pure functions** : have no side-effects, are time independent & have referential integrity, which means you can replace the function with the value it produces, anytime.
 
-**Monads** : functions with side-effects, let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence (one after another).
+**Monads** : functions with side-effects. Let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence (one after another e.g. promise).
 
 **Fewer categories** :  e.g list, tuple, map (non mutable). 
 

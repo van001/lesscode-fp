@@ -114,12 +114,12 @@ Streams content of a text file, converts to uppercase then write back to another
 
 input.txt (the real file may be huge...)
 ```
-this text is all lowercase. please turn it into to uppercase case.
+this text is all lowercase. please turn it into to uppercase.
 ```
 
 output.txt
 ```
-THIS TEXT IS ALL LOWERCASE. PLEASE TURN IT INTO TO UPPERCASE CASE.
+THIS TEXT IS ALL LOWERCASE. PLEASE TURN IT INTO TO UPPERCASE.
 ```
 
 ```

@@ -13,7 +13,7 @@ as a mathematical function, which for a given input will awlays produce the same
 // appends string to another string and returns a new string
 const sappend = str1 => str2 => str1 + str2 
 
-// checks is a value is null or not?
+// checks if a value is null or not?
 const eqNull = val => (val == null || undefined) ? true : false 
 
 // Find the max of 2 munmers
@@ -52,7 +52,7 @@ const FileRead = option => async name => fsp.readFile(name, option);
 ```
 
 ### Composition ### 
-In function programming there is no assignment you just compose functions to produce more specific functions/ solutions.
+In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions.
 We will be using $ / $M for pure functions / monadic composition (see [examples](https://github.com/van001/lesscode-fp#examples) below)
 
 # Examples

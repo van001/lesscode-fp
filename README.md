@@ -20,11 +20,6 @@ const eqNull = val => (val == null || undefined) ? true : false
 const max = a => b => Math.max(a,b)
 ```
 
-### Fewer categories ### 
-string list, tuple, map (non mutable). Functions to manipulate those categories. Also functions to change from one category to another.
-
-```
-```
 ### Immutable ###
 Data is immutable. 
 
@@ -41,6 +36,12 @@ Functions that take more than one parameter,  should accept data as the last par
 Function that takes more than one parameter, curry  them (f(a, b) => f(a) -> f(b)). 
 Currying allows you to partially apply other options (initialize) and dependencies (injection) that you might need for multi parameter functions.
 Currying also allows you to create your own DSL (domain specifi language) by partially applying many generic functions and creating a new domain specfic one.
+
+### Fewer categories ### 
+string list, tuple, map (non mutable). Functions to manipulate those categories. Also functions to change from one category to another.
+
+```
+```
 
 ### Monads ### 
 Functions with side-effects. Let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence. Lesscode implement monads using promise/ async. It also provides a monadic version of all the pure fucntion, so that you can seamlessly use it with [monadic composition]((https://github.com/van001/lesscode-fp#Composition)). 

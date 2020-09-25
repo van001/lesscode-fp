@@ -2,7 +2,7 @@
 ![Lego Kids](lego-kid.jpeg) When I started this journey few months back, my goal was simple - 
 
 - Instead of writing tonnes of imperative code can we just compose functions and build a solution?
-- Can we build a generic functional library/ construct to solve any algorithm or real-world problem? 
+- Can we build a generic functional library / construct to solve any algorithm or real-world problem? 
 
 Based on my earlier work on [Functional Thinking](https://github.com/van001/lesscode), I propose the following [functions](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js) (subject to change). I will be using these functions and the FP principles to build other/ future projects. So stay tuned...
 

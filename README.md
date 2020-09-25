@@ -49,16 +49,24 @@ Data last principle also allows you to [compose](https://github.com/van001/lessc
 
 ```
 // l2String converts, List to String. 
-// It takes List (which it will convert to String) as a last parameter.
+// it takes List (which it will convert to String) as a last parameter.
 const l2String = sep => lst => lst.join(sep)
 ```
 
 ### Currying ### 
-Function that takes more than one parameter, [curry](https://en.wikipedia.org/wiki/Currying)  them (f(a, b) => f(a) -> f(b)). 
-Currying allows you to partially apply other options (initialize) and dependencies (injection) that you might need for multi parameter functions.
+Function that takes more than one parameter, [curry](https://en.wikipedia.org/wiki/Currying)  them (f(a, b) => f(a)(b)). 
+Currying allows you to partially apply other options (initializion) and dependencies (injection) that you might need for multi-parameter functions.
 Currying also allows you to create your own DSL (domain specifi language) by partially applying many generic functions and creating a new domain specfic one.
 
 ```
+// s2List is a curried function. 
+const s2List = ptrn => async str => str.split(ptrn)
+
+// partially apply s2List, with whitespace pattern
+const whitspace2List = s2List(space)
+
+// will break String into List on every whitespace.
+whitspace2List('This is cool') 
 ```
 
 ### Fewer categories ### 

@@ -10,9 +10,12 @@ side effects (Monads).
 ```
 // appends string to another string and returns a new string
 const sappend = str1 => str2 => str1 + str2 
+
 // checks is a value is null or not?
 const eqNull = val => (val == null || undefined) ? true : false 
 
+// lets you map over List
+const lmap = func => lst => lst.map(func)
 ```
 
 **Monads** : functions with side-effects. Let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence (one after another e.g. promise).

@@ -2,7 +2,7 @@
 ![Lego Kids](lego-kid.jpeg) Based on my earlier work on [Functional Thinking](https://github.com/van001/lesscode), I propose the following [functions](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js) (subject to change). I will be using these functions and the FP principles to build other/ future projects. So stay tuned...
 
 In pure functional programming languages, you are either writing functions with no side effects (pure functions) or functions with 
-side effects (Monads). Also if FP, you do not assign anything, but just compose functions to produce a desired outcome.
+side effects (Monads). Also in FP, you do not assign anything, you just compose functions to produce a desired outcome.
 
 Lesscode-fp, libarary is designed using functional programming principles ([see below](https://github.com/van001/lesscode-fp#Features)).
 

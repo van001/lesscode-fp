@@ -1,15 +1,12 @@
 # Motivation
 
-Going back in time when Alan Turing built state machine (Turing machine) to perform computation, Alanzo Chruch designed 
+![Lego Kids](lego-kid.jpeg) Going back in time when Alan Turing built state machine (Turing machine) to perform computation, Alanzo Chruch designed 
 [Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus) to mathematically compute anything by composing lambda functions. 
 Soon world got filled with programming languages in both the paradigm and many languages start borrowing each other's concept (sounds familiar?) to only become bloated and un-manageable. 
 
-John Bakus's ["Can programming be liberated from von nuemann style?"](https://github.com/van001/lesscode/blob/master/can-programming-be-liberated.pdf) put it very rightly.
+Fast forward 1997, John Bakus's paper, ["Can programming be liberated from von nuemann style?"](https://github.com/van001/lesscode/blob/master/can-programming-be-liberated.pdf) put it very rightly.
 
-The above article forced me to dive deep into programming paradigm concepts and really understand the concepts from the work of those
-2 greats. 
-
-![Lego Kids](lego-kid.jpeg) [Functional Thinking](https://github.com/van001/lesscode), when I started this journey few months back, my goal was simple - 
+The above article forced me to dive deep into programming paradigm concepts, specially functional programming and really understand it from the work of those 2 greats. So begin the journey of [Functional Thinking](https://github.com/van001/lesscode), with few very simple goals in mind - 
 
 - Seek deep understanding of motivation and concepts behind the functional programming, 
 without being caught in the programming lanugage nuances, syntax or even nomenclature. 

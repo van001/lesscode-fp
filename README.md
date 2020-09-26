@@ -23,7 +23,7 @@ In functional programming languages :
 
 - you either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects. 
 
-- you do not assign anything, you just compose functions (using orpeators like ., >>= , >>) to produce a desired outcome.
+- you do not assign anything, you just compose functions (using orpeators like . , >>= , >>) to produce a desired outcome.
 
 - functions are treated as a 1st class citizen and so you can pass / return a function to / from another function.
 
@@ -133,9 +133,9 @@ In functional programming there is no assignment you just compose functions to p
 has infix composition operator like '.' (pure function) and '>>= / >>' for monadic compsotion. But in many multi-paradigm language, we do not have any such 
 operators nor they support infix styling.
 
-We will be using **$(...)** for pure functions & **$M(...)** for monadic composition (see [examples](https://github.com/van001/lesscode-fp#examples) below). 
+I will be using **$(...)** for pure functions & **$M(...)** for monadic composition (see [examples](https://github.com/van001/lesscode-fp#examples) below). 
 
-I used  '$' coz it has a very small foot-print and can be easily spotted to show the composition.
+* '$' has a very small foot-print and can be easily spotted to show the composition.
 
 ```
 

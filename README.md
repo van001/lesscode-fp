@@ -28,7 +28,7 @@ In functional programming languages :
 - functions are treated as a 1st class citizen and so you can pass / return a function to / from another function.
 
 
-[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), libarary is designed using the following 
+[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic library designed using the following 
 functional programming principles :
 
 ### Pure functions ### 
@@ -129,12 +129,16 @@ const FileRead = option => async name => fsp.readFile(name, option);
 ### Composition ### 
 Crux of any programming paradigm is composition. Composition, allows you to re-use the code (less-code ;))
 
-In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions.
+In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions. Traditional FP languages like Haskell
+has infix composition operator like '.' (pure function) and '>>= / >>' for monadic compsotion. But in many multi-paradigm language, we do not have any such 
+operators nor they support infix styling.
+
 We will be using **$(...)** for pure functions & **$M(...)** for monadic composition (see [examples](https://github.com/van001/lesscode-fp#examples) below). 
 
 I used  '$' coz it has a very small foot-print and can be easily spotted to show the composition.
 
 ```
+
 ```
 
 # Examples

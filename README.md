@@ -5,9 +5,10 @@
 [Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus) to mathematically compute anything by composing lambda functions. 
 Soon world got filled with programming languages in both the paradigm and many languages start borrowing each other's concept (sounds familiar?) to only become bloated and un-manageable. 
 
-Fast forward 1977, John Bakus's paper, ["Can programming be liberated from von nuemann style?"](https://github.com/van001/lesscode/blob/master/can-programming-be-liberated.pdf) put it very rightly.
+Fast forward 1977...John Bakus's paper, ["Can programming be liberated from von nuemann style?"](https://github.com/van001/lesscode/blob/master/can-programming-be-liberated.pdf) put it very rightly.
 
-The above article influenced me to dive deep into programming paradigm concepts, specially functional programming and really understand it from the work of those 2 greats. So begin the journey of [Functional Thinking](https://github.com/van001/lesscode), with few very simple goals in mind - 
+The above article influenced me to dive deep into programming paradigm concepts, specially functional programming and really understand it from the work of those 2 greats.
+So begin the journey of [Functional Thinking](https://github.com/van001/lesscode), with few very simple goals in mind - 
 
 - Seek deep understanding of motivation and concepts behind the functional programming, 
 without being caught in the programming lanugage nuances, syntax or even nomenclature. 
@@ -22,9 +23,10 @@ In functional programming languages :
 
 - you either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects. 
 
-- you do not assign anything, you just compose functions to produce a desired outcome.
+- you do not assign anything, you just compose functions (using orpeators like ., >>= , >>) to produce a desired outcome.
 
 - functions are treated as a 1st class citizen and so you can pass / return a function to / from another function.
+
 
 [lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), libarary is designed using the following 
 functional programming principles :
@@ -66,8 +68,8 @@ const sappend = str1 => str2 => str1 + str2
 ```
 
 ### Currying ### 
-Function that takes more than one parameter, [curry](https://en.wikipedia.org/wiki/Currying)  them (f(a, b) => f(a)(b)). 
-Currying allows you to partially apply other options (initializion) and dependencies (injection) that you might need for multi-parameter functions.
+[Currying](https://en.wikipedia.org/wiki/Currying) (f(a, b) => f(a)(b)) is applied to all the functions that takes more than one parameter. 
+Currying allows you to partially apply other options (initializion) and dependencies (injection) on multi-parameter functions.
 Currying also allows you to create your own DSL (domain specific language) by partially applying many generic functions and creating a new domain specfic one.
 
 ```

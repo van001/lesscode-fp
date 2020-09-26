@@ -123,7 +123,10 @@ Lesscode implements monad using promise/ async. It also provide a monadic versio
 
 ```
 // Read content of a file. 
-const FileRead = option => async name => fsp.readFile(name, option);
+const FileRead = option =>  name => fs.promises.readFile(name, option);
+
+// Wait for all Monads to complete.
+const Wait = all => Promise.all(all)
 ```
 
 ### Composition ### 

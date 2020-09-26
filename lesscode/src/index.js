@@ -141,14 +141,11 @@ const fs = require('fs')
 const FileStreamIn  = option => func => async file => fs.createReadStream(file, option).on('data', func); 
 const FileStreamOut = option => file => async buffer => fs.createWriteStream(file,option).write(buffer)
 
-
-const fsp = fs.promises
-const FileRead = option => async name => fsp.readFile(name, option);
-const FileWrite = option => name => async data => fsp.writeFile(name, data, option)
-
+const FileRead = option =>  name => fs.promises.readFile(name, option);
+const FileWrite = option => name => data => fs.promises.writeFile(name, data, option)
 
 const axios = require('axios')
-const HttpGET = async url => await axios.get(url)
+const HttpGET = url => axios.get(url)
 
 module.exports = {
     // Generic

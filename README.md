@@ -127,7 +127,7 @@ const FileRead = option => async name => fsp.readFile(name, option);
 ```
 
 ### Composition ### 
-Crux of any programming paradigm is composition. Composition, allows you to re-use the code (less-code ;))
+Crux of any programming paradigm is composition. Composition, allows you to re-use the code (less code ;))
 
 In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions. Traditional FP languages like Haskell
 has infix composition operator like '.' (pure function) and '>>= / >>' for monadic compsotion. But in many multi-paradigm language, we do not have any such 

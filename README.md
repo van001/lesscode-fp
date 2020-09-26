@@ -135,7 +135,7 @@ operators nor they support infix styling.
 
 I will be using **$(...)** for pure functions & **$M(...)** for monadic composition (see [examples](https://github.com/van001/lesscode-fp#examples) below). 
 
-* '$' has a very small foot-print and can be easily spotted to show the composition.
+***'$' has a very small foot-print and can be easily spotted to show the composition.***
 
 ```
 

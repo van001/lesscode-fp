@@ -28,7 +28,8 @@ In functional programming languages :
 - functions are treated as a 1st class citizen and so you can pass / return a function to / from another function.
 
 
-[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic library designed using the following 
+[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic functional library,
+which define functions to manipulate  String, List & Map / Object categories. It's built using the following 
 functional programming principles :
 
 ### Pure functions ### 
@@ -100,7 +101,7 @@ const l2String = sep => lst => lst.join(sep)
 ```
 
 ### Categories ### 
-Fewer categories - String, List / Tuple, Map / Object (non mutable). Functions to manipulate those categories. Also functions to change from one category to another.
+Fewer categories - String, List, Map / Object (non mutable). Functions to manipulate those categories. Also functions to change from one category to another.
 
 ```
 

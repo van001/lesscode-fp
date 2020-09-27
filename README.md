@@ -23,7 +23,7 @@ In functional programming languages :
 
 - you either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects. 
 
-- you do not assign anything, you just compose functions (using orpeators like . , >>= , >>) to produce a desired outcome.
+- you do not assign anything, you just compose functions to produce a desired outcome.
 
 - functions are treated as a 1st class citizen and so you can pass / return a function to / from another function.
 
@@ -35,6 +35,7 @@ functional programming principles :
 Functions with no side-effects, are time independent & have [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), 
 which means you can replace the function with it's return value, anytime. 
 Think them as a mathematical function, which for a given input will awlays return the same output.
+This also means, a pure function can exeecute once and cache (memoize) the result for future use.
 ```
 // appends String to another String and returns a new String
 const sappend = str1 => str2 => str1 + str2 

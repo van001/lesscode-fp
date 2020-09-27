@@ -35,7 +35,7 @@ functional programming principles :
 Functions with no side-effects, are time independent & have [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), 
 which means you can replace the function with it's return value, anytime. 
 Think them as a mathematical function, which for a given input will awlays return the same output.
-This also means, a pure function can exeecute once and cache (memoize) the result for future use.
+This also means, a pure function can execute once and cache ([memoize](https://en.wikipedia.org/wiki/Memoization) the result for future use.
 ```
 // appends String to another String and returns a new String
 const sappend = str1 => str2 => str1 + str2 

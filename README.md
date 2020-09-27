@@ -13,7 +13,7 @@ So begin the journey of [Functional Thinking](https://github.com/van001/lesscode
 - Seek deep understanding of motivation and concepts behind the functional programming, 
 without being caught in the programming lanugage nuances, syntax or even nomenclature. 
 
-- Apply the learned knowledge to solve the real-world problems - APIs, IOs etc
+- Apply the learned knowledge to solve the real-world problems - APIs, IOs, Databases etc
 
 This repo is about the 2nd goal - Application.
 

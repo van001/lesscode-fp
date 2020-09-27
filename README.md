@@ -15,17 +15,18 @@ without being caught in the programming lanugage nuances, syntax or even nomencl
 
 - Apply the learned knowledge to solve the real-world problems - APIs, IOs, Databases etc
 
-This repo is about the 2nd goal - Application.
-
 # Overview
+
+This repo is about my learning of functional programming and coming up with a language agnostic librrary of fucntion, which
+I am use to solve many real-world problems.
 
 In functional programming languages :
 
 - you either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects. 
 
-- you do not assign anything, you just compose functions to produce a desired outcome.
+- you just compose functions to produce a desired outcome.
 
-- functions are treated as a 1st class citizen and so you can pass / return a function to / from another function.
+- you treant functions as a 1st class citizen and so you can pass / return a function to / from another function.
 
 
 [lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic functional library,
@@ -49,7 +50,8 @@ const max = a => b => Math.max(a,b)
 ```
 
 ### Immutable ###
-In functional programming you do not mutate data, instead you compute a new.
+In functional programming you do not mutate data, instead you compute a new. Also, most FP languages support lazy evaluation,
+ which means your function is not executed until it's needed. Isn't it sweet...
 
 ```
 // appends String to another String and returns a new String
@@ -101,7 +103,13 @@ const l2String = sep => lst => lst.join(sep)
 ```
 
 ### Categories ### 
-Fewer categories - String, List, Map / Object (non mutable). Functions to manipulate those categories. Also functions to change from one category to another.
+Until now, we talked about the fundementals of funtional programming without talking about the complex or hetrogenous data that we would feed into the system.
+
+Since functional programming is all about abstraction, the principles of category theory started proliferating. The next few principles we talk about will
+have concepts & names borrowed from category theory.
+
+Fewer categories - String, List, Map / Object (non mutable). Functions to manipulate those categories. Functions to transfrom those categories
+and also functions to change from one category to another.
 
 ```
 

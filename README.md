@@ -51,7 +51,7 @@ const max = a => b => Math.max(a,b)
 
 ### Immutable ###
 In functional programming you do not mutate data, instead you compute a new. Also, most FP languages support lazy evaluation,
- which means your function is not executed until it's needed. Isn't it sweet...
+ which means your function is executed only when it's needed. Isn't it sweet...
 
 ```
 // appends String to another String and returns a new String

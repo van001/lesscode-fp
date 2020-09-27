@@ -26,7 +26,7 @@ In functional programming languages :
 
 - you just compose functions to produce a desired outcome.
 
-- you treant functions as a 1st class citizen and so you can pass / return a function to / from another function.
+- you treat functions as a 1st class citizen and so you pass / return a function to / from another function.
 
 
 [lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic functional library,

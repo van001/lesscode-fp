@@ -17,8 +17,8 @@ without being caught in the programming lanugage nuances, syntax or even nomencl
 
 # Overview
 
-This repo is about my learning of functional programming and coming up with a language agnostic librrary of fucntion, which
-I am use to solve many real-world problems.
+This repo is about my learning of functional programming and coming up with a language agnostic librrary of functions, which
+can be applied to solve many real-world problems.
 
 In functional programming languages :
 

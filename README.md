@@ -103,9 +103,10 @@ const l2String = sep => lst => lst.join(sep)
 ```
 
 ### Fewer Categories ### 
-Lesscode library provide funtions to manipulate / transform the following categories : String, List, Map / Object (non mutable). 
 Unlike, Object Oriented programming, where every class is a new category, functional programming benefits from fewer category and 
 coming up with domain specific abstractions to solve them generically.
+
+Lesscode library provide funtions to manipulate / transform the following categories : String, List, Map / Object (non mutable). 
 
 ```
 // slices String at the specified position
@@ -116,19 +117,26 @@ const s2List = ptrn => str => str.split(ptrn)
 ```
 
 ### Functor ###
-Until now, we talked about the fundementals of functional programming using simple data types. 
-Real-world is filled with more complex data types, many of whihc are some sort of collection
+Until now, we talked about the fundementals of functional programming using simple data-types. 
+Real-world is filled with more complex data-types, many of which are some sort of collection
 - List, Object, Tuple etc. 
 
 The next few principles have been borrowed from [Category Theory](https://en.wikipedia.org/wiki/Category_theory), 
 which provide laws / abstractions on how you treat / manipulate collection of data.
+I will try to simplify category theory jargon in terms or real-world practical examples.
+
+Ultimately programming is all about breaking a large / complex problem into list of smaller / simpler problems, executing them independently (or one after another) and essembling the final result. 
+
+Functor is a type which allows you to do so. A List is a functor, as it allows you to
+map over all it's items to produce another List with other items (structure remains the same).
 
 ```
 // Map over List to tranform into another List, while preserving the structure (Functor - borrowed from category theory). 
 const lmap = func => lst => lst.map(func)
 
-// allows you to change one category into another.
-const lfold = cat => func => lst => lst.reduce((cat, val) => func(cat)(val), (cat)? cat : []) // left reducer
+// convert the List of strings to uppercase
+const str = ['neelesh' , 'vaikhary']
+const strUpper = lmap(supper)(str)
 ```
 
 ### Monad ### 

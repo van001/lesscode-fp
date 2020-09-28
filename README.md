@@ -18,7 +18,7 @@ without being caught in the programming lanugage nuances, syntax or even nomencl
 # Overview
 
 This repo is about my learning of functional programming and coming up with a language agnostic library of functions, which
-can be applied to solve many real-world problems.
+can be applied to solve many real-world problems. 
 
 In functional programming languages :
 
@@ -37,7 +37,7 @@ functional programming principles :
 Pure functions have no side-effects, are time independent & have [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), 
 which means you can replace the function with it's return value, anytime. 
 Think them as a mathematical function, which for a given input will awlays return the same output.
-This also means, a pure function can easily cache ([memoize](https://en.wikipedia.org/wiki/Memoization) the value it returns after execution.
+This also means, a pure function can easily cache ([memoize](https://en.wikipedia.org/wiki/Memoization)) the value it returns after the execution.
 ```
 // appends String to another String and returns a new String
 const sappend = str1 => str2 => str1 + str2 
@@ -102,14 +102,16 @@ Data last principle also allows you to [compose](https://github.com/van001/lessc
 const l2String = sep => lst => lst.join(sep)
 ```
 
-### Categories ### 
+### Fewer Categories ### 
 Lesscode library provide funtions to manipulate / transform the following categories : String, List, Map / Object (non mutable). 
+Unlike, Object Oriented programming, where every class is a new category, functional programming benefits from fewer category and 
+coming up with domain specific abstractions to solve them generically.
 
 ```
 // slices String at the specified position
 const sslice  = start => end => str => str.slice(start,end)
 
-// converts Sting to List, by breaking it with supplied pattern
+// converts String to List, by breaking it with supplied pattern
 const s2List = ptrn => str => str.split(ptrn)
 ```
 

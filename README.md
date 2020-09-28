@@ -34,7 +34,7 @@ which define functions to manipulate  String, List & Map / Object categories. It
 functional programming principles :
 
 ### Pure functions ### 
-Pure functions have no side-effects, are time independent & have [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), which means, for a given input, you can replace the function with it's return value, anytime. 
+Pure functions have no side-effects, are time independent & maintain [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), which means, for a given input, you can replace the function with it's return value, anytime. 
 Think of them as a mathematical function, which for a given input will awlays return the same output.
 This also means, a pure function can easily cache ([memoize](https://en.wikipedia.org/wiki/Memoization)) the value it returns after the execution. This is huge, now that memory / storage is cheap and computation is expensive.
 
@@ -120,10 +120,10 @@ const cocunutMachine = $(DropStraw ,SliceFromTop)
 ```
 
 ### Fewer Categories ### 
-Unlike, Object Oriented programming, where every class is a new category, functional programming benefits from fewer category and 
-coming up with domain specific abstractions to solve them generically.
+Unlike, Object Oriented programming, where every class is a new category, functional programming benefits from fewer category and coming up with domain specific abstractions to solve them generically.
 
-Lesscode library provide funtions to manipulate / transform the following categories : String, List, Map / Object (non mutable). 
+Lesscode library provide funtions to manipulate / transform the following categories : String, List, Map / Object (non mutable). These categories are quiet popular in many programming languages. List allows for a work distribution, while 
+Map / Object allows faster retrieval.
 
 ```
 // slices String at the specified position

@@ -24,9 +24,9 @@ In functional programming languages :
 
 - you either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects. 
 
-- you just compose functions to produce a desired outcome.
+- you compose functions to produce a desired outcome.
 
-- you treat functions as a 1st class citizen and so you pass / return a function to / from another function.
+- you treat functions as a 1st class citizen and pass / return a function to / from another function.
 
 
 [lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic functional library,
@@ -62,8 +62,8 @@ const sappend = str1 => str2 => str1 + str2
 The origin of functional programming, ***[lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus)***, only allowed single input/ ouput. While it may not seem practical, currying (see below)  allows you to do so. Functional programming treats functions as a 1st class citizen, so you can pass a function as a parameter and return a function as a result.
 
 ```
-// reverses a String
-const lreverse = lst => lst.reduce((acc, val) => lappend([val])(acc), [])
+// reverses a List
+const lreverse => lfold(([])(lappend)
 
 // sappend takes a String as 1st parameter and using currying , 
 // returns a function that takes another String as a parameter
@@ -103,27 +103,30 @@ const l2String = sep => lst => lst.join(sep)
 ```
 
 ### Categories ### 
-Until now, we talked about the fundementals of funtional programming without talking about the complex or hetrogenous data that we would feed into the system.
-
-Since functional programming is all about abstraction, the principles of category theory started proliferating. The next few principles we talk about will
-have concepts & names borrowed from category theory.
-
-Fewer categories - String, List, Map / Object (non mutable). Functions to manipulate those categories. Functions to transfrom those categories
-and also functions to change from one category to another.
+Lesscode library provide funtions to manipulate / transform the following categories : String, List, Map / Object (non mutable). 
 
 ```
-
 // slices String at the specified position
 const sslice  = start => end => str => str.slice(start,end)
 
 // converts Sting to List, by breaking it with supplied pattern
 const s2List = ptrn => str => str.split(ptrn)
+```
 
-// sorts a List
-const lsort = lst => lst.sort()
+### Functor ###
+Until now, we talked about the fundementals of functional programming using simple data types. 
+Real-world is filled with more complex data types, many of whihc are some sort of collection
+- List, Object, Tuple etc. 
 
-// gets the value from a specified key form the Map / Object
-const mget = key => map => map[key] // retrieves the value for key
+The next few principles have been borrowed from [Category Theory](https://en.wikipedia.org/wiki/Category_theory), 
+which provide laws / abstractions on how you treat / manipulate collection of data.
+
+```
+// Map over List to tranform into another List, while preserving the structure (Functor - borrowed from category theory). 
+const lmap = func => lst => lst.map(func)
+
+// allows you to change one category into another.
+const lfold = cat => func => lst => lst.reduce((cat, val) => func(cat)(val), (cat)? cat : []) // left reducer
 ```
 
 ### Monad ### 

@@ -60,18 +60,11 @@ const S2List = ptrn => async str => str.split(ptrn)
 const lcreate = start => end => lst => ( start === end ) ? lst : lcreate(start+1)(end)(lappend(lst)(start)) // Creates a List with specified range.
 // Boolean
 const leqEmpty = lst => lst.length == 0
+
 // Positional
 const lhead = lst => lst[0] // return the head element of the List
 const ltail = lst => lst[lst.length-1]
 const lat = index => lst[index]
-// Modifiers
-const lsort = lst => lst.sort()
-const lreverse = lst => lst.reduce((acc, val) => lappend([val])(acc), [])
-const lswap = pos1 => pos2 => lst => lst.slice(0, pos1). //slice to pos1
-                                    concat(lst.slice(pos2, pos2 + 1)). // concat pos2
-                                    concat(lst.slice(pos1 + 1, pos2)). // concat pos1+1 to pos2
-                                    concat(lst.slice(pos1, pos1 + 1)). // concat pos2
-                                    concat(lst.slice(pos2 + 1, lst.length)) // concat the remaining
 
 // Mapper
 const lmapA = func => lst => lst.map((val, index, lst ) => func(lst)(index)(val)) //with arity
@@ -113,6 +106,15 @@ const l2String = sep => lst => lst.join(sep)
 const L2String = sep => async lst => lst.join(sep)
 const l2countMap = lst => lst.reduce((map, val) => mincr(val)(map) ,{}) //histogram
 const l2indexMap = lst => lst.reduce ( (cat, val, index) => { (cat[val]) ? cat[val][index] = index : cat[val] = $(mset(index)(index))({}); return cat},{} ) // List to index Map - very helpful function to solve many problems
+
+// Modifiers
+const lsort = lst => lst.sort()
+const lreverse = lfold([])(lprepend)
+const lswap = pos1 => pos2 => lst => lst.slice(0, pos1). //slice to pos1
+                                    concat(lst.slice(pos2, pos2 + 1)). // concat pos2
+                                    concat(lst.slice(pos1 + 1, pos2)). // concat pos1+1 to pos2
+                                    concat(lst.slice(pos1, pos1 + 1)). // concat pos2
+                                    concat(lst.slice(pos2 + 1, lst.length)) // concat the remaining
 
 // Map
 // Positional

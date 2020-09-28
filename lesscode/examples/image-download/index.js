@@ -1,7 +1,7 @@
 
 // Lesscode-fp
 const { 
-    $, $M, Hint, Trace, print, hash, Lmap, Wait, mget, exit, mgettwo, 
+    $, $M, Hint, Trace, print, hash, Lmap, Wait, mget, exit, mgettwo, lfold, lprepend,
     linebreak, utf8, newline,  
     L2String, S2List,
     FileRead, FileWrite,

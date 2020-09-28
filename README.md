@@ -13,7 +13,7 @@ So begin the journey of [Functional Thinking](https://github.com/van001/lesscode
 - Seek deep understanding of motivation and concepts behind the functional programming, 
 without being caught in the programming lanugage nuances, syntax or even nomenclature. 
 
-- Come up with a language agnostic list of functions (library), which can be implemented in any multi-paradigm language that supports functional programming. 
+- Come up with a language agnostic list of real-world functions (library), which can be implemented in any multi-paradigm language that supports functional programming. 
 
 # Overview
 
@@ -37,6 +37,9 @@ It's built using the following functional programming principles :
 Pure functions have no side-effects, are time independent & maintain [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), which means, for a given input, you can replace the function with it's return value, anytime. 
 Think of them as a mathematical function, which for a given input will awlays return the same output.
 This also means, a pure function can easily cache ([memoize](https://en.wikipedia.org/wiki/Memoization)) the value it returns after the execution. This is huge, now that memory / storage is cheap and computation is expensive.
+
+All the functions in lesscode library are pure, unless they are not. All pure function name start with lowercase letter. 
+Impure functions are name with Capital letters.
 
 ```
 // appends String to another String and returns a new String

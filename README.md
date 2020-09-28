@@ -106,10 +106,10 @@ const l2String = sep => lst => lst.join(sep)
 Crux of any programming paradigm is composition. Composition, allows you to re-use the code (less code ;))
 
 In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions. Traditional FP languages like Haskell
-has infix composition operator like '.' (pure function) and '>>= / >>' for monadic compsotion. But in many multi-paradigm language, we do not have any such 
+has infix composition operator like '.' (for pure function) and '>>= / >>' (for [monadic composition](https://github.com/van001/lesscode-fp#Monad)). Other multi-paradigm languages like javascript, java etc do not have any such 
 operators nor they support infix styling.
 
-I will be using **$(...)** for pure functions & **$M(...)** for [monadic composition](https://github.com/van001/lesscode-fp#Monad) (see [examples](https://github.com/van001/lesscode-fp#Examples) below). 
+Lesscode library provide  **$(...)** (for pure functions) & **$M(...)** for [monadic](https://github.com/van001/lesscode-fp#Monad) composition. 
 
 ***'$' has a very small foot-print and can be easily spotted to show the composition.***
 

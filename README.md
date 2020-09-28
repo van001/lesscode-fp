@@ -114,7 +114,9 @@ Lesscode library provide  **$(...)** (for pure functions) & **$M(...)** for [mon
 ***'$' has a very small foot-print and can be easily spotted to show the composition.***
 
 ```
-
+// coconut machine will take List of coconuts, then slice the top & put a straw.
+// Using point free styling, you can create such function as -
+const cocunutMachine = $(DropStraw ,SliceFromTop)
 ```
 
 ### Fewer Categories ### 

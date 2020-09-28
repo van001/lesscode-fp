@@ -102,6 +102,21 @@ Data last principle also allows you to [compose](https://github.com/van001/lessc
 const l2String = sep => lst => lst.join(sep)
 ```
 
+### Composition ### 
+Crux of any programming paradigm is composition. Composition, allows you to re-use the code (less code ;))
+
+In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions. Traditional FP languages like Haskell
+has infix composition operator like '.' (pure function) and '>>= / >>' for monadic compsotion. But in many multi-paradigm language, we do not have any such 
+operators nor they support infix styling.
+
+I will be using **$(...)** for pure functions & **$M(...)** for [monadic composition](https://github.com/van001/lesscode-fp#Monad) (see [examples](https://github.com/van001/lesscode-fp#Examples) below). 
+
+***'$' has a very small foot-print and can be easily spotted to show the composition.***
+
+```
+
+```
+
 ### Fewer Categories ### 
 Unlike, Object Oriented programming, where every class is a new category, functional programming benefits from fewer category and 
 coming up with domain specific abstractions to solve them generically.
@@ -125,10 +140,12 @@ The next few principles have been borrowed from [Category Theory](https://en.wik
 which provide laws / abstractions on how you treat / manipulate collection of data.
 I will try to simplify category theory jargon in terms or real-world practical examples.
 
-Ultimately programming is all about breaking a large / complex problem into list of smaller / simpler problems, executing them independently (or one after another) and essembling the final result. 
+Ultimately programming is all about breaking a large / complex problem into list of smaller / simpler problems, executing them concurrently / parallelly / sequentially and essembling the final result. 
 
-Functor is a type which allows you to do so. A List is a functor, as it allows you to
-map over all it's items to produce another List with other items (structure remains the same).
+Functor allows for you to run bunch of operations concurrently / parallelly. Using a List functor, you 
+can map a 'slice' function to slice all the apples (List of apples - californian, fuji...deosn't matter).
+
+Less code library provide an 'lmap' function for the List functor.
 
 ```
 // Map over List to tranform into another List, while preserving the structure (Functor - borrowed from category theory). 
@@ -152,20 +169,7 @@ const FileRead = option =>  name => fs.promises.readFile(name, option);
 const Wait = all => Promise.all(all)
 ```
 
-### Composition ### 
-Crux of any programming paradigm is composition. Composition, allows you to re-use the code (less code ;))
 
-In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions. Traditional FP languages like Haskell
-has infix composition operator like '.' (pure function) and '>>= / >>' for monadic compsotion. But in many multi-paradigm language, we do not have any such 
-operators nor they support infix styling.
-
-I will be using **$(...)** for pure functions & **$M(...)** for monadic composition (see [examples](https://github.com/van001/lesscode-fp#examples) below). 
-
-***'$' has a very small foot-print and can be easily spotted to show the composition.***
-
-```
-
-```
 
 # Examples
 

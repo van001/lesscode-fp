@@ -3,7 +3,7 @@
 ![Lego Kids](lego-kid.jpeg) Going back in time, when Alan Turing built 
 [Turing machine](https://en.wikipedia.org/wiki/Turing_machine) to perform computation, Alanzo Chruch designed 
 [Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus) to mathematically compute anything by composing lambda functions. 
-Soon world got filled with programming languages in both the paradigm and many languages start borrowing each other's concept (sounds familiar?) to only become bloated and un-manageable. 
+Soon world got filled with programming languages in both the paradigms and many languages start borrowing each other's concept (sounds familiar?) to only become bloated and un-manageable. 
 
 Fast forward 1977...John Bakus's paper, ["Can programming be liberated from von nuemann style?"](https://github.com/van001/lesscode/blob/master/can-programming-be-liberated.pdf) put it very rightly.
 
@@ -34,10 +34,10 @@ which define functions to manipulate  String, List & Map / Object categories. It
 functional programming principles :
 
 ### Pure functions ### 
-Pure functions have no side-effects, are time independent & have [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), 
-which means you can replace the function with it's return value, anytime. 
-Think them as a mathematical function, which for a given input will awlays return the same output.
-This also means, a pure function can easily cache ([memoize](https://en.wikipedia.org/wiki/Memoization)) the value it returns after the execution.
+Pure functions have no side-effects, are time independent & have [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), which means, for a given input, you can replace the function with it's return value, anytime. 
+Think of them as a mathematical function, which for a given input will awlays return the same output.
+This also means, a pure function can easily cache ([memoize](https://en.wikipedia.org/wiki/Memoization)) the value it returns after the execution. This is huge, now that memory / storage is cheap and computation is expensive.
+
 ```
 // appends String to another String and returns a new String
 const sappend = str1 => str2 => str1 + str2 

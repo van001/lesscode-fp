@@ -29,9 +29,9 @@ In functional programming languages :
 - you treat functions as a 1st class citizen and pass / return a function to / from another function.
 
 
-[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic functional library,
-which define functions to manipulate  String, List & Map / Object categories. It's built using the following 
-functional programming principles :
+[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic javascript functional library, which define functions to manipulate  String, List & Map / Object categories.
+You can implement these functions in any multi-paradigm language that supports functional programming.
+It's built using the following functional programming principles :
 
 ### Pure functions ### 
 Pure functions have no side-effects, are time independent & maintain [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), which means, for a given input, you can replace the function with it's return value, anytime. 

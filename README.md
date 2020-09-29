@@ -38,8 +38,8 @@ Pure functions have no side-effects, are time independent & maintain [referentia
 Think of them as a mathematical function, which for a given input will awlays return the same output.
 This also means, a pure function can easily cache ([memoize](https://en.wikipedia.org/wiki/Memoization)) the value it returns after the execution. This is huge, now that memory / storage is cheap and computation is expensive.
 
-All the functions in lesscode library are pure, unless they are not. All pure function name start with lowercase letter. 
-Impure functions are name with Capital letters.
+All the functions in lesscode library are pure, unless they are not. Pure function name starts with lowercase,  
+impure with uppercase letters.
 
 ```
 // appends String to another String and returns a new String

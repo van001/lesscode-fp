@@ -33,3 +33,5 @@ $M(
 .catch($(exit, print))
 
 
+const _ = a => b => a+b
+print(_(1)(2))

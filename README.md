@@ -67,7 +67,7 @@ The origin of functional programming, ***[lambda calculus](https://en.wikipedia.
 All lesscode functions accept single parameter and multi-paramter functions are curried.
 
 ```
-// reverses a List, point-free.
+// reverses a List, point-free (see [Data-Last](https://github.com/van001/lesscode-fp#Data-Last)).
 // same as : lreverse =>  lst => lfold(([])(lappend)(lst)
 const lreverse => lfold(([])(lappend)
 

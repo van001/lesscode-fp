@@ -121,7 +121,7 @@ Lesscode library provide  **$(...)** (for pure functions) & **$M(...)** for [mon
 ```
 // coconut machine will take List of coconuts, then slice the top & put a straw.
 // Using point free styling, you can create such function as -
-const cocunutMachine = $(DropStraw ,SliceFromTop)
+const coconutMachine = $(DropStraw ,SliceFromTop)
 ```
 
 ### Fewer Categories ### 
@@ -147,10 +147,8 @@ The next few principles have been borrowed from [Category Theory](https://en.wik
 which provide laws / abstractions on how you treat / manipulate collection of data.
 I will try to simplify category theory jargon in terms or real-world practical examples.
 
-Ultimately programming is all about breaking a large / complex problem into list of smaller / simpler problems, executing them concurrently / parallelly / sequentially and essembling the final result. 
-
-Functor allows for you to run bunch of operations concurrently / parallelly. Using a List functor, you 
-can map a 'slice' function to slice all the apples (List of apples - californian, fuji...deosn't matter).
+Programming is all about transforming (morphing) data from one form (category) to another. Functor allows you to define
+a single / series of transformation, which can be applied to each item in a category to achive the transfromation.
 
 Less code library provide an 'lmap' function for the List functor.
 
@@ -161,6 +159,12 @@ const lmap = func => lst => lst.map(func)
 // convert the List of strings to uppercase
 const str = ['neelesh' , 'vaikhary']
 const strUpper = lmap(supper)(str)
+
+// Applying the cocununt machine logic to slice & straw, list of coconuts
+const readyCoconut = lamp(coconutMachine)['full coconut', 'full coconut']
+// or                lamp($(DropStraw ,SliceFromTop))['full coconut', 'full coconut'] 
+
+print(readyCoconut) // ['strawed sliced coconut', 'strawed sliced coconut']
 ```
 
 ### Monad ### 

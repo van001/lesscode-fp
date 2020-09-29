@@ -144,7 +144,7 @@ const s2List = ptrn => str => str.split(ptrn)
 
 ### Functor ###
 The next few principles have been borrowed from [Category Theory](https://en.wikipedia.org/wiki/Category_theory), 
-which provide laws / abstractions on fransform data from one category into another.
+which provide laws / abstractions for transforming from one category into another.
 I will try to simplify category theory jargon using real-world examples.
 
 Programming is all about transforming (morphing) data from one form (category) to another. 

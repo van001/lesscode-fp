@@ -143,19 +143,16 @@ const s2List = ptrn => str => str.split(ptrn)
 ```
 
 ### Functor ###
-Until now, we talked about the fundementals of functional programming using simple data-types. 
-Real-world is filled with more complex data-types, many of which are some sort of collection
-
-- List of tasks, List of items etc
-
 The next few principles have been borrowed from [Category Theory](https://en.wikipedia.org/wiki/Category_theory), 
-which provide laws / abstractions on how you treat / manipulate collection of data.
-I will try to simplify category theory jargon in terms or real-world practical examples.
+which provide laws / abstractions on fransform data from one category into another.
+I will try to simplify category theory jargon using real-world examples.
 
-Programming is all about transforming (morphing) data from one form (category) to another. Sometimes, the transformation will preserve the structure, other times not. I category theory, Functor is a structure preserving transformation from one categoty to another. For e.g : Transforming List of lowecase text to List of uppercase. Transforming List of Strings and List of Hash of Strings.
+Programming is all about transforming (morphing) data from one form (category) to another. 
+Sometimes, the transformation will preserve the structure, other times not. 
+In category theory, Functor is a structure preserving transformation from one categoty to another. 
+For e.g : Transforming List of lowecase text to List of uppercase. Transforming List of Strings to List of Hash of Strings.
 
-Less code library provide an 'lmap' function for the List functor. Using lmap you can transform one List to another. **lmap** will
-essentially lift each item from the List and hand to the function will trasform it to another item.
+Lesscode library provide 'lmap' function for the List functor. Using lmap you can transform one List to another. **lmap**, essentially lifts each item from the List and hand to the function, which trasforms it to something else, but still a List of something.
 
 ```
 // Map over List to tranform into another List, while preserving the structure (Functor - borrowed from category theory). 

@@ -143,17 +143,17 @@ const s2List = ptrn => str => str.split(ptrn)
 ### Functor ###
 Until now, we talked about the fundementals of functional programming using simple data-types. 
 Real-world is filled with more complex data-types, many of which are some sort of collection
-- List, Object, Tuple etc. 
+
+- List of tasks, List of items etc
 
 The next few principles have been borrowed from [Category Theory](https://en.wikipedia.org/wiki/Category_theory), 
 which provide laws / abstractions on how you treat / manipulate collection of data.
 I will try to simplify category theory jargon in terms or real-world practical examples.
 
-Programming is all about transforming (morphing) data from one form (category) to another. Functor allows you to define
-a single / series of transformation, which can be applied to each item in a category to achive the transfromation. The key
-is, functor preserves the structure after transformation.
+Programming is all about transforming (morphing) data from one form (category) to another. Sometimes, the transformation will preserve the structure, other times not. I category theory, Functor is a structure preserving transformation from one categoty to another. For e.g : Transforming List of lowecase text to List of uppercase. Transforming List of Strings and List of Hash of Strings.
 
-Less code library provide an 'lmap' function for the List functor.
+Less code library provide an 'lmap' function for the List functor. Using lmap you can transform one List to another. **lmap** will
+essentially lift each item from the List and hand to the function will trasform it to another item.
 
 ```
 // Map over List to tranform into another List, while preserving the structure (Functor - borrowed from category theory). 
@@ -162,6 +162,7 @@ const lmap = func => lst => lst.map(func)
 // convert the List of strings to uppercase
 const str = ['neelesh' , 'vaikhary']
 const strUpper = lmap(supper)(str)
+print(strUpper) // ['NEELESH' , 'VAIKHARY']
 
 // Applying the cocununt machine logic to slice & straw, list of coconuts
 const readyCoconut = lmap(coconutMachine)['full coconut', 'full coconut']

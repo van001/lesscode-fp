@@ -148,7 +148,8 @@ which provide laws / abstractions on how you treat / manipulate collection of da
 I will try to simplify category theory jargon in terms or real-world practical examples.
 
 Programming is all about transforming (morphing) data from one form (category) to another. Functor allows you to define
-a single / series of transformation, which can be applied to each item in a category to achive the transfromation.
+a single / series of transformation, which can be applied to each item in a category to achive the transfromation. The key
+is, functor preserves the structure after transformation.
 
 Less code library provide an 'lmap' function for the List functor.
 

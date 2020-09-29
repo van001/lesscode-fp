@@ -77,7 +77,7 @@ const sappend = str1 => str2 => str1 + str2
 ```
 
 ### Currying ### 
-[Currying](https://en.wikipedia.org/wiki/Currying) (f(a, b) => f(a)(b)) allows function with multiple parameters to be written as function, which returns a function that takes an extra parameter. 
+[Currying](https://en.wikipedia.org/wiki/Currying) (f(a, b) => f(a)(b)), allows function with multiple parameters to be written as sequence of functions that each take a single parameter. 
 Currying allows you to partially apply other options (initializion) and dependencies (injection) on multi-parameter functions.
 Currying also allows you to create your own DSL (domain specific language) by partially applying many generic functions and creating a new domain specfic one.
 

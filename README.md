@@ -82,14 +82,16 @@ Currying allows you to partially apply other options (initializion) and dependen
 Currying also allows you to create your own DSL (domain specific language) by partially applying many generic functions and creating a new domain specfic one.
 
 ```
+// it splits a String into List based on pattern matching.
 // s2List is a curried function. 
 const s2List = ptrn => async str => str.split(ptrn)
 
-// partially apply s2List, with whitespace pattern
-const whitspace2List = s2List(space)
+// suppose your domain breaks Sting into List based on space.
+// partially apply s2List, with space and create a new function.
+const space2List = s2List(space)
 
 // will break String into List on every whitespace.
-whitspace2List('This is cool') 
+space2List('This is cool') // ['This','is','cool']
 ```
 
 ### Data-Last ###

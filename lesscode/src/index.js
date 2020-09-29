@@ -1,18 +1,19 @@
 // Generics
 const print = val => { console.log(val); return val } //print
-const Print = async val => print(val)
 const trace = label => val => { print(label); print(val); print(' '); return val } // trace with label
-const Trace = label => async val => { print(label); print(val); print(' '); return val } 
 const hint = label => val => { print(label); return val }
-const Hint = label => async val => hint(label)(val) // monadic
-const $ = (...func) => (...args) => func.reduceRight((args, func) => [func(...args)], args)[0] // composition function
-const $M = (...ms) => (ms.reduce((f,g) => x => g(x)['then'](f))) // monadic composition
-const $P = (...f) => (...args) => f.map(fn => fn(...args))// Executes the functions in parallel and return the result as List
-const $A = func => lst => { const $$A = func => lst => count => (count == lst.length -1)? func(lst[count]) : $$A(func(lst[count]))(lst)(count+1); return $$A(func)(lst)(0)} // applicative
 const assert = input => output => msg => console.assert((typeof output === 'object' && output != null) ? input.join('') === output.join('') : input === output, msg)
 const memoize = f => { const cache = {}; return (...args) => { const argStr = args.join(''); return cache[argStr] = cache[argStr] || f(...args); } }
 const exit = msg =>  process.exit(0)
-const Wait = all => Promise.all(all)
+const M = f => async a => f(a) // convert fure function to monad
+const Wait = all => Promise.all(all) // wait for all mondas to complete
+
+
+// Composition
+const $ = (...func) => (...args) => func.reduceRight((args, func) => [func(...args)], args)[0] // composition function
+const $M = (...ms) => (ms.reduce((f, g) => x => (eqType('AsyncFunction')(f)) ? g(x)['then'](f) : M(g)(x)['then'](f))) // monadic composition
+const $P = (...f) => (...args) => f.map(fn => fn(...args))// Executes the functions in parallel and return the result as List
+const $A = func => lst => { const $$A = func => lst => count => (count == lst.length -1)? func(lst[count]) : $$A(func(lst[count]))(lst)(count+1); return $$A(func)(lst)(0)} // applicative
 
 
 // Equality functions
@@ -53,7 +54,6 @@ const sslice  = start => end => str => str.slice(start,end)
 
 // Category Changers
 const s2List = ptrn => str => str.split(ptrn)
-const S2List = ptrn => async str => str.split(ptrn)
 
 /** List **/
 // Creator
@@ -68,9 +68,7 @@ const lat = index => lst[index]
 
 // Mapper
 const lmapA = func => lst => lst.map((val, index, lst ) => func(lst)(index)(val)) //with arity
-const LmapA = func => async lst => lmapA(func)(lst)
 const lmap = func => lst => lst.map(func)
-const Lmap = func => async lst => lmap(func)(lst)
 
 // Expander
 const lprepend = lst1 => lst2 => lst2.concat(lst1) // prepend lst2 to lst1
@@ -103,7 +101,6 @@ const lfoldZ = cat => move => func => lst => {
 
 // Category Changers
 const l2String = sep => lst => lst.join(sep)
-const L2String = sep => async lst => lst.join(sep)
 const l2countMap = lst => lst.reduce((map, val) => mincr(val)(map) ,{}) //histogram
 const l2indexMap = lst => lst.reduce ( (cat, val, index) => { (cat[val]) ? cat[val][index] = index : cat[val] = $(mset(index)(index))({}); return cat},{} ) // List to index Map - very helpful function to solve many problems
 
@@ -137,7 +134,6 @@ const m2keyList = map => Object.keys(map) // Map to List (values)
 /** Utilities */
 const crypto = require("crypto")
 const hash = cipher => data => crypto.createHash(cipher).update(data).digest("hex")
-const Hash = cipher => async data => hash(cipher)(data)
 
 const fs = require('fs')
 const FileStreamIn  = option => func => async file => fs.createReadStream(file, option).on('data', func); 
@@ -151,9 +147,12 @@ const HttpGET = url => axios.get(url)
 
 module.exports = {
     // Generic
-    print, Print, hint, Hint, trace, Trace, 
-    $, $M, $P, $A, assert, 
-    memoize, Wait, exit, 
+    print, hint, trace, assert, memoize, Wait, exit,
+    
+    // Composition
+    $, $M, $P, $A,  
+    
+    // Equality
     eq, eqNull, eqType, 
     
     // Math
@@ -165,18 +164,18 @@ module.exports = {
     shead, slen,                                                 // String : Positional 
     sappend, srepeat,                                            // String : Expanders
     sslice,                                                      // String : Collapsers                                     
-    s2List, S2List,                                              // Srting : Category changers
+    s2List,                                                      // Srting : Category changers
     
     // List
     lcreate,                                                     // List : Creator
     leqEmpty,                                                    // List : Boolean
     lhead, ltail, lat,                                           // List : Positional
     lsort, lreverse, lswap ,                                     // List : Modifiers
-    lmap, Lmap, lmapA,LmapA,                                     // List : Mapper & Presets
+    lmap, lmapA,                                                 // List : Mapper & Presets
     lremove, lprepend, lappend,                                  // List : Expander
     lsliceHead, lsliceTail, lslice, lzip, lflat,                 // List : Collapsers                     
     lfold, lfoldr, lfoldZ,                                       // List : Folders & Presets
-    l2String, L2String, l2countMap, l2indexMap,                  // List : Category Changers
+    l2String, l2countMap, l2indexMap,                            // List : Category Changers
     
     // Map
     mget, mgettwo, mlen, mheadKey, 
@@ -185,7 +184,7 @@ module.exports = {
     m2valList, m2keyList,
 
     // Utilities
-    hash, Hash, 
+    hash, 
     FileStreamIn, FileStreamOut, FileRead, FileWrite,
     HttpGET,
     

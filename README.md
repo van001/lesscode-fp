@@ -113,19 +113,18 @@ const l2String = sep => lst => lst.join(sep)
 ### Composition ### 
 Crux of any programming paradigm is composition. Composition, allows you to re-use the code (less code ;))
 
-In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions. Traditional FP languages like Haskell
+In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions. Haskell
 has infix composition operator like '.' (for pure function) and '>>= / >>' (for [monadic composition](https://github.com/van001/lesscode-fp#Monad)). Other multi-paradigm languages like javascript, java etc do not have any such 
 operators nor they support infix styling.
 
 Lesscode library provide  **$(...)** (for pure functions) & **$M(...)** for [monadic](https://github.com/van001/lesscode-fp#Monad) composition. 
 
-***'$' has a very small foot-print and can be easily spotted to show the composition.***
-
 ```
 // coconut machine will take List of coconuts, then slice the top & put a straw.
-// Using point free styling, you can create such function as -
+// same as  : coconutMachine = DropStraw . SliceFromTop 
 const coconutMachine = $(DropStraw ,SliceFromTop)
 ```
+***'$' has a very small foot-print and can be easily spotted to show the composition.***
 
 ### Fewer Categories ### 
 Unlike, Object Oriented programming, where every class is a new category, functional programming benefits from fewer category and coming up with domain specific abstractions to solve them generically.

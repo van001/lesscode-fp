@@ -128,7 +128,9 @@ const coconutMachine = $(DropStraw ,SliceFromTop)
 Unlike, Object Oriented programming, where every class is a new category, functional programming benefits from fewer category and coming up with domain specific abstractions to solve them generically.
 
 Lesscode library provide funtions to manipulate / transform the following categories : String, List, Map / Object (non mutable). These categories are quiet popular in many programming languages. List allows for a work distribution, while 
-Map / Object allows faster retrieval.
+Map / Object allows faster retrieval. 
+
+Lesscode libraray prefix the name of category for all the category specifi functions. This design is by choice.
 
 ```
 // slices String at the specified position
@@ -162,8 +164,8 @@ const str = ['neelesh' , 'vaikhary']
 const strUpper = lmap(supper)(str)
 
 // Applying the cocununt machine logic to slice & straw, list of coconuts
-const readyCoconut = lamp(coconutMachine)['full coconut', 'full coconut']
-// or                lamp($(DropStraw ,SliceFromTop))['full coconut', 'full coconut'] 
+const readyCoconut = lmap(coconutMachine)['full coconut', 'full coconut']
+// or                lmap($(DropStraw ,SliceFromTop))['full coconut', 'full coconut'] 
 
 print(readyCoconut) // ['strawed sliced coconut', 'strawed sliced coconut']
 ```

@@ -2,7 +2,7 @@
 
 ![Lego Kids](lego-kid.jpeg) Going back in time, when Alan Turing built 
 [Turing machine](https://en.wikipedia.org/wiki/Turing_machine) to perform computation, Alanzo Chruch designed 
-[Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus) to mathematically compute anything by composing lambda functions. 
+[Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus) to mathematically compute anything by composing lambda functions (world's smallest programming langauage). 
 Soon world got filled with programming languages in both the paradigms and many languages start borrowing each other's concept (sounds familiar?) to only become bloated and un-manageable. 
 
 Fast forward 1977...John Bakus's paper, ["Can programming be liberated from von nuemann style?"](https://github.com/van001/lesscode/blob/master/can-programming-be-liberated.pdf) put it very rightly.
@@ -20,9 +20,9 @@ without being caught in the programming lanugage nuances, syntax or even nomencl
 This repo is about my learning of functional programming and coming up with a language agnostic library of functions, which
 can be applied to solve many real-world problems.
 
-In functional programming languages :
+In functional programming language :
 
-- you either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects. 
+- you either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects ( writing to logs / screen, reading from file, making a database call , etc). 
 
 - you compose functions to produce a desired outcome.
 
@@ -34,7 +34,7 @@ You can implement these functions in any multi-paradigm language that supports f
 It's built using the following functional programming principles :
 
 ### Pure functions ### 
-Pure functions have no side-effects, are time independent & maintain [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), which means, for a given input, you can replace the function with it's return value, anytime. 
+Pure functions have no side-effects, are time independent & maintain [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), which means, for a given input, you can replace the function with it's output, anytime. 
 Think of them as a mathematical function, which for a given input will awlays return the same output.
 This also means, a pure function can easily cache ([memoize](https://en.wikipedia.org/wiki/Memoization)) the value it returns after the execution. This is huge, now that memory / storage is cheap and computation is expensive.
 
@@ -64,7 +64,7 @@ const sappend = str1 => str2 => str1 + str2
 ### Single input / output ### 
 The origin of functional programming, ***[lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus)***, only allowed single input/ ouput. While it may not seem practical, currying ([see below](https://github.com/van001/lesscode-fp#Currying))  allows you to do so. Functional programming treats functions as a 1st class citizen, so you can pass a function as a parameter and return a function as a result.
 
-All lesscode functions accept single parameter and multi-paramter functions are curried.
+Lesscode functions accept single parameter; multi-paramter functions are curried.
 
 ```
 // reverses a List, point-free (see [Data-Last](https://github.com/van001/lesscode-fp#Data-Last)).
@@ -81,6 +81,8 @@ const sappend = str1 => str2 => str1 + str2
 [Currying](https://en.wikipedia.org/wiki/Currying) (f(a, b) => f(a)(b)), allows function with multiple parameters to be written as sequence of functions that each take a single parameter. 
 Currying allows you to partially apply other options (initializion) and dependencies (injection) on multi-parameter functions.
 Currying also allows you to create your own DSL (domain specific language) by partially applying many generic functions and creating a new domain specfic one.
+
+Every function is lesscode library is curried and [point-free](https://en.wikipedia.org/wiki/Tacit_programming) (where possible).
 
 ```
 // it splits a String into List based on pattern matching.
@@ -102,7 +104,7 @@ you manipulate the encapsulated data with function(s), which take additional opt
 
 In FP, data and functions are separate, hence you build library of functions to work with your data.  
 
-Data last principle also allows you to [compose](https://github.com/van001/lesscode-fp#Composition) functions to produce more functions.
+Data last principle also allows you to [compose](https://github.com/van001/lesscode-fp#Composition) functions to produce more functions. Also it allows for a point free style of composition.
 
 ```
 // l2String converts, List to String. 
@@ -184,8 +186,7 @@ const FileRead = option =>  name => fs.promises.readFile(name, option);
 // Wait for all Monads to complete.
 const Wait = all => Promise.all(all)
 ```
-
-
+***Monad is just a monoid in the category of endofunctors***
 
 # Examples
 

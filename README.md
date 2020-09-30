@@ -98,7 +98,7 @@ space2List('This is cool') // ['This','is','cool']
 ```
 
 ### Data-Last ###
-Functions that take more than one parameter,  should accept data as the last parameter. If you are coming from imperative programming paradigm, this might be new to you.
+Functions that take more than one parameter,  should accept data as a last parameter. If you are coming from imperative programming paradigm, this might be new to you.
 In imperative programming you pass data 1st & options (default values - ring the bell?) later.  Or in the case of object oriented programming (still imperative), 
 you manipulate the encapsulated data with function(s), which take additional options. 
 

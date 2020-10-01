@@ -151,21 +151,20 @@ const s2List = ptrn => str => str.split(ptrn)
 ```
 
 ### Functor ###
-Since functional programming is already about abstraction ( what to do, not, how to do), the proliferation of  [Category Theory](https://en.wikipedia.org/wiki/Category_theory) took it to next level. Like, there is a Set theory, Graph theory and many more, Category theory is about the therory of theories.
+Since functional programming is already about abstraction ( what to do, not, how to do), the proliferation of  [Category Theory](https://en.wikipedia.org/wiki/Category_theory) took it to the next level. Since many of the real-world problem is about Set, Ring or Group, it was but natural.
 
-Programming is not just about computation about also transforming (morphing) data from one form (category) to another. 
-Sometimes, the transformation will preserve the structure, other times not.
- 
+Many real-world problems are about working with Group / Set of data to produce another.
+
 In category theory, Functor is a structure preserving transformation from one categoty to another. 
-For e.g : Transforming List of lowecase text to List of uppercase. Transforming List of Strings to List of Hash of Strings.
+For e.g : Transforming List of lowercase text to List of uppercase. Transforming List of Strings to List of Hash of Strings.
 
-Lesscode library provide 'lmap' function for the List functor. Using lmap you can transform one List to another. **lmap**, essentially lifts each item from the List and hand to the function, which trasforms it to something else, then puts back the result into List.
+Lesscode library provide 'lmap' function for the List functor. Using lmap you can transform one List into another. **lmap**, essentially lifts each item from the List, hands it to the function for transformation, then puts it back into a new List.
 
 ```
 // Map over List to tranform into another List, while preserving the structure (Functor - borrowed from category theory). 
 const lmap = func => lst => lst.map(func)
 
-// convert the List of strings to uppercase
+// convert the List of Strings to uppercase
 const str = ['neelesh' , 'vaikhary']
 const strUpper = lmap(supper)(str)
 print(strUpper) // ['NEELESH' , 'VAIKHARY']

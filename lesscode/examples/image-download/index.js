@@ -1,4 +1,3 @@
-
 // Lesscode-fp
 const {
     $M, $, hint, trace, print, hash, lmap, Wait, mget, exit, mgettwo,
@@ -10,9 +9,7 @@ const {
 const inputFile = process.argv[2]
 const outputFile = process.argv[3]
 
-const computeHash = $(hash('sha256'), mget('data'))
-const contentLen = mgettwo('headers')('content-length')
-const LogData = name => async data => `${name} ${contentLen(data)} ${computeHash(data)}`
+const LogData = name => async data => `${name} ${mgettwo('headers')('content-length')} ${hash('sha256')(mget('data'))}`
 const LogErorr = name => async err => `${name} 0  ${escape(err)}`
 
 // processFile :: String -> String

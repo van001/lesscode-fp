@@ -1,4 +1,4 @@
 http://i.imgur.com/c2z0yhtx.jpg 0  Error%3A%20Request%20failed%20with%20status%20code%20404
-http://i.imgur.com/KxyEGOn.jpg 470489 cc042826ed386d4247aca63cb7aff54b37acb1f89ce8f4549ac96a9e8683360c
-http://i.imgur.com/vPae8qL.jpg 69085 bde0a62bb35dffe66cebf6cfd9ca3841ca1419fb323281bd67c86145f2173207
-http://i.imgur.com/cz0yhtx.jpg 2464218 ed9f8c1e95d58e02fcf576f64ec064a64bc628852bc3b298cda15f3e47dfe251
+http://i.imgur.com/KxyEGOn.jpg 0  TypeError%20%5BERR_INVALID_ARG_TYPE%5D%3A%20The%20%22data%22%20argument%20must%20be%20of%20type%20string%20or%20an%20instance%20of%20Buffer%2C%20TypedArray%2C%20or%20DataView.%20Received%20type%20function%20%28%5BFunction%20%28anonymous%29%5D%29
+http://i.imgur.com/vPae8qL.jpg 0  TypeError%20%5BERR_INVALID_ARG_TYPE%5D%3A%20The%20%22data%22%20argument%20must%20be%20of%20type%20string%20or%20an%20instance%20of%20Buffer%2C%20TypedArray%2C%20or%20DataView.%20Received%20type%20function%20%28%5BFunction%20%28anonymous%29%5D%29
+http://i.imgur.com/cz0yhtx.jpg 0  TypeError%20%5BERR_INVALID_ARG_TYPE%5D%3A%20The%20%22data%22%20argument%20must%20be%20of%20type%20string%20or%20an%20instance%20of%20Buffer%2C%20TypedArray%2C%20or%20DataView.%20Received%20type%20function%20%28%5BFunction%20%28anonymous%29%5D%29

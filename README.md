@@ -122,7 +122,7 @@ has infix composition operator like '.' (for pure function) and '>>= / >>' (for 
 operators nor they support infix styling.
 
 Lesscode library provide :
--  **$(...)** (for pure functions) 
+-  **$(...)** for pure functions.
 -  **$M(...)** for [monadic](https://github.com/van001/lesscode-fp#Monad) composition. 
 
 ```

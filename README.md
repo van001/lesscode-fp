@@ -56,6 +56,8 @@ const max = a => b => Math.max(a,b)
 In functional programming you do not mutate data, instead you compute a new. Also, most FP languages support lazy evaluation,
  which means your function is executed only when it's needed. Isn't it sweet...
 
+ Lesscode adheres to the principle, unless it's a Monad ([see below]https://github.com/van001/lesscode-fp#Monad)
+
 ```
 // appends String to another String and returns a new String
 const sappend = str1 => str2 => str1 + str2 
@@ -104,7 +106,7 @@ you manipulate the encapsulated data with function(s), which take additional opt
 
 In FP, data and functions are separate, hence you build library of functions to work with your data.  
 
-Data last principle also allows you to [compose](https://github.com/van001/lesscode-fp#Composition) functions to produce more functions. Also it allows for a point free style of composition.
+Data last principle makes function [composition](https://github.com/van001/lesscode-fp#Composition), easier (builder pattern). Also it allows for a point free style of composition.
 
 ```
 // l2String converts, List to String. 

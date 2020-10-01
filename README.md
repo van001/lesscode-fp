@@ -151,9 +151,7 @@ const s2List = ptrn => str => str.split(ptrn)
 ```
 
 ### Functor ###
-Since functional programming is already about abstraction ( what to do, not, how to do), the proliferation of  [Category Theory](https://en.wikipedia.org/wiki/Category_theory) took it to the next level. Since many of the real-world problem is about Set, Ring or Group, it was but natural.
-
-Many real-world problems are about working with Group / Set of data to produce another.
+Since functional programming is already about abstraction ( what to do, not, how to do), the proliferation of  [Category Theory](https://en.wikipedia.org/wiki/Category_theory) took it to the next level. Since many of the real-world problems are about transformation of one Group / Set of data into another, it was but natural.
 
 In category theory, Functor is a structure preserving transformation from one categoty to another. 
 For e.g : Transforming List of lowercase text to List of uppercase. Transforming List of Strings to List of Hash of Strings.

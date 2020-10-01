@@ -84,7 +84,7 @@ const sappend = str1 => str2 => str1 + str2
 Currying allows you to partially apply other options (initializion) and dependencies (injection) on multi-parameter functions.
 Currying also allows you to create your own DSL (domain specific language) by partially applying many generic functions and creating a new domain specfic one.
 
-Every function is lesscode library is curried and [point-free](https://en.wikipedia.org/wiki/Tacit_programming) (where possible).
+Every function in lesscode library is curried and [point-free](https://en.wikipedia.org/wiki/Tacit_programming) (where possible).
 
 ```
 // it splits a String into List based on pattern matching.
@@ -138,7 +138,7 @@ const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 ### Fewer Categories ### 
 Unlike, Object Oriented programming, where every class is a new category, functional programming benefits from fewer categories and coming up with domain specific abstractions to solve them generically.
 
-Lesscode library provide funtions to manipulate / transform the following categories : String, List, Map / Object (non mutable). These categories are quiet popular in many programming languages. List,  allows for a work distribution; Map / Object,  allows faster retrieval; String, is a preffered way of storing data.
+Lesscode library provide funtions to manipulate / transform the following categories : String, List, Map / Object (non mutable). These categories are quiet popular in many programming languages. List,  allows easier work distribution; Map / Object,  allows faster retrieval; String, is a preffered way of storing data.
 
 Lesscode libraray prefixes the name of category for all the category specific functions. This design is by choice.
 
@@ -153,7 +153,7 @@ const s2List = ptrn => str => str.split(ptrn)
 ### Functor ###
 Since functional programming is already about abstraction ( what to do, not, how to do), the proliferation of  [Category Theory](https://en.wikipedia.org/wiki/Category_theory) took it to the next level. Since many of the real-world problems are about transformation of one Group / Set of data into another, it was but natural.
 
-In category theory, Functor is a structure preserving transformation from one categoty to another. 
+In category theory, Functor is a structure preserving transformation from one category to another. 
 For e.g : Transforming List of lowercase text to List of uppercase. Transforming List of Strings to List of Hash of Strings.
 
 Lesscode library provide 'lmap' function for the List functor. Using lmap you can transform one List into another. **lmap**, essentially lifts each item from the List, hands it to the function for transformation, then puts it back into a new List.

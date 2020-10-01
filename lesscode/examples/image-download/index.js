@@ -7,8 +7,6 @@ const {
     FileRead, FileWrite,
     HttpGET } = require('lesscode-fp')
 
-
-
 // processFile :: String -> String
 const ProcessURL = name => {
     const computeHash = $(hash('sha256'), mget('data'))

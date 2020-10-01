@@ -106,7 +106,7 @@ you manipulate the encapsulated data with function(s), which take additional opt
 
 In FP, data and functions are separate, hence you build library of functions to work with your data.  
 
-Data last principle makes function [composition](https://github.com/van001/lesscode-fp#Composition), easier (builder pattern). Also it allows for a point free style of composition.
+Data last principle makes function [composition](https://github.com/van001/lesscode-fp#Composition), easier (builder pattern). Also, it allows for a point-free style of composition.
 
 ```
 // l2String converts, List to String. 
@@ -200,7 +200,7 @@ Coming soon...
 ### Parallel ###
 
 ![Parallel](parallel.png) Doing bunch of things in parallel, waiting for the result and then doing something else. 
-Also tolerating the failures instead of aborting on any error (if a file download fails it is ok, just write the error).
+Also, tolerating failures instead of aborting on error (if a file download fails it is ok, just write the error).
 
 **[Image Download](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/image-download)**
 

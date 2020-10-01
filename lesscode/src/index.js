@@ -66,10 +66,6 @@ const lhead = lst => lst[0] // return the head element of the List
 const ltail = lst => lst[lst.length-1]
 const lat = index => lst[index]
 
-// Mapper
-const lmapA = func => lst => lst.map((val, index, lst ) => func(lst)(index)(val)) //with arity
-const lmap = func => lst => lst.map(func)
-
 // Expander
 const lprepend = lst1 => lst2 => lst2.concat(lst1) // prepend lst2 to lst1
 const lappend = lst1 => lst2 => lst1.concat(lst2) // append lst2 to lst1
@@ -99,12 +95,9 @@ const lfoldZ = cat => move => func => lst => {
     return $lfoldZ(cat)(func)(lst)(lst.length-1)(0)
 }
 
-// Category Changers
-const l2String = sep => lst => lst.join(sep)
-const l2countMap = lst => lst.reduce((map, val) => mincr(val)(map) ,{}) //histogram
-const l2indexMap = lst => lst.reduce ( (cat, val, index) => { (cat[val]) ? cat[val][index] = index : cat[val] = $(mset(index)(index))({}); return cat},{} ) // List to index Map - very helpful function to solve many problems
-
-// Modifiers
+// Category Changers - structure preserving
+const lmapA = func => lst => lst.map((val, index, lst ) => func(lst)(index)(val)) //with arity
+const lmap = func => lst => lst.map(func)
 const lsort = lst => lst.sort()
 const lreverse = lfold([])(lprepend)
 const lswap = pos1 => pos2 => lst => lst.slice(0, pos1). //slice to pos1
@@ -112,6 +105,14 @@ const lswap = pos1 => pos2 => lst => lst.slice(0, pos1). //slice to pos1
                                     concat(lst.slice(pos1 + 1, pos2)). // concat pos1+1 to pos2
                                     concat(lst.slice(pos1, pos1 + 1)). // concat pos2
                                     concat(lst.slice(pos2 + 1, lst.length)) // concat the remaining
+
+// Category Changers - structure non-preserving
+const l2String = sep => lst => lst.join(sep)
+const l2countMap = lst => lst.reduce((map, val) => mincr(val)(map) ,{}) //histogram
+const l2indexMap = lst => lst.reduce ( (cat, val, index) => { (cat[val]) ? cat[val][index] = index : cat[val] = $(mset(index)(index))({}); return cat},{} ) // List to index Map - very helpful function to solve many problems
+
+
+
 
 // Map
 // Positional

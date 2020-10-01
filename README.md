@@ -247,8 +247,7 @@ const ProcessURL = name => {
 const ProcessContent = $M(l2String(newline), Wait, lmap(ProcessURL), s2List(linebreak))
 
 // Main pipeline.
-$M(FileWrite(utf8)(outputFile), ProcessContent, FileRead(utf8))(inputFile)
-.catch(print)
+$M(FileWrite(utf8)(outputFile), ProcessContent, FileRead(utf8))(inputFile).catch(print)
 ```
 ### Streaming ###
 

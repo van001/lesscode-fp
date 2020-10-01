@@ -117,28 +117,30 @@ const l2String = sep => lst => lst.join(sep)
 ### Composition ### 
 Crux of any programming paradigm is composition. Composition, allows you to re-use the code (less code ;))
 
-In functional programming there is no assignment you just compose functions to produce more specific functions/ solutions. Haskell
+In functional programming there is no assignment, you just compose functions to produce more specific functions/ solutions. Haskell
 has infix composition operator like '.' (for pure function) and '>>= / >>' (for [monadic composition](https://github.com/van001/lesscode-fp#Monad)). Other multi-paradigm languages like javascript, java etc do not have any such 
 operators nor they support infix styling.
 
 Lesscode library provide :
--  **$(...)** for pure functions.
+-  **$(...)** for pure function composition.
 -  **$M(...)** for [monadic](https://github.com/van001/lesscode-fp#Monad) composition. 
 
 ```
 // coconut machine will take List of coconuts, then slice the top & put a straw.
 // same as  : coconutMachine = DropStraw . SliceFromTop 
 const coconutMachine = $(DropStraw ,SliceFromTop)
+
+// to copy the content of one file to another (point-free)
+const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 ```
 ***'$' has a very small foot-print and can be easily spotted to show the composition.***
 
 ### Fewer Categories ### 
-Unlike, Object Oriented programming, where every class is a new category, functional programming benefits from fewer category and coming up with domain specific abstractions to solve them generically.
+Unlike, Object Oriented programming, where every class is a new category, functional programming benefits from fewer categories and coming up with domain specific abstractions to solve them generically.
 
-Lesscode library provide funtions to manipulate / transform the following categories : String, List, Map / Object (non mutable). These categories are quiet popular in many programming languages. List allows for a work distribution, while 
-Map / Object allows faster retrieval. 
+Lesscode library provide funtions to manipulate / transform the following categories : String, List, Map / Object (non mutable). These categories are quiet popular in many programming languages. List,  allows for a work distribution; Map / Object,  allows faster retrieval; String, is a preffered way of storing data.
 
-Lesscode libraray prefix the name of category for all the category specifi functions. This design is by choice.
+Lesscode libraray prefixes the name of category for all the category specific functions. This design is by choice.
 
 ```
 // slices String at the specified position

@@ -151,12 +151,11 @@ const s2List = ptrn => str => str.split(ptrn)
 ```
 
 ### Functor ###
-The next few principles have been borrowed from [Category Theory](https://en.wikipedia.org/wiki/Category_theory), 
-which provide laws / abstractions for transforming from one category into another.
-I will try to simplify category theory jargon using real-world examples.
+Since functional programming is already about abstraction ( what to do, not, how to do), the proliferation of  [Category Theory](https://en.wikipedia.org/wiki/Category_theory) took it to next level. Like, there is a Set theory, Graph theory and many more, Category theory is about the therory of theories.
 
-Programming is all about transforming (morphing) data from one form (category) to another. 
-Sometimes, the transformation will preserve the structure, other times not. 
+Programming is not just about computation about also transforming (morphing) data from one form (category) to another. 
+Sometimes, the transformation will preserve the structure, other times not.
+ 
 In category theory, Functor is a structure preserving transformation from one categoty to another. 
 For e.g : Transforming List of lowecase text to List of uppercase. Transforming List of Strings to List of Hash of Strings.
 

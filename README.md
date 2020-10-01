@@ -115,7 +115,7 @@ const l2String = sep => lst => lst.join(sep)
 ```
 
 ### Composition ### 
-Crux of any programming paradigm is composition. Composition, allows you to re-use the code (less code ;))
+Crux of any programming paradigm is composition. Composition, allows you to re-use the code (less code ;-))
 
 In functional programming there is no assignment, you just compose functions to produce more specific functions/ solutions. Haskell
 has infix composition operator like '.' (for pure function) and '>>= / >>' (for [monadic composition](https://github.com/van001/lesscode-fp#Monad)). Other multi-paradigm languages like javascript, java etc do not have any such 

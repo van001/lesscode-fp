@@ -197,11 +197,14 @@ const FileRead = option =>  name => fs.promises.readFile(name, option);
 const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 ```
 
-### Applicative (functor) ###
+### Applicative ###
 Applicative is also about functions with side-effects, but the name doesn't originate form Category therory, instead it was coined to solve something 
 between functor and monad. When you have to write a function with side-effects that accept more than one paramter you use applicative functor. 
 Normal functor composition only works with functions with single parameter. Also applicative allows for the concurrent execution of functions with side-effects
 without any dependecies.
+
+```
+```
 
 # Examples
 

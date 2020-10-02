@@ -204,9 +204,9 @@ Coming soon...
 
 ## Real-world 
 
-### Parallel ###
+### Concurrently ###
 
-![Parallel](parallel.png) Doing bunch of things in parallel, waiting for the result and then doing something else. 
+Doing bunch of things in concurrently, waiting for the result and then doing something else. 
 Also, tolerating failures instead of aborting on error (if a file download fails it is ok, just write the error).
 
 **[Image Download](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/image-download)**

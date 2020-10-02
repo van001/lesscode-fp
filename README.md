@@ -176,7 +176,7 @@ print(readyCoconut) // ['strawed sliced coconut', 'strawed sliced coconut']
 ```
 
 ### Monad ### 
-Uptill now we only talked about pure functions but real-world functions have side-effects (hidden data, wrapped context), are in-predictable (fail or different result), or even need sequential execution (one after another).
+Uptill now we only talked about pure functions but real-world functions have side-effects (hidden data, wrapped context), are in-predictable (fail or different result), or even need sequential execution (one after another). 
 
 Monads, let you do all that. Monads let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence. 
 
@@ -185,7 +185,9 @@ theroy Monads jargon, Monads are just a [Monoid](https://en.wikipedia.org/wiki/M
 
 As Saunders Mac Lane said, ***Monad is just a monoid in the category of endofunctors***
 
-Lesscode implements monad using promise/ async. It also provide a monadic version of all the pure fucntions, so that you can seamlessly use them in [monadic composition](https://github.com/van001/lesscode-fp#Composition). 
+Lesscode  provide some built-in Monads using javascript async (promise). It also provide a function **M(...)** to convery any pure function to Monad.
+
+**$M(...) supports [monadic composition](https://github.com/van001/lesscode-fp#Composition). 
 
 ```
 // Read content of a file. 

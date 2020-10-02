@@ -187,7 +187,7 @@ As Saunders Mac Lane said, ***Monad is just a monoid in the category of endofunc
 
 Lesscode  provide some built-in Monads using javascript async (promise). It also provide a function **M(...)** to convery any pure function to Monad.
 
-**$M(...) supports [monadic composition](https://github.com/van001/lesscode-fp#Composition). 
+**$M(...)** supports [monadic composition](https://github.com/van001/lesscode-fp#Composition) (instead of a >==> operator or kliesli arrow , as it's called in category theory)
 
 ```
 // Read content of a file. 

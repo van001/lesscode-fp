@@ -204,7 +204,7 @@ Normal functor composition only works with functions with single parameter. Also
 without any dependecies.
 
 Lesscode implements applicative using **$A(...)** and accept List as a parameter. Functions is appplicative composition should accept the same number of parameters.
-The result is again a List. 
+The result is again a List. So technically, an applicative is a functor ;-).
 
 ```
 ```

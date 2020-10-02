@@ -153,7 +153,8 @@ const s2List = ptrn => str => str.split(ptrn)
 ### Functor ###
 Since functional programming is already about abstraction ( what to do, not, how to do), the proliferation of  [Category Theory](https://en.wikipedia.org/wiki/Category_theory) took it to the next level. Since many of the real-world problems are about transformation of one Group / Set of data into another, it was but natural.
 
-In category theory, Functor is a structure preserving transformation from one category to another. 
+In category theory, Functor is a structure preserving transformation from one category to another. Since functor always produces another functor, composition is trivial.
+
 For e.g : Transforming List of lowercase text to List of uppercase. Transforming List of Strings to List of Hash of Strings.
 
 Lesscode library provide 'lmap' function for the List functor. Using lmap you can transform one List into another. **lmap**, essentially lifts each item from the List, hands it to the function for transformation, then puts it back into a new List.
@@ -175,7 +176,12 @@ print(readyCoconut) // ['strawed sliced coconut', 'strawed sliced coconut']
 ```
 
 ### Monad ### 
-Real-world functions have side-effects. Monad, lets you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence. 
+Uptill now we only talked about pure functions but real-world functions have side-effects (hidden data, wrapped context), are in-predictable (fail or different result), or even need sequential execution (one after another).
+
+Monads, let you do all that. Monads let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence. 
+
+Think of Monad a simple wrapper that wraps all the complexity and allows you to join them one after another, passing result form one to another. In category
+theroy Monads jargon, Monads are just a [Monoid](https://en.wikipedia.org/wiki/Monoid_(category_theory)) (Category with single element that can be joined). 
 
 Lesscode implements monad using promise/ async. It also provide a monadic version of all the pure fucntions, so that you can seamlessly use them in [monadic composition](https://github.com/van001/lesscode-fp#Composition). 
 

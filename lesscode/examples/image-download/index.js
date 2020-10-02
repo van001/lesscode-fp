@@ -1,7 +1,6 @@
 // Lesscode-fp
 const {
-    $M, $, hint, trace, print, hash, lmap, Wait, mget, exit, mgettwo,
-    linebreak, utf8, newline,
+    $M, print, hash, lmap, Wait, mget, mgettwo, linebreak, utf8, newline,
     l2String, s2List,
     FileRead, FileWrite,
     HttpGET } = require('lesscode-fp')
@@ -12,7 +11,7 @@ const outputFile = process.argv[3]
 const LogData = name => async data => `${name} ${mgettwo('headers')('content-length')} ${hash('sha256')(mget('data'))}`
 const LogErorr = name => async err => `${name} 0  ${escape(err)}`
 
-// processFile :: String -> String
+// processURL :: String -> String
 const ProcessURL = name => $M(LogData(name), HttpGET)(name).catch(LogErorr(name))
 
 // ProcessContent :: String -> String

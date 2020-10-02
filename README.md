@@ -204,7 +204,7 @@ Coming soon...
 
 ## Real-world 
 
-### Concurrently ###
+### Concurrent ###
 
 Doing bunch of things in concurrently, waiting for the result and then doing something else. 
 Also, tolerating failures instead of aborting on error (if a file download fails it is ok, just write the error).
@@ -255,7 +255,7 @@ const ProcessContent = $M(l2String(newline), Wait, lmap(ProcessURL), s2List(line
 // Main pipeline.
 $M(FileWrite(utf8)(outputFile), ProcessContent, FileRead(utf8))(inputFile).catch(print)
 ```
-### Streaming ###
+### Stream ###
 
 Sometimes, input is a **stream** or needs to be handled in chunk.
 

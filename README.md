@@ -180,8 +180,10 @@ Uptill now we only talked about pure functions but real-world functions have sid
 
 Monads, let you do all that. Monads let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence. 
 
-Think of Monad a simple wrapper that wraps all the complexity and allows you to join them one after another, passing result form one to another. In category
+Think of monad as a function that wraps all the side-effects and make it a pure and allow composition by passing the value from one to another. In category
 theroy Monads jargon, Monads are just a [Monoid](https://en.wikipedia.org/wiki/Monoid_(category_theory)) (Category with single element that can be joined). 
+
+As Saunders Mac Lane said, ***Monad is just a monoid in the category of endofunctors***
 
 Lesscode implements monad using promise/ async. It also provide a monadic version of all the pure fucntions, so that you can seamlessly use them in [monadic composition](https://github.com/van001/lesscode-fp#Composition). 
 
@@ -189,13 +191,10 @@ Lesscode implements monad using promise/ async. It also provide a monadic versio
 // Read content of a file. 
 const FileRead = option =>  name => fs.promises.readFile(name, option);
 
-// Wait for all Monads to complete.
-const Wait = all => Promise.all(all)
-
 // mondaic composition : copy the content of one file to another (point-free)
 const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 ```
-***Monad is just a monoid in the category of endofunctors***
+
 
 # Examples
 

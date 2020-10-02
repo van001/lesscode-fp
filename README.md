@@ -214,8 +214,6 @@ Also, tolerating failures instead of aborting on error (if a file download fails
 
 Download list of images specified in a file and write metadata(url, size, hash) to the specified output file.
 
-
-
 input.txt
 ```
 http://i.imgur.com/c2z0yhtx.jpg

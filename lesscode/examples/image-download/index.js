@@ -1,6 +1,6 @@
 // Lesscode-fp
 const {
-    $M, print, hash, lmap, Wait, mget, mgettwo, linebreak, utf8, newline,
+    $M, Print, hash, lmap, Wait, mget, mgettwo, linebreak, utf8, newline,
     l2String, s2List,
     FileRead, FileWrite,
     HttpGET } = require('lesscode-fp')
@@ -18,4 +18,4 @@ const ProcessURL = name => $M(LogData(name), HttpGET)(name).catch(LogErorr(name)
 const ProcessContent = $M(l2String(newline), Wait, lmap(ProcessURL), s2List(linebreak))
 
 // Main pipeline.
-$M(FileWrite(utf8)(outputFile), ProcessContent, FileRead(utf8))(inputFile).catch(print)
+$M(FileWrite(utf8)(outputFile), ProcessContent, FileRead(utf8))(inputFile).catch(Print)

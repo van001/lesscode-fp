@@ -1,14 +1,3 @@
-// Generics
-const print = val => { console.log(val); return val } //print
-const trace = label => val => { print(label); print(val); print(' '); return val } // trace with label
-const hint = label => val => { print(label); return val }
-const assert = input => output => msg => console.assert((typeof output === 'object' && output != null) ? input.join('') === output.join('') : input === output, msg)
-const memoize = f => { const cache = {}; return (...args) => { const argStr = args.join(''); return cache[argStr] = cache[argStr] || f(...args); } }
-const exit = msg =>  process.exit(0)
-const M = f => async a => f(a) // convert fure function to monad
-const Wait = all => Promise.all(all) // wait for all mondas to complete
-
-
 // Composition
 const $ = (...func) => (...args) => func.reduceRight((args, func) => [func(...args)], args)[0] // composition function
 const $M = (...ms) => (ms.reduce((f, g) => x => (eqType('AsyncFunction')(f)) ? g(x)['then'](f) : M(g)(x)['then'](f))) // monadic composition
@@ -29,6 +18,8 @@ const eq = a => b => {
 const max = a => b => Math.max(a,b)
 const min = a => b => Math.min(a,b)
 const sum = a => b => a + b
+const crypto = require("crypto")
+const hash = cipher => data => crypto.createHash(cipher).update(data).digest("hex")
 
 /** String **/
 // Constants
@@ -111,9 +102,6 @@ const l2String = sep => lst => lst.join(sep)
 const l2countMap = lst => lst.reduce((map, val) => mincr(val)(map) ,{}) //histogram
 const l2indexMap = lst => lst.reduce ( (cat, val, index) => { (cat[val]) ? cat[val][index] = index : cat[val] = $(mset(index)(index))({}); return cat},{} ) // List to index Map - very helpful function to solve many problems
 
-
-
-
 // Map
 // Positional
 const mget = key => map => map[key] // retrieves the value for key
@@ -132,10 +120,18 @@ const mdelete = key => map => { map.delete(key); return map}
 const m2valList = map => { const lst = [];  Object.keys(map).forEach( key => lst.push(map[key]));  return lst} // Map to List (values)
 const m2keyList = map => Object.keys(map) // Map to List (values)
 
-/** Utilities */
-const crypto = require("crypto")
-const hash = cipher => data => crypto.createHash(cipher).update(data).digest("hex")
+/** Monads */
 
+// Generics
+const Print = val => { console.log(val); return val } //print
+const Trace = label => val => { Print(label); Print(val); Print(' '); return val } // trace with label
+const Hint = label => val => { Print(label); return val }
+const Memoize = f => { const cache = {}; return (...args) => { const argStr = args.join(''); return cache[argStr] = cache[argStr] || f(...args); } }
+const Exit =  msg =>  process.exit(0)
+const M = f => async a => f(a) // convert fure function to monad
+const Wait = all => Promise.all(all) // wait for all mondas to complete
+
+// File
 const fs = require('fs')
 const FileStreamIn  = option => func => async file => fs.createReadStream(file, option).on('data', func); 
 const FileStreamOut = option => file => async buffer => fs.createWriteStream(file,option).write(buffer)
@@ -143,13 +139,11 @@ const FileStreamOut = option => file => async buffer => fs.createWriteStream(fil
 const FileRead = option =>  name => fs.promises.readFile(name, option);
 const FileWrite = option => name => data => fs.promises.writeFile(name, data, option)
 
+// Http
 const axios = require('axios')
 const HttpGET = url => axios.get(url)
 
-module.exports = {
-    // Generic
-    print, hint, trace, assert, memoize, Wait, exit,
-    
+module.exports = { 
     // Composition
     $, $M, $P, $A,  
     
@@ -157,7 +151,7 @@ module.exports = {
     eq, eqNull, eqType, 
     
     // Math
-    max, min, sum, // Math : Calculations
+    max, min, sum,   hash,                                       // Math : Calculations
     
     // String
     blank, space, comma, linebreak, utf8, newline, sha256,
@@ -184,9 +178,12 @@ module.exports = {
     mdelete,
     m2valList, m2keyList,
 
-    // Utilities
-    hash, 
+    //************* Monads *******************
+    // Generic
+    Print, Hint, Trace, Memoize, Wait, Exit,
+    //File
     FileStreamIn, FileStreamOut, FileRead, FileWrite,
+    // Http
     HttpGET,
     
 }

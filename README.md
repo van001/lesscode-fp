@@ -191,6 +191,9 @@ const FileRead = option =>  name => fs.promises.readFile(name, option);
 
 // Wait for all Monads to complete.
 const Wait = all => Promise.all(all)
+
+// mondaic composition : copy the content of one file to another (point-free)
+const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 ```
 ***Monad is just a monoid in the category of endofunctors***
 

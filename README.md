@@ -175,7 +175,7 @@ const readyCoconut = lmap(coconutMachine)['full coconut', 'full coconut']
 print(readyCoconut) // ['strawed sliced coconut', 'strawed sliced coconut']
 ```
 
-### Monad ### 
+### Monad (endofunctor) ### 
 Uptill now we only talked about pure functions but real-world functions have side-effects (hidden data, wrapped context), are in-predictable (fail or different result), or even need sequential execution (one after another). 
 
 Monads, let you do all that. Monads let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence. 
@@ -197,6 +197,11 @@ const FileRead = option =>  name => fs.promises.readFile(name, option);
 const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 ```
 
+### Applicative (functor) ###
+Applicative is also about functions with side-effects, but the name doesn't originate form Category therory, instead it was coined to solve something 
+between functor and monad. When you have to write a function with side-effects that accept more than one paramter you use applicative functor. 
+Normal functor composition only works with functions with single parameter. Also applicative allows for the concurrent execution of functions with side-effects
+without any dependecies.
 
 # Examples
 

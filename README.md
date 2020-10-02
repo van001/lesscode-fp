@@ -203,7 +203,7 @@ between functor and monad. When you have to write a function with side-effects t
 Normal functor composition only works with functions with single parameter. Also applicative allows for the concurrent execution of functions with side-effects
 without any dependecies.
 
-Lessocde implements applicative using **$A(...) and accept List as a parameter. Functions is appplicative composition should accept the same number of parameters.
+Lesscode implements applicative using **$A(...) and accept List as a parameter. Functions is appplicative composition should accept the same number of parameters.
 The result is again a List. 
 
 ```

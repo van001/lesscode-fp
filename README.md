@@ -207,6 +207,8 @@ Lesscode implements applicative using **$A(...)** and accept List as a parameter
 The result is again a List. So technically, an applicative is a functor ;-).
 
 ```
+// make 2 HttpCall concurrently and return the result as a List
+$A(HttpGET , HttpGET)['https://foo.com'].then(Print)
 ```
 
 # Examples

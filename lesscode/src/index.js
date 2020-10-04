@@ -1,9 +1,7 @@
 // Composition
-const $ = (...func) => (...args) => func.reduceRight((args, func) => [func(...args)], args)[0] // composition function
-const $M = (...ms) => (ms.reduce((f, g) => x => (eqType('AsyncFunction')(f)) ? g(x)['then'](f) : M(g)(x)['then'](f))) // monadic composition
-const $P = (...f) => (...args) => f.map(fn => fn(...args))// Executes the functions in parallel and return the result as List
-const $A = func => lst => { const $$A = func => lst => count => (count == lst.length -1)? func(lst[count]) : $$A(func(lst[count]))(lst)(count+1); return $$A(func)(lst)(0)} // applicative
-
+const $ = (...func) => (...args) => func.reduceRight((args, func) => [func(...args)], args)[0] // pure function 
+const $M = (...ms) => (ms.reduce((f, g) => x => (eqType('AsyncFunction')(f)) ? g(x)['then'](f) : M(g)(x)['then'](f))) // monad
+const $A = (...func) => lst => $M(Wait,lmap(Lift(lst)))(func) // applicative
 
 // Equality functions
 const eqNull = val => (val == null || val == undefined) ? true : false
@@ -56,6 +54,7 @@ const leqEmpty = lst => lst.length == 0
 const lhead = lst => lst[0] // return the head element of the List
 const ltail = lst => lst[lst.length-1]
 const lat = index => lst[index]
+const llen = lst => lst.length
 
 // Expander
 const lprepend = lst1 => lst2 => lst2.concat(lst1) // prepend lst2 to lst1
@@ -128,8 +127,13 @@ const Trace = label => val => { Print(label); Print(val); Print(' '); return val
 const Hint = label => val => { Print(label); return val }
 const Memoize = f => { const cache = {}; return (...args) => { const argStr = args.join(''); return cache[argStr] = cache[argStr] || f(...args); } }
 const Exit =  msg =>  process.exit(0)
-const M = f => async a => f(a) // convert fure function to monad
+const M = f => async a => f(a) // convert single parameter pure function into monad
+const M2 = f => a => async b =>  f(a)(b) // convert 2 parameter pure function into monad
+const M3 = f => a => b => async c => f(a)(b)(c) // convert 3 parameter pure function into monad
+const M4 = f => a => b => c => async d => f(a)(b)(c)(d) // convert 4 parameter pure function into monad
 const Wait = all => Promise.all(all) // wait for all mondas to complete
+const Lift = lst => async func => {const $lift = func => lst => count => (count == lst.length -1)? func(lst[count]) : $lift(func(lst[count]))(lst)(count+1); return $lift(func)(lst)(0)}
+
 
 // File
 const fs = require('fs')
@@ -145,7 +149,7 @@ const HttpGET = url => axios.get(url)
 
 module.exports = { 
     // Composition
-    $, $M, $P, $A,  
+    $, $M, $A,  
     
     // Equality
     eq, eqNull, eqType, 
@@ -164,7 +168,7 @@ module.exports = {
     // List
     lcreate,                                                     // List : Creator
     leqEmpty,                                                    // List : Boolean
-    lhead, ltail, lat,                                           // List : Positional
+    lhead, ltail, lat, llen,                                     // List : Positional
     lsort, lreverse, lswap ,                                     // List : Modifiers
     lmap, lmapA,                                                 // List : Mapper & Presets
     lremove, lprepend, lappend,                                  // List : Expander
@@ -180,7 +184,8 @@ module.exports = {
 
     //************* Monads *******************
     // Generic
-    Print, Hint, Trace, Memoize, Wait, Exit,
+    Print, Hint, Trace, Memoize,  Exit, M, M2,
+    M3, M4, Wait, Lift,
     //File
     FileStreamIn, FileStreamOut, FileRead, FileWrite,
     // Http

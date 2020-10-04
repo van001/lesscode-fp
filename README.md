@@ -207,6 +207,9 @@ Lesscode implements applicative using **$A(...)** and accept List as a parameter
 The result is again a List. So technically, an applicative is a functor ;-).
 
 ```
+// apply max, min concurrently to the list os 2 numbers
+$A(max,min)([2,4]).then(Print)) // [4,2]
+
 // make 2 HttpCall concurrently and return the result as a List
 $A(HttpGET , HttpGET)['https://foo.com'].then(Print)
 ```

@@ -247,12 +247,12 @@ Doing bunch of things one after another, like copying content of one file to ano
 
 input.txt 
 ```
-this text is all lowercase. please turn it into to uppercase.
+writing less-code is cool...
 ```
 
 output.txt 
 ```
-this text is all lowercase. please turn it into to uppercase.
+writing less-code is cool...
 ```
 
 ```

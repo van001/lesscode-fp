@@ -222,7 +222,7 @@ $E(HttpGET)(['https://www.google.com','https://www.yahoo.com']).then(Print)
 ```
 
 ### Stream ###
-While monads and applicatives allow for a sequential and concurrent data flow, there is another abstraction that would apply something after another, after another, forever.
+While monads and applicatives allow for a sequential and concurrent data flow, there is another abstraction that would apply something one after another forever.
 Like picking water from one bucket, doing somethng with it and dumping to another, forever. 
 I am not sure if there is a name for this in functional programming but I'd like to call it a Stream. 
 This is a classic callback pattern.

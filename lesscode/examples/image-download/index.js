@@ -14,7 +14,7 @@ const LogData = name => async data => `${name} ${mgettwo('headers')('content-len
 const LogErorr = name => async err => `${name} 0  ${escape(err)}`
 
 // processURL :: String -> String
-const ProcessURL = name => $M(LogData(name), HttpGET)(name).catch(LogErorr(name))
+const ProcessURL = name => $M(LogData(name), HttpGET())(name).catch(LogErorr(name))
 
 const In = process.argv[2]
 const Out = process.argv[3]

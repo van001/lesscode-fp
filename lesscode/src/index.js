@@ -150,10 +150,10 @@ const Wait = all => Promise.all(all) // wait for all mondas to complete
 const Lift = lst => async func => {const $lift = func => lst => count => (count == lst.length -1)? func(lst[count]) : $lift(func(lst[count]))(lst)(count+1); return $lift(func)(lst)(0)}
 
 /** 
- All IO Mondas follow a simple rule 
- - the 1st parameter is option. Option let's you configure the monad.
- - the second parameter is name.
- - if it is a steram it will have a 3rd paramter for action on the steam data.
+ All IO Mondas follow a simple rule : 
+ - 1st parameter is option. Option let's you configure the monad.
+ - 2nd parameter is name. (if any). 
+ - 3rd paramter is function, if any.
 **/
 
 // File
@@ -164,15 +164,15 @@ const FileStreamIn  = option => name => async func => fs.createReadStream(name, 
 const FileStreamOut = option => name => async buffer => fs.createWriteStream(name, option).write(buffer)
 
 // Dir
-const DirStream = option =>  name  => async action => {
+const DirStream = option =>  name  => async func => {
     for await (const file of  await fs.promises.opendir(`${name}`)) {
-        $M(action)(`${name}/${file.name}`)
+        $M(func)(`${name}/${file.name}`)
     }
 }
 
 // Http
 const axios = require('axios')
-const HttpGET = url => axios.get(url)
+const HttpGET = option => url => axios.get((option) ? {...option, method : 'get', url} : {method : 'get', url})
 
 module.exports = { 
     // Composition

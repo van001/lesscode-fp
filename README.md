@@ -218,7 +218,7 @@ $ indicates compostion and E denotes concurrency.
 $E(sum(3), sum(2))([1,2,4]).then(Print) // [ 3, 4, 6, 4, 5, 7 ]
 
 // make 2 Http call concurrently and return the result as a List
-$E(HttpGET)(['https://www.google.com','https://www.yahoo.com']).then(Print)
+$E(HttpGET())(['https://www.google.com','https://www.yahoo.com']).then(Print)
 ```
 
 ### Stream ###
@@ -307,7 +307,7 @@ const LogData = name => async data => `${name} ${mgettwo('headers')('content-len
 const LogErorr = name => async err => `${name} 0  ${escape(err)}`
 
 // processURL :: String -> String
-const ProcessURL = name => $M(LogData(name), HttpGET)(name).catch(LogErorr(name))
+const ProcessURL = name => $M(LogData(name), HttpGET())(name).catch(LogErorr(name))
 
 const In = process.argv[2]
 const Out = process.argv[3]

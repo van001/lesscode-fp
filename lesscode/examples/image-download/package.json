@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.20.0",
-    "lesscode-fp": "^1.0.20"
+    "lesscode-fp": "^1.0.23"
   }
 }

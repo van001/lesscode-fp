@@ -123,8 +123,10 @@ has infix composition operator like '.' (for pure function) and '>>= / >>' (for 
 operators nor they support infix styling.
 
 Lesscode library provide :
--  **$(...)** for pure function composition.
--  **$M(...)** for [monadic](https://github.com/van001/lesscode-fp#Monad) composition. 
+- **$(...)** for pure function composition.
+- **$M(...)** for [monadic](https://github.com/van001/lesscode-fp#Monad) composition. 
+- **E(...)** for [applicative](https://github.com/van001/lesscode-fp#Applicative) compostion.
+- **$3()()()** for [stream](https://github.com/van001/lesscode-fp#Stream) compition.
 
 ```
 // coconut machine will take List of coconuts, then slice the top & put a straw.

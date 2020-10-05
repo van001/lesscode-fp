@@ -1,10 +1,8 @@
-const { $M, print, utf8, FileStreamIn, FileStreamOut} = require('lesscode-fp')
+const { $M, Print, utf8, FileStreamOut} = require('lesscode-fp')
 
 const Uppercase = async str => str.toUpperCase()
-const SaveFile = name => FileStreamOut(utf8)(name)
-
-// Process Stream
-const ProcessStream = $M(SaveFile(process.argv[3]),Uppercase)
+const is = FileStreamIn(utf8)(process.argv[2])
+const os = FileStreamOut(utf8)(process.argv[3])
 
 // Pipeline
-FileStreamIn(utf8)(ProcessStream)(process.argv[2]).catch(print)
+$S(is)(os)(Uppercase)

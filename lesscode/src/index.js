@@ -5,6 +5,7 @@ const $A = (...func) => lst => { // applicative
     const apply = lst => cat => f => $(lappend(cat))((lmap( val => f(val))(lst)))
     return $M(Wait, lfoldr([])(apply(lst)))(func) // applicative
 }
+const $S = input => output => func => input($M(output,func)) // Streaming
 
 // Equality functions
 const eqNull = val => (val == null || val == undefined) ? true : false
@@ -140,7 +141,7 @@ const Lift = lst => async func => {const $lift = func => lst => count => (count 
 
 // File
 const fs = require('fs')
-const FileStreamIn  = option => func => async file => fs.createReadStream(file, option).on('data', func); 
+const FileStreamIn  = option => file => async func => fs.createReadStream(file, option).on('data', func)
 const FileStreamOut = option => file => async buffer => fs.createWriteStream(file,option).write(buffer)
 
 const FileRead = option =>  name => fs.promises.readFile(name, option);
@@ -152,7 +153,7 @@ const HttpGET = url => axios.get(url)
 
 module.exports = { 
     // Composition
-    $, $M, $A,  
+    $, $M, $A, $S,
     
     // Equality
     eq, eqNull, eqType, 

@@ -245,6 +245,16 @@ Many of the real-world problems involve :
 ### Sequential 
 Doing bunch of things one after another, like copying content of one file to another.
 
+input.txt 
+```
+this text is all lowercase. please turn it into to uppercase.
+```
+
+output.txt 
+```
+this text is all lowercase. please turn it into to uppercase.
+```
+
 ```
 const {
     $M,                       // Composition

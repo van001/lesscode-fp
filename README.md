@@ -226,7 +226,7 @@ While monad and applicative allows your for a sequential and concurrent data flo
 Like picking the water from one bucket and dumping to another, forever. I am not sure if there is a name for this in functional programming but I'd like to call it a Stream. 
 This is a classic callback pattern.
 
-Lesscode implements stream as **$3**. $ means it's still a composition but 3 denotes that it's airity is 3, i.e it takes accepts 3 parameters (outstream, func, instream)
+Lesscode implements stream as **$3**. $ means it's still a composition but 3 denotes that it's airity is 3, i.e it accept 3 parameters (outstream, func, instream)
 
 [See below](https://github.com/van001/lesscode-fp#Stream)
 

@@ -14,9 +14,9 @@ follow-redirects@^1.10.0:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
 
-lesscode-fp@^1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/lesscode-fp/-/lesscode-fp-1.0.21.tgz#eeadbbca9c8cb61951f60000b373068d373da4ab"
-  integrity sha512-lYT0Jq4ntUjPnNccIfw28mplGLRYeshMpAQ34Bao+7fkZN2bl+ipDBwtjh1SETo43p+ZJJeQVfhUeNdR6P21bA==
+lesscode-fp@^1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/lesscode-fp/-/lesscode-fp-1.0.22.tgz#8609de749d9dfc3d54577ee24f410aaa0b959f0a"
+  integrity sha512-p8C9DCk0nxZSd+V6JVl9nypgCluhJFGy57QBTAHg1nBxIUM5fxOD4nEq0UtYIhCO1mSPWJBKyGkroCwNmsc/kA==
   dependencies:
     axios "^0.20.0"

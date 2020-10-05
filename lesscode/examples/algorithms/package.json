@@ -8,6 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "lesscode-fp": "^1.0.15"
+    "lesscode-fp": "^1.0.18"
   }
 }

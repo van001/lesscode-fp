@@ -140,11 +140,24 @@ const M4 = f => a => b => c => async d => f(a)(b)(c)(d) // convert 4 parameter p
 const Wait = all => Promise.all(all) // wait for all mondas to complete
 const Lift = lst => async func => {const $lift = func => lst => count => (count == lst.length -1)? func(lst[count]) : $lift(func(lst[count]))(lst)(count+1); return $lift(func)(lst)(0)}
 
+/** 
+ All IO Mondas follow a simple rule 
+ - the 1st parameter is option. Option let's you configure the monad.
+ - the second parameter is name.
+ - if it is a steram it will have a 3rd paramter for action on the steam data.
+**/
 
 // File
 const fs = require('fs')
-const FileStreamIn  = option => file => async func => fs.createReadStream(file, option).on('data', func)
-const FileStreamOut = option => file => async buffer => fs.createWriteStream(file,option).write(buffer)
+const FileStreamIn  = option => name => async func => fs.createReadStream(name, option).on('data', func)
+const FileStreamOut = option => name => async buffer => fs.createWriteStream(name, option).write(buffer)
+
+// Dir
+const DirStream = option =>  name  => async action => {
+    for await (const file of  await fs.promises.opendir(`${name}`)) {
+        $M(action)(`${name}/${file.name}`)
+    }
+}
 
 const FileRead = option =>  name => fs.promises.readFile(name, option);
 const FileWrite = option => name => data => fs.promises.writeFile(name, data, option)
@@ -192,8 +205,13 @@ module.exports = {
     // Generic
     Print, Hint, Trace, Memoize,  Exit, M, M2,
     M3, M4, Wait, Lift,
+    
     //File
     FileStreamIn, FileStreamOut, FileRead, FileWrite,
+    
+    // Dir
+    DirStream,
+    
     // Http
     HttpGET,
     

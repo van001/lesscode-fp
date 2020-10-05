@@ -242,6 +242,20 @@ Many of the real-world problems involve :
 - processing data sequentially / concurrently.
 - processing continious stream of data.
 
+### Sequential 
+Doing bunch of things one after another, like copying content of one file to another.
+
+```
+const {
+    $M,                   // Composition
+    FileRead, FileWrite,  // IO Monad
+} = require('lesscode-fp')
+
+const In = process.argv[2]
+const Out = process.argv[3]
+$M(FileWrite(Out)(tprocess.argv[2]), FileRead(utf8))(In)
+```
+
 ### Concurrent ###
 
 Doing bunch of things concurrently, also tolerating failures instead of aborting on error (if a file download fails it is ok, just write the error).

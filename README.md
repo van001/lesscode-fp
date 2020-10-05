@@ -222,8 +222,9 @@ $E(HttpGET)(['https://www.google.com','https://www.yahoo.com']).then(Print)
 ```
 
 ### Stream ###
-While monad and applicative allows your for a sequential and concurrent data flow (think as a lego blocks), there is an abstraction which would want something to happen one after another, forever.
-Like picking the water from one bucket and dumping to another, forever. I am not sure if there is a name for this in functional programming but I'd like to call it a Stream. 
+While monads and applicatives allow for a sequential and concurrent data flow, there is another abstraction that would apply something after another, after another, forever.
+Like picking water from one bucket, doing somethng with it and dumping to another, forever. 
+I am not sure if there is a name for this in functional programming but I'd like to call it a Stream. 
 This is a classic callback pattern.
 
 Lesscode implements stream as **$3**. $ means it's still a composition but 3 denotes that it's airity is 3, i.e it accept 3 parameters (outstream, func, instream)

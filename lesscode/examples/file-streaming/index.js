@@ -1,7 +1,7 @@
 const { 
     utf8, 
     suppercase,
-    $3, M, 
+    $3, 
     FileStreamIn, FileStreamOut,
 } = require('lesscode-fp')
 

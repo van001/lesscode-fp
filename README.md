@@ -282,7 +282,7 @@ $M(FileWrite(utf8)(Out),l2String(newline), $E(ProcessURL), s2List(linebreak), Fi
 ```
 ### Stream ###
 
-Sometimes, input is a **stream** or needs to be handled as stream coz of size.
+Sometimes, input is a continious **stream** of data or needs to be handled as stream coz of size. 
 
 **[File Streaming](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/file-streaming)**
 

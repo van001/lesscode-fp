@@ -263,7 +263,7 @@ const {
 
 const In = process.argv[2]
 const Out = process.argv[3]
-$M(FileWrite(Out)(tprocess.argv[2]), FileRead(utf8))(In)
+$M(FileWrite(utf8)(Out), FileRead(utf8))(In)
 ```
 
 ### Concurrent ###

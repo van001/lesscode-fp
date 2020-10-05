@@ -245,8 +245,7 @@ http://i.imgur.com/cz0yhtx.jpg 2464218 ed9f8c1e95d58e02fcf576f64ec064a64bc628852
 ```
 // Lesscode-fp
 const {
-    $M, $, hint, trace, print, hash, lmap, Wait, mget, exit, mgettwo,
-    linebreak, utf8, newline,
+    $M, Print, hash, $A, mget, mgettwo, linebreak, utf8, newline,
     l2String, s2List,
     FileRead, FileWrite,
     HttpGET } = require('lesscode-fp')
@@ -257,14 +256,11 @@ const outputFile = process.argv[3]
 const LogData = name => async data => `${name} ${mgettwo('headers')('content-length')} ${hash('sha256')(mget('data'))}`
 const LogErorr = name => async err => `${name} 0  ${escape(err)}`
 
-// processFile :: String -> String
+// processURL :: String -> String
 const ProcessURL = name => $M(LogData(name), HttpGET)(name).catch(LogErorr(name))
 
-// ProcessContent :: String -> String
-const ProcessContent = $M(l2String(newline), Wait, lmap(ProcessURL), s2List(linebreak))
-
-// Main pipeline.
-$M(FileWrite(utf8)(outputFile), ProcessContent, FileRead(utf8))(inputFile).catch(print)
+// Main pipeline. Classic mix of sequence (monads) & concurrency (applicative)
+$M(FileWrite(utf8)(outputFile),l2String(newline), $A(ProcessURL), s2List(linebreak), FileRead(utf8))(inputFile).catch(Print)
 ```
 ### Stream ###
 
@@ -273,8 +269,6 @@ Sometimes, input is a **stream** or needs to be handled in chunk.
 **[File Streaming](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/file-streaming)**
 
 Streams content of a text file, converts to uppercase then write back to another stream (output file).
-
-
 
 input.txt (the real file may be huge...)
 ```

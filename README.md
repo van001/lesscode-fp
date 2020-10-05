@@ -247,8 +247,8 @@ Doing bunch of things one after another, like copying content of one file to ano
 
 ```
 const {
-    $M,                   // Composition
-    FileRead, FileWrite,  // IO Monad
+    $M,                       // Composition
+    FileRead, FileWrite,      // IO Monad
 } = require('lesscode-fp')
 
 const In = process.argv[2]

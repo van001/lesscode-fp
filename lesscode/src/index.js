@@ -1,7 +1,10 @@
 // Composition
 const $ = (...func) => (...args) => func.reduceRight((args, func) => [func(...args)], args)[0] // pure function 
 const $M = (...ms) => (ms.reduce((f, g) => x => (eqType('AsyncFunction')(f)) ? g(x)['then'](f) : M(g)(x)['then'](f))) // monad
-const $A = (...func) => lst => $M(Wait,lmap(Lift(lst)))(func) // applicative
+const $A = (...func) => lst => { // applicative
+    const apply = lst => cat => f => $(lappend(cat))((lmap( val => f(val))(lst)))
+    return $M(Wait, lfoldr([])(apply(lst)))(func) // applicative
+}
 
 // Equality functions
 const eqNull = val => (val == null || val == undefined) ? true : false

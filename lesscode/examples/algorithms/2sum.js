@@ -1,3 +1,10 @@
-const {$A, min, max, Print} = require('lesscode-fp')
+const { min, max, Print} = require('lesscode-fp')
+const { $, $M, Wait, lmap, sum, lfoldr, lappend, HttpGET} = require('../../src')
 
-$A(max,min)([2,4]).then(Print)
+
+const $A = (...func) => lst => {
+    const apply = lst => cat => f => $(lappend(cat))((lmap( val => f(val))(lst)))
+    return $M(Wait, lfoldr([])(apply(lst)))(func) // applicative
+}
+
+$A(HttpGET)(['https://www.google.com','https://www.yahoo.com']).then(Print)

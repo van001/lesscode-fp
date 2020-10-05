@@ -238,6 +238,10 @@ Coming soon...
 
 ## Real-world 
 
+Many of the real-world problems involve :
+- processing data sequentially / concurrently.
+- processing continious stream of data.
+
 ### Concurrent ###
 
 Doing bunch of things concurrently, also tolerating failures instead of aborting on error (if a file download fails it is ok, just write the error).

@@ -2,13 +2,13 @@
 // pure
 const $ = (...func) => (...args) => func.reduceRight((args, func) => [func(...args)], args)[0]
 
-// monad ; letter M for monad, also M denotes sequence.
+// monad ; letter M for monad, also M denotes sequence. Monadinc comosition, automatically converts pure to monad.
 const $M = (...ms) => (ms.reduce((f, g) => x => (eqType('AsyncFunction')(f)) ? g(x)['then'](f) : M(g)(x)['then'](f))) 
 
 // applicative; E for concurrency. 
-const $E = (...func) => lst => { 
-    const apply = lst => cat => f => $(lappend(cat))((lmap( val => f(val))(lst)))
-    return $M(Wait, lfoldr([])(apply(lst)))(func) // applicative
+const $E = (...func) => val => { 
+    const apply = val => cat => f => $(lappend(cat))(Array.isArray(val) ? lmap( val => f(val))(val) : f(val))
+    return $M(Wait, lfoldr([])(apply(val)))(func) // applicative
 }
 
 // stream; letter S denotes stream, also 3 indicates 3 parameters.
@@ -54,7 +54,7 @@ const sslice  = start => end => str => str.slice(start,end)
 
 // Category Changers : structure preserving
 const suppercase = str => str.toUpperCase()
-const slowercase = str => str.toUpperCase()
+const slowercase = str => str.toLowerCase()
 
 // Category Changers : non structure preserving
 const s2List = ptrn => str => str.split(ptrn)

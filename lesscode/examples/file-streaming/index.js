@@ -2,7 +2,7 @@ const {
     utf8, 
     suppercase,
     $3, 
-    FileStreamIn, FileStreamOut
+    FileStreamIn, FileStreamOut,
 } = require('lesscode-fp')
 
 const is = FileStreamIn(utf8)(process.argv[2])

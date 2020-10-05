@@ -20,3 +20,4 @@ const In = process.argv[2]
 const Out = process.argv[3]
 // Main pipeline. Classic mix of sequence ($M - monad) & concurrency ( $E - applicative)
 $M(FileWrite(utf8)(Out),l2String(newline), $E(ProcessURL), s2List(linebreak), FileRead(utf8))(In).catch(Print)
+

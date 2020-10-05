@@ -1,8 +1,12 @@
-const { _, utf8, FileStreamIn, FileStreamOut} = require('lesscode-fp')
+const { 
+    utf8, 
+    suppercase,
+    $3, 
+    FileStreamIn, FileStreamOut
+} = require('lesscode-fp')
 
-const Uppercase = async str => str.toUpperCase()
 const is = FileStreamIn(utf8)(process.argv[2])
 const os = FileStreamOut(utf8)(process.argv[3])
 
-// Streaming pipeline
-_(is)(os)(Uppercase)
+// Streaming pipeline. Classic example of doing pure function composition inside 2 im-pure (Monads), which also happens to be stream.
+$3(os)(suppercase)(is)

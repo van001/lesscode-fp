@@ -21,6 +21,7 @@ This repo is about my learning of functional programming and coming up with a la
 can be applied to solve many real-world problems.
 
 In functional programming language :
+- data is immutable. You compute a new value using pure / im-pure functions.
 
 - you either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects ( writing to logs / screen, reading from file, making a database call , etc). 
 
@@ -204,7 +205,7 @@ const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 ### Applicative ###
 While monadic composition execute functions (with side-effects) sequentially, applicatives execute them concurrently. 
 
-Lesscode implements applicative composition using **$A(...) / $E(...)** and accept List as a parameter. 
+Lesscode implements applicative composition using **$E(...)** and accept List as a parameter. 
 
 ```
 // apply max, min concurrently to the list os 2 numbers
@@ -213,6 +214,15 @@ $A(sum(3), sum(2))([1,2,4]).then(Print) // [ 3, 4, 6, 4, 5, 7 ]
 // make 2 Http call concurrently and return the result as a List
 $A(HttpGET)(['https://www.google.com','https://www.yahoo.com']).then(Print)
 ```
+
+### Stream ###
+While monad and applicative allows your for a sequential and concurrent data flow (think as a lego blocks), there is an abstraction which would want something to happend one after another.
+Like picking the water from one bucket and dumping to another, forever. I am not sure if there is a name for this in functional programming but I'd like to call it a Stream. 
+This is a classic callback pattern.
+
+Lesscode implements stream as **$3**, $ means it's still a composition but 3 denotes that it's airity is 3, i.e it takes accepts 3 parameters (outstream, func, instream)
+
+[See below](https://github.com/van001/lesscode-fp#Stream)
 
 # Examples
 
@@ -288,14 +298,18 @@ THIS TEXT IS ALL LOWERCASE. PLEASE TURN IT INTO TO UPPERCASE.
 ```
 
 ```
-const { _, utf8, FileStreamIn, FileStreamOut} = require('lesscode-fp')
+const { 
+    utf8, 
+    suppercase,
+    $3, 
+    FileStreamIn, FileStreamOut
+} = require('lesscode-fp')
 
-const Uppercase = async str => str.toUpperCase()
 const is = FileStreamIn(utf8)(process.argv[2])
 const os = FileStreamOut(utf8)(process.argv[3])
 
-// Streaming pipeline
-_(is)(os)(Uppercase)
+// Streaming pipeline. Classic example of doing pure function composition inside 2 im-pure (Monads), which also happens to be stream.
+$3(os)(suppercase)(is)
 ```
 
 

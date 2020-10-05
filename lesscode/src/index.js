@@ -1,13 +1,18 @@
 // Composition
-const $ = (...func) => (...args) => func.reduceRight((args, func) => [func(...args)], args)[0] // pure function 
-const $M = (...ms) => (ms.reduce((f, g) => x => (eqType('AsyncFunction')(f)) ? g(x)['then'](f) : M(g)(x)['then'](f))) // monad
-const $A = (...func) => lst => { // applicative
+// pure
+const $ = (...func) => (...args) => func.reduceRight((args, func) => [func(...args)], args)[0]
+
+// monad ; letter M for monad, also M denotes sequence.
+const $M = (...ms) => (ms.reduce((f, g) => x => (eqType('AsyncFunction')(f)) ? g(x)['then'](f) : M(g)(x)['then'](f))) 
+
+// applicative; E for concurrency. 
+const $E = (...func) => lst => { 
     const apply = lst => cat => f => $(lappend(cat))((lmap( val => f(val))(lst)))
     return $M(Wait, lfoldr([])(apply(lst)))(func) // applicative
 }
-const $E = $A // applictive
-const $S = input => output => func => input($M(output,func)) // stream
-const _ = $S // stream
+
+// stream; letter S denotes stream, also 3 indicates 3 parameters.
+const $3 =  output => func => input => input($M(output,func)) 
 
 // Equality functions
 const eqNull = val => (val == null || val == undefined) ? true : false
@@ -47,7 +52,11 @@ const srepeat = count => str => { const $srepeat = acc => count => str => (count
 // Collapsers
 const sslice  = start => end => str => str.slice(start,end)
 
-// Category Changers
+// Category Changers : structure preserving
+const suppercase = str => str.toUpperCase()
+const slowercase = str => str.toUpperCase()
+
+// Category Changers : non structure preserving
 const s2List = ptrn => str => str.split(ptrn)
 
 /** List **/
@@ -168,7 +177,7 @@ const HttpGET = url => axios.get(url)
 
 module.exports = { 
     // Composition
-    $, $M, $E, $A, $S, _,
+    $, $M, $E, $3, 
     
     // Equality
     eq, eqNull, eqType, 
@@ -181,8 +190,9 @@ module.exports = {
     md5,                                                         // String : Constants
     shead, slen,                                                 // String : Positional 
     sappend, srepeat,                                            // String : Expanders
-    sslice,                                                      // String : Collapsers                                     
-    s2List,                                                      // Srting : Category changers
+    sslice,                                                      // String : Collapsers   
+    suppercase, slowercase,                                      // Srting : Category changers                                  
+    s2List,                                                      
     
     // List
     lcreate,                                                     // List : Creator

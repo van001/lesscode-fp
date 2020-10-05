@@ -223,8 +223,7 @@ Coming soon...
 
 ### Concurrent ###
 
-Doing bunch of things concurrently, waiting for the result and then doing something else. 
-Also, tolerating failures instead of aborting on error (if a file download fails it is ok, just write the error).
+Doing bunch of things concurrently, also tolerating failures instead of aborting on error (if a file download fails it is ok, just write the error).
 
 **[Image Download](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/image-download)**
 
@@ -268,7 +267,7 @@ $M(FileWrite(utf8)(outputFile),l2String(newline), $E(ProcessURL), s2List(linebre
 ```
 ### Stream ###
 
-Sometimes, input is a **stream** or needs to be handled in chunk.
+Sometimes, input is a **stream** or needs to be handled as stream coz of size.
 
 **[File Streaming](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/file-streaming)**
 
@@ -285,16 +284,14 @@ THIS TEXT IS ALL LOWERCASE. PLEASE TURN IT INTO TO UPPERCASE.
 ```
 
 ```
-const { $M, print, utf8, FileStreamIn, FileStreamOut} = require('lesscode-fp')
+const { _, utf8, FileStreamIn, FileStreamOut} = require('lesscode-fp')
 
 const Uppercase = async str => str.toUpperCase()
-const SaveFile = name => FileStreamOut(utf8)(name)
+const is = FileStreamIn(utf8)(process.argv[2])
+const os = FileStreamOut(utf8)(process.argv[3])
 
-// Process Stream
-const ProcessStream = $M(SaveFile(process.argv[3]),Uppercase)
-
-// Pipeline
-FileStreamIn(utf8)( ProcessStream )(process.argv[2]).catch(print)
+// Streaming pipeline
+_(is)(os)(Uppercase)
 ```
 
 

@@ -155,7 +155,7 @@ Since functional programming is already about abstraction ( what to do, not, how
 
 Many of the real-world problems are either about :
 - transforming one category of things to another,
-- achieiving those transformation sequentially or concurrently / parallelly.
+- achieiving those transformation sequentially or concurrently.
 
 In category theory, Functor is a structure preserving transformation from one category to another. Since functor always produces another functor, composition is trivial.
 

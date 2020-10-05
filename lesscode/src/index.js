@@ -158,6 +158,8 @@ const Lift = lst => async func => {const $lift = func => lst => count => (count 
 
 // File
 const fs = require('fs')
+const FileRead = option =>  name => fs.promises.readFile(name, option);
+const FileWrite = option => name => data => fs.promises.writeFile(name, data, option)
 const FileStreamIn  = option => name => async func => fs.createReadStream(name, option).on('data', func)
 const FileStreamOut = option => name => async buffer => fs.createWriteStream(name, option).write(buffer)
 
@@ -167,9 +169,6 @@ const DirStream = option =>  name  => async action => {
         $M(action)(`${name}/${file.name}`)
     }
 }
-
-const FileRead = option =>  name => fs.promises.readFile(name, option);
-const FileWrite = option => name => data => fs.promises.writeFile(name, data, option)
 
 // Http
 const axios = require('axios')

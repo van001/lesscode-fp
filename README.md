@@ -153,7 +153,7 @@ const s2List = ptrn => str => str.split(ptrn)
 ### Functor ###
 Since functional programming is already about abstraction ( what to do, not, how to do), the proliferation of  [Category Theory](https://en.wikipedia.org/wiki/Category_theory) took it to the next level.
 
-Many of the real-world problems are either about :
+Many of the real-world problems are about :
 - transforming one category of things to another,
 - achieiving those transformation sequentially or concurrently.
 

@@ -229,7 +229,7 @@ This is a classic callback pattern.
 
 Lesscode implements stream as **$3**. $ means it's still a composition but 3 denotes that it's airity is 3, i.e it accept 3 parameters (outstream, func, instream)
 
-[See below](https://github.com/van001/lesscode-fp#Stream)
+[Stream example](https://github.com/van001/lesscode-fp#Stream)
 
 # Examples
 

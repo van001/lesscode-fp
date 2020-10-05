@@ -200,13 +200,13 @@ const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 ### Applicative ###
 While monadic composition execute functions (with side-effects) sequentially, applicatives execute them concurrently. 
 
-Lesscode implements applicative using **$A(...)** and accept List as a parameter.  
+Lesscode implements applicative composition using **$A(...)** and accept List as a parameter. 
 
 ```
 // apply max, min concurrently to the list os 2 numbers
 $A(sum(3), sum(2))([1,2,4]).then(Print) // [ 3, 4, 6, 4, 5, 7 ]
 
-// make 2 HttpCall concurrently and return the result as a List
+// make 2 Http call concurrently and return the result as a List
 $A(HttpGET)(['https://www.google.com','https://www.yahoo.com']).then(Print)
 ```
 

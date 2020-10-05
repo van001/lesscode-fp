@@ -5,7 +5,9 @@ const $A = (...func) => lst => { // applicative
     const apply = lst => cat => f => $(lappend(cat))((lmap( val => f(val))(lst)))
     return $M(Wait, lfoldr([])(apply(lst)))(func) // applicative
 }
-const $S = input => output => func => input($M(output,func)) // Streaming
+const $E = $A // applictive
+const $S = input => output => func => input($M(output,func)) // stream
+const _ = $S // stream
 
 // Equality functions
 const eqNull = val => (val == null || val == undefined) ? true : false
@@ -153,7 +155,7 @@ const HttpGET = url => axios.get(url)
 
 module.exports = { 
     // Composition
-    $, $M, $A, $S,
+    $, $M, $E, $A, $S, _,
     
     // Equality
     eq, eqNull, eqType, 

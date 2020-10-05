@@ -1,6 +1,6 @@
 // Lesscode-fp
 const {
-    $M, Print, hash, $A, mget, mgettwo, linebreak, utf8, newline,
+    $M, Print, hash, $E, mget, mgettwo, linebreak, utf8, newline,
     l2String, s2List,
     FileRead, FileWrite,
     HttpGET } = require('lesscode-fp')
@@ -15,4 +15,4 @@ const LogErorr = name => async err => `${name} 0  ${escape(err)}`
 const ProcessURL = name => $M(LogData(name), HttpGET)(name).catch(LogErorr(name))
 
 // Main pipeline. Classic mix of sequence (monads) & concurrency (applicative)
-$M(FileWrite(utf8)(outputFile),l2String(newline), $A(ProcessURL), s2List(linebreak), FileRead(utf8))(inputFile).catch(Print)
+$M(FileWrite(utf8)(outputFile),l2String(newline), $E(ProcessURL), s2List(linebreak), FileRead(utf8))(inputFile).catch(Print)

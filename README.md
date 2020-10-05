@@ -204,7 +204,7 @@ const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 ### Applicative ###
 While monadic composition execute functions (with side-effects) sequentially, applicatives execute them concurrently. 
 
-Lesscode implements applicative composition using **$A(...)** and accept List as a parameter. 
+Lesscode implements applicative composition using **$A(...) / $E(...)** and accept List as a parameter. 
 
 ```
 // apply max, min concurrently to the list os 2 numbers
@@ -249,7 +249,7 @@ http://i.imgur.com/cz0yhtx.jpg 2464218 ed9f8c1e95d58e02fcf576f64ec064a64bc628852
 ```
 // Lesscode-fp
 const {
-    $M, Print, hash, $A, mget, mgettwo, linebreak, utf8, newline,
+    $M, Print, hash, $E, mget, mgettwo, linebreak, utf8, newline,
     l2String, s2List,
     FileRead, FileWrite,
     HttpGET } = require('lesscode-fp')
@@ -264,7 +264,7 @@ const LogErorr = name => async err => `${name} 0  ${escape(err)}`
 const ProcessURL = name => $M(LogData(name), HttpGET)(name).catch(LogErorr(name))
 
 // Main pipeline. Classic mix of sequence (monads) & concurrency (applicative)
-$M(FileWrite(utf8)(outputFile),l2String(newline), $A(ProcessURL), s2List(linebreak), FileRead(utf8))(inputFile).catch(Print)
+$M(FileWrite(utf8)(outputFile),l2String(newline), $E(ProcessURL), s2List(linebreak), FileRead(utf8))(inputFile).catch(Print)
 ```
 ### Stream ###
 

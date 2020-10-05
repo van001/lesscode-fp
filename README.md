@@ -190,9 +190,10 @@ theroy jargon, Monads are just a [Monoid](https://en.wikipedia.org/wiki/Monoid_(
 
 ***Monad is just a monoid in the category of endofunctors - Saunders Mac Lane***
 
-Lesscode  provide some built-in Monads using javascript async (promise). It also provide a function **M(...)** to convery any pure function to Monad.
+Lesscode  provide some built-in Monads using javascript async (promise). 
 
-**$M(...)** supports [monadic composition](https://github.com/van001/lesscode-fp#Composition) (instead of a >==> operator or kliesli arrow , as it's called in category theory)
+**$M(...)** supports [monadic composition](https://github.com/van001/lesscode-fp#Composition) (instead of a >==> operator or kliesli arrow , as it's called in category theory). 
+$ indicates composition, M denotes monad or sequence.
 
 ```
 // Read content of a file. 
@@ -207,6 +208,8 @@ While monadic composition execute functions (with side-effects) sequentially, ap
 
 Lesscode implements applicative composition using **$E(...)** and accept Primitive / Object / List as a parameter. 
 If the paramter is a List, then all the functions are concurrently applied to all the items in the List to produce another List .
+
+$ indicates compostion and E denotes concurrency.
 
 ```
 // apply max, min concurrently to the list os 2 numbers

@@ -185,9 +185,9 @@ Uptill now we only talked about pure functions but real-world functions have sid
 Monads, let you do all that. Monads let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence. 
 
 Think of monad as a function that wraps all the side-effects and make it a pure and allow composition by passing the value from one to another. In category
-theroy Monads jargon, Monads are just a [Monoid](https://en.wikipedia.org/wiki/Monoid_(category_theory)) (Category with single element that can be joined). 
+theroy jargon, Monads are just a [Monoid](https://en.wikipedia.org/wiki/Monoid_(category_theory)) (Category with single element that can be joined). 
 
-As Saunders Mac Lane said, ***Monad is just a monoid in the category of endofunctors***
+***Monad is just a monoid in the category of endofunctors - Saunders Mac Lane***
 
 Lesscode  provide some built-in Monads using javascript async (promise). It also provide a function **M(...)** to convery any pure function to Monad.
 

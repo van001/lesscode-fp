@@ -24,11 +24,12 @@ const eq = a => b => {
 }
 
 // Mathematical functions
-const max = a => b => Math.max(a,b)
-const min = a => b => Math.min(a,b)
-const sum = a => b => a + b
+const max = a => b => Math.max(a,b) // max of 2 numbers
+const min = a => b => Math.min(a,b) // min of 2 numbers
+const sum = a => b => a + b // sum of 2 numbers
+const sub = a => b => a - b // subtract one from another
 const crypto = require("crypto")
-const hash = cipher => data => crypto.createHash(cipher).update(data).digest("hex")
+const hash = cipher => data => crypto.createHash(cipher).update(data).digest("hex") // compute hash
 
 /** String **/
 // Constants
@@ -36,8 +37,8 @@ const space = ' '
 const blank = ''
 const comma = ','
 const linebreak = /\r?\n/
-const utf8 = 'utf8'
 const newline = '\n'
+const utf8 = 'utf8'
 const sha256 = 'sha256'
 const md5 = 'md5'
 
@@ -58,6 +59,7 @@ const slowercase = str => str.toLowerCase()
 
 // Category Changers : non structure preserving
 const s2List = ptrn => str => str.split(ptrn)
+const s2i = str => parseInt(str, 0)
 
 /** List **/
 // Creator
@@ -74,18 +76,23 @@ const llen = lst => lst.length
 // Expander
 const lprepend = lst1 => lst2 => lst2.concat(lst1) // prepend lst2 to lst1
 const lappend = lst1 => lst2 => lst1.concat(lst2) // append lst2 to lst1
+const lapply = lst =>  $(lflat, lmap(val => lst.map( val2 => [val2, val]))) // apply [a,b] one lst to another list
 
 // Collapsers
 const lremove = index => lst => lst.slice(0,index).concat(lst.slice(index+1,lst.length))
 const lsliceHead = lst => (lst.length > 0) ? lst.slice(1, lst.length) : [] // slices head
 const lsliceTail = lst => lst.slice(0, lst.length - 1) // slice tail
 const lslice = start => end => lst = lst.slice(start, end) // slicer
+const lfilter = func => lst => lst.reduce( (cat, val ) => func(val) ? lappend([val])(cat) : cat , [])
 const lzip = lst => lst[0].map((val, index) => [val, lst[1][index]]) // zip 2 column list 2 one column
 const lflat = lst => lst.reduce((acc, val) => val.reduce( (acc2, val) => lappend(acc2)([val]) , acc),[]) // flats one level
 
+
 // Category Changers - Generic
 const lfold = cat => func => lst => lst.reduce((cat, val) => func(cat)(val), (cat)? cat : []) // left reducer
+const lfoldA = cat => func => lst => lst.reduce((cat, val, index) => func(cat)(index)(val), (cat)? cat : []) // full airity
 const lfoldr = cat => func => lst => lst.reduceRight((cat, val) => func(cat)(val), (cat)? cat : []) // right reducer 
+const lfoldrA = cat => func => lst => lst.reduceRight((cat, val, index) => func(cat)(index)(val), (cat)? cat : []) // full airity
 
 // folds the List based on move function which dictate the folding direction - zigzag
 // move :: cat => lst => j => i -> bool ; true move left pointer, false right
@@ -114,7 +121,7 @@ const lswap = pos1 => pos2 => lst => lst.slice(0, pos1). //slice to pos1
 // Category Changers - structure non-preserving
 const l2String = sep => lst => lst.join(sep)
 const l2countMap = lst => lst.reduce((map, val) => mincr(val)(map) ,{}) //histogram
-const l2indexMap = lst => lst.reduce ( (cat, val, index) => { (cat[val]) ? cat[val][index] = index : cat[val] = $(mset(index)(index))({}); return cat},{} ) // List to index Map - very helpful function to solve many problems
+const l2indexMap = lst => lst.reduce ( (cat, val, index) => { (cat[val]) ? cat[val].push(index) : cat[val] = [index]; return cat},{} ) // List to index Map - very helpful function to solve many problems
 
 // Map
 // Positional
@@ -137,11 +144,11 @@ const m2keyList = map => Object.keys(map) // Map to List (values)
 /** Monads */
 
 // Generics
-const Print = val => { console.log(val); return val } //print
-const Trace = label => val => { Print(label); Print(val); Print(' '); return val } // trace with label
-const Hint = label => val => { Print(label); return val }
+const Print =  val => { console.log(val); return val } //print
+const Trace = label =>  val => { Print(label); Print(val); Print(' '); return val } // trace with label
+const Hint = label =>  val => { Print(label); return val }
+const Assert = input => output => msg => console.assert((typeof output === 'object' && output != null) ? input.join('') === output.join('') : input === output, msg)
 const Memoize = f => { const cache = {}; return (...args) => { const argStr = args.join(''); return cache[argStr] = cache[argStr] || f(...args); } }
-const Exit =  msg =>  process.exit(0)
 const M = f => async a => f(a) // convert single parameter pure function into monad
 const M2 = f => a => async b =>  f(a)(b) // convert 2 parameter pure function into monad
 const M3 = f => a => b => async c => f(a)(b)(c) // convert 3 parameter pure function into monad
@@ -182,7 +189,7 @@ module.exports = {
     eq, eqNull, eqType, 
     
     // Math
-    max, min, sum,   hash,                                       // Math : Calculations
+    max, min, sum, sub, hash,                                    // Math : Calculations
     
     // String
     blank, space, comma, linebreak, utf8, newline, sha256,
@@ -190,8 +197,8 @@ module.exports = {
     shead, slen,                                                 // String : Positional 
     sappend, srepeat,                                            // String : Expanders
     sslice,                                                      // String : Collapsers   
-    suppercase, slowercase,                                      // Srting : Category changers                                  
-    s2List,                                                      
+    suppercase, slowercase,                                      // String " Structure preserving                                                                     
+    s2List, s2i,                                                 // Srting : Category changers                                                       
     
     // List
     lcreate,                                                     // List : Creator
@@ -199,9 +206,9 @@ module.exports = {
     lhead, ltail, lat, llen,                                     // List : Positional
     lsort, lreverse, lswap ,                                     // List : Modifiers
     lmap, lmapA,                                                 // List : Mapper & Presets
-    lremove, lprepend, lappend,                                  // List : Expander
-    lsliceHead, lsliceTail, lslice, lzip, lflat,                 // List : Collapsers                     
-    lfold, lfoldr, lfoldZ,                                       // List : Folders & Presets
+    lremove, lprepend, lappend, lapply,                          // List : Expander
+    lsliceHead, lsliceTail, lslice, lfilter, lzip, lflat,        // List : Collapsers                     
+    lfold, lfoldA, lfoldr, lfoldrA, lfoldZ,                      // List : Folders & Presets
     l2String, l2countMap, l2indexMap,                            // List : Category Changers
     
     // Map
@@ -212,7 +219,7 @@ module.exports = {
 
     //************* Monads *******************
     // Generic
-    Print, Hint, Trace, Memoize,  Exit, M, M2,
+    Print, Hint, Trace, Assert, Memoize, M, M2,
     M3, M4, Wait, Lift,
     
     //File

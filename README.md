@@ -296,7 +296,7 @@ Many of the real-world problems involve :
 - processing synchronously / asynchronously. 
 - feeding bulk / continious stream of data.
 
-### Sequential,  bulk
+### Sequential
 Doing bunch of things one after another, like copying content of one file to another.
 
 input.txt 
@@ -320,7 +320,7 @@ const Out = process.argv[3]
 $M(FileWrite(utf8)(Out), FileRead(utf8))(In)
 ```
 
-### Concurrent, bulk ###
+### Concurrent 
 
 Doing bunch of things concurrently, also tolerating failures instead of aborting on error (if a file download fails it is ok, just write the error).
 

@@ -29,6 +29,7 @@ In functional programming language :
 
 - you treat function as a 1st class citizen and pass / return a function to / from another function.
 
+- you use fewer category ( String, List, Object) and provide functions to manipulate / transform those categories.
 
 [lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic javascript functional library, which define functions to manipulate  String, List & Map / Object categories.
 You can implement these functions in any multi-paradigm language that supports functional programming.

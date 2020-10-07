@@ -11,7 +11,7 @@ The above article influenced me to dive deep into programming paradigm concepts,
 So begin the journey of [Functional Thinking](https://github.com/van001/lesscode), with few very simple goals in mind - 
 
 - Seek deep understanding of motivation and concepts behind the functional programming, 
-without being caught in the programming lanugage nuances, syntax or even nomenclature. 
+without being caught in the programming lanugages nuances / jargon, syntax or even nomenclature. 
 
 - Come up with a language agnostic list of real-world functions (library), which can be implemented in any multi-paradigm language that supports functional programming. 
 

@@ -86,6 +86,11 @@ const lslice = start => end => lst = lst.slice(start, end) // slicer
 const lfilter = func => lst => lst.reduce( (cat, val ) => func(val) ? lappend([val])(cat) : cat , [])
 const lzip = lst => lst[0].map((val, index) => [val, lst[1][index]]) // zip 2 column list 2 one column
 const lflat = lst => lst.reduce((acc, val) => val.reduce( (acc2, val) => lappend(acc2)([val]) , acc),[]) // flats one level
+// returns the index of the join of 2 list - List of List
+const ljoinindex = lst2 => lst => {
+    const $join = map => lfoldrA([])(cat => index => val =>  map[val] ? lappend(lapply([index])(map[val]))(cat) : cat )
+    return $($join(l2indexMap(lst2)))(lst)
+}
 
 
 // Category Changers - Generic
@@ -125,7 +130,7 @@ const l2indexMap = lst => lst.reduce ( (cat, val, index) => { (cat[val]) ? cat[v
 
 // Map
 // Positional
-const mget = key => map => map[key] // retrieves the value for key
+const mget = key => map => Array.isArray(key) ? key.reduce((cat, val, index) => (map[val]) ? lappend([lappend([index])(map[val])])(cat) : cat, []) : map[key]
 const mgettwo = key1 => key2 => map => map[key1][key2]
 const mlen = map => map.size
 const mheadKey = map => (map.size > 0) ? map.keys().next()['value'] : undefined
@@ -207,7 +212,8 @@ module.exports = {
     lsort, lreverse, lswap ,                                     // List : Modifiers
     lmap, lmapA,                                                 // List : Mapper & Presets
     lremove, lprepend, lappend, lapply,                          // List : Expander
-    lsliceHead, lsliceTail, lslice, lfilter, lzip, lflat,        // List : Collapsers                     
+    lsliceHead, lsliceTail, lslice, lfilter, lzip, lflat,        // List : Collapsers    
+    ljoinindex,                  
     lfold, lfoldA, lfoldr, lfoldrA, lfoldZ,                      // List : Folders & Presets
     l2String, l2countMap, l2indexMap,                            // List : Category Changers
     

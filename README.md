@@ -125,7 +125,7 @@ operators nor they support infix styling.
 Lesscode library provide :
 - **$(...)** for pure function composition.
 - **$M(...)** for [monadic](https://github.com/van001/lesscode-fp#Monad) composition. 
-- **E(...)** for [applicative](https://github.com/van001/lesscode-fp#Applicative) compostion.
+- **$E(...)** for [applicative](https://github.com/van001/lesscode-fp#Applicative) compostion.
 - **$3(...)** for [stream](https://github.com/van001/lesscode-fp#Stream) compition.
 
 ```
@@ -256,7 +256,7 @@ nums[0] + nums[1] == 9, so we return [0, 1].
  * 
  * Logic is very self explanatory :
  * 1. Convert List to index Map. 
- * 2. Find the 1st matching key (value) form the map, whose sum matches the item + key.
+ * 2. Find the matching key (value) form the map, whose sum matches the item + key.
  * 3. Discard self - [0,0]
  * 4. Remove dupes - [1,2] / [2,1]
 **/

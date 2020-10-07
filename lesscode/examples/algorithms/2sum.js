@@ -1,30 +1,30 @@
 
 /**
  * Logic is very self explanatory :
- * 1. Transform List to another List by subrtcting it from target
- * 2. Join the 2 List to obtain matching indices.
- * 3. Discard self - [0,0]
- * 4. Remove dupes - [1,2] = [2,1]
+ * 1. Transform List to another List by subracting it from the target : lmap(sub)
+ * 2. Join the 2 List to obtain matching indices : ljoinIndex
+ * 3. Remove dupes - [[1,2], [2,1]] => [[1,2]] : lcollapse
+ * 3. Discard self - [0,0] :
+
 **/
 
 const {
-    $, $M, 
+    $M, 
     sub, 
     eqNot,
     comma, s2List, 
-    llift2, lmap, l2indexMap, lsort, lflat, lfilter, ljoinIndex, 
-    m2keyList, 
+    lcollapse, llift2, lmap, lflat, lfilter, ljoinIndex, 
     Print,
 } = require('lesscode-fp')
 
 const target = process.argv[3]
 const nums = s2List(comma)(process.argv[2].slice(1,-1))
 
-// Remove dupes : [ [ 1, 2 ], [ 2, 1 ] ] => [ [1,2] ]
-const ldropDupes = $( lmap(lsort))
-
 // Remove self : [ [ 0, 0 ], [ 1, 2 ], [ 2, 1 ] ] => [ [ 1, 2 ], [ 2, 1 ] ]
 const ldropSelf = lfilter(llift2(eqNot))
 
-const subList = Print(lmap(sub(target))(nums))
-$M(Print,  ldropDupes, ldropSelf, ljoinIndex(subList))(nums)
+// Transform List to sublist with subtraction
+const subList = lmap(sub(target))(nums)
+
+// [3,3] / 6 =>  [1,1]
+$M(lflat, ldropSelf, lcollapse, ljoinIndex(subList))(nums) 

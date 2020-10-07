@@ -73,10 +73,10 @@ const lhead = lst => lst[0] // return the head element of the List
 const ltail = lst => lst[lst.length-1]
 const lat = index => lst[index]
 const llen = lst => lst.length
-const llift = func => lst => func(lst[0])
-const llift2 = func => lst => func(lst[0])(lst[1])
-const llift3 = func => lst => func(lst[0])(lst[1])(lst[2])
-const llift4 = func => lst => func(lst[0])(lst[1])(lst[2])(lst[3])
+const llift = func => lst => eqType('object')(func)? [lst[0]] : func(lst[0])
+const llift2 = func => lst => eqType('object')(func)? [lst[0], lst[1]] : func(lst[0])(lst[1])
+const llift3 = func => lst => eqType('object')(func)? [lst[0], lst[1], lst[2]] : func(lst[0])(lst[1])(lst[2])
+const llift4 = func => lst => eqType('object')(func)? [lst[0], lst[1], lst[2], lst[3]] : func(lst[0])(lst[1])(lst[2])(lst[3])
 
 // Expander
 const lprepend = lst1 => lst2 => lst2.concat(lst1) // prepend lst2 to lst1
@@ -95,6 +95,8 @@ const ljoinIndex = lst2 => lst => { // returns the matched indices [1,3] [2,3] =
     return $($join(l2indexMap(lst2)))(lst)
 }
 const lflat = lst => lst.reduce((acc, val) => val.reduce( (acc2, val) => lappend(acc2)([val]) , acc),[]) // flats one level
+const lsublist = indexLst => lst =>  lmap(index => lst[index])(indexLst) // given a sublist index, returns th sublist
+const lcollapse = lst => lsublist($(lflat, lmap(llift([])), m2valList, l2indexMap, lmap(lsort))(lst))(lst) // removes the duplicates
 
 
 // Category Changers - Generic
@@ -219,7 +221,7 @@ module.exports = {
     lmap, lmapA,                                                 // List : Mapper & Presets
     lremove, lprepend, lappend, lapply,                          // List : Expander
     lsliceHead, lsliceTail, lslice, lfilter, lzip,               // List : Collapsers    
-    ljoinIndex, lflat,                  
+    ljoinIndex, lflat, lsublist, lcollapse,                
     lfold, lfoldA, lfoldr, lfoldrA, lfoldZ,                      // List : Folders & Presets
     l2String, l2countMap, l2indexMap,                            // List : Category Changers
     

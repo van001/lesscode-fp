@@ -257,40 +257,33 @@ Solution
 ```
 /**
  * Logic is very self explanatory :
- * 1. Convert List to index Map. 
- * 2. Find the matching key (value) form the map, whose sum matches the item + key.
- * 3. Discard self - [0,0]
- * 4. Remove dupes - [1,2] / [2,1]
+ * 1. Transform List to another List by subracting it from the target : lmap(sub)
+ * 2. Join the 2 List to obtain matching indices : ljoinIndex
+ * 3. Remove dupes - [[1,2], [2,1]] => [[1,2]] : lcollapse
+ * 3. Discard self - [0,0] :
+
 **/
 
 const {
-    $, 
-    eq,
+    $M, 
     sub, 
-    comma, blank, s2List, s2i,
-    lapply, lmap, lfoldrA, l2indexMap, lappend, lsort, lflat, lfilter,
-    m2keyList, 
+    eqNot,
+    comma, s2List, 
+    lcollapse, llift2, lmap, lflat, lfilter, ljoinIndex, 
     Print,
-    lfold
 } = require('lesscode-fp')
 
 const target = process.argv[3]
 const nums = s2List(comma)(process.argv[2].slice(1,-1))
 
-// convert List 2 Map :  { '2' : [1], '3' :[0], '4' : [2]}
-const map = l2indexMap(nums) 
-
-// Remove dupes : [ [ 1, 2 ], [ 2, 1 ] ] => [ [1,2] ]
-const removeDupes = $(lmap($(lmap(s2i), s2List(comma))), m2keyList, l2indexMap, lmap(lsort))
-
 // Remove self : [ [ 0, 0 ], [ 1, 2 ], [ 2, 1 ] ] => [ [ 1, 2 ], [ 2, 1 ] ]
-const unique = lst => !eq(lst[0])(lst[1])
+const ldropSelf = lfilter(llift2(eqNot))
 
-// Return the maching list of indexes : [ [ 0, 0 ], [ 1, 2 ], [ 2, 1 ] ]
-const matchSum = sum => map => lfoldrA([])(cat => index => val =>  map[sub(sum)(val)] ? lappend(lapply([index])(map[sub(sum)(val)]))(cat) : cat )
+// Transform List to sublist with subtraction
+const subList = lmap(sub(target))(nums)
 
-// nums = [3,2,4], target = 6 => [1,2]
-$(Print, lflat, removeDupes, lfilter(unique) ,matchSum(target)(map))(nums)
+// [3,3] / 6 =>  [1,1]
+$M(lflat, ldropSelf, lcollapse, ljoinIndex(subList))(nums) 
 ```
 
 ## Real-world 

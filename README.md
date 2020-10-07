@@ -374,7 +374,7 @@ Sometimes, input is a continious **stream** of data or needs to be handled as st
 
 **[File Streaming](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/file-streaming)**
 
-Streams content of a text file, converts to uppercase then write back to another stream (output file).
+Stream content of a text file, convert to uppercase then write back to another stream (output file).
 
 input.txt (the real file may be huge...)
 ```

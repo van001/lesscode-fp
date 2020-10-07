@@ -141,11 +141,14 @@ const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 ***'$' has a very small foot-print and can be easily spotted to show the composition.***
 
 ### Fewer Categories ### 
-Unlike, Object Oriented programming, where every class is a new category, functional programming benefits from fewer categories and coming up with domain specific abstractions to solve them generically.
+Unlike, Object Oriented programming, where every class is a new category, functional programming benefits from fewer categories and coming up with domain specific abstractions & algebra to solve them generically.
 
-Lesscode library provide funtions to manipulate / transform the following categories : String, List, Map / Object (non mutable). These categories are quiet popular in many programming languages. List,  allows easier work distribution; Map / Object,  allows faster retrieval; String, is a preffered way of storing data.
+Lesscode library provide funtions to manipulate / transform the following categories : String, List, Map / Object (non mutable).  
+These categories are quiet popular in many programming languages.
+List,  allows easier work distribution; Map / Object,  allows faster retrieval; String, is a preffered way of storing data. 
 
-Lesscode libraray prefixes the name of category for all the category specific functions. This design is by choice.
+Lesscode libraray prefixes the name of category for all the category specific functions. This design is by choice. 
+This allows you to easily spot which ctagory a function belongs.
 
 ```
 // slices String at the specified position

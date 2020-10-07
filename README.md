@@ -261,7 +261,7 @@ Solution
  * 1. Transform List to another List by subracting it from the target : lmap(sub)
  * 2. Join the 2 List to obtain matching indices : ljoinIndex
  * 3. Remove dupes - [[1,2], [2,1]] => [[1,2]] : lcollapse
- * 3. Discard self - [0,0] :
+ * 4. Discard self - [[0,0]] => []
 
 **/
 

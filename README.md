@@ -234,9 +234,9 @@ Lesscode implements stream as **$3**. $ means it's still a composition but 3 den
 # Examples
 
 ## Algorithms
+Algorithms span many domains and hence it becomes tricky. Lesscode libarary provide generefic functions to solve many algorithm problems.
 
 ### List 
-
 [Twosum](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/algorithms/2sum.js)
 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -252,8 +252,6 @@ nums = [3,3], target = 6 => [0,1]
 Solution
 ```
 /**
- * Solution includes FP approach/ styling - composition, data last, pure functions (as much), point free, currying.
- * 
  * Logic is very self explanatory :
  * 1. Convert List to index Map. 
  * 2. Find the matching key (value) form the map, whose sum matches the item + key.

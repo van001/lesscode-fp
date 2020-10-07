@@ -1,10 +1,10 @@
 
 /**
  * Logic is very self explanatory :
- * 1. Transform List to index Map. 
- * 2. Transform the List again
+ * 1. Transform List to another List by subratcting it from target
+ * 2. Zip the 2 List to obtain matching indices.
  * 3. Discard self - [0,0]
- * 4. Remove dupes - [1,2] / [2,1]
+ * 4. Remove dupes - [1,2] = [2,1]
 **/
 
 const {
@@ -12,25 +12,31 @@ const {
     eq, eqType, 
     sub, 
     comma, s2List, s2i,
-    lapply, lmap, lfoldrA, l2indexMap, lappend, lsort, lflat, lfilter, ljoinindex,
-    m2keyList, 
+    lapply, lmap, lfoldrA, l2indexMap, lappend, lsort, lflat, lfilter, lzipMatchingIndex,
     Print,
 } = require('lesscode-fp')
 
-lift2 = func => lst => func(lst[0])(lst[1])
+const llift2 = func => lst => func(lst[0])(lst[1])
+const llift3 = func => lst => func(lst[0])(lst[1])(lst[2])
+const llift4 = func => lst => func(lst[0])(lst[1])(lst[2])(lst[3])
+
 const target = process.argv[3]
 const nums = s2List(comma)(process.argv[2].slice(1,-1))
 
+const m2List = map => Object.keys(map).reduce( (cat, key ) => lappend(lapply(map[key])([ (isFinite(key) ? Number.isInteger(key) ? parseInt(key) : parseFloat(key) : key) ]))(cat),[])
+const m2keyList = map => lmap( key => (isFinite(key) ? Number.isInteger(key) ? parseInt(key) : parseFloat(key) : key) )(Object.keys(map)) // Map to List (values)
+
 // Remove dupes : [ [ 1, 2 ], [ 2, 1 ] ] => [ [1,2] ]
-const removeDupes = $(lmap($(lmap(s2i), s2List(comma))), m2keyList, l2indexMap, lmap(lsort))
+const removeDupes = $(m2keyList, l2indexMap, lmap(lsort))
 
 // Remove self : [ [ 0, 0 ], [ 1, 2 ], [ 2, 1 ] ] => [ [ 1, 2 ], [ 2, 1 ] ]
-const lunique = lfilter(lift2(eq))
+const lunique = lfilter(llift2(eq))
 
 
-const m2List = map => Object.keys(map).reduce( (cat, val ) => lappend(lapply(map[val])([val]))(cat),[])
 
 const subList = Print(lmap(sub(target))(nums))
 // nums = [3,2,4], target = 6 => [1,2]
 //$M(Print, removeDupes, lfilter(unique) ,matchSum(target)(nums), l2indexMap)(nums)
-$M(Print, lunique, ljoinindex(subList))(nums)
+$M(Print, lunique, lzipMatchingIndex(subList))(nums)
+//$M(Print, m2List, l2indexMap)(nums)
+//console.log(Number(3.0))

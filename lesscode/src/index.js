@@ -72,6 +72,10 @@ const lhead = lst => lst[0] // return the head element of the List
 const ltail = lst => lst[lst.length-1]
 const lat = index => lst[index]
 const llen = lst => lst.length
+const llift = func => lst => func(lst[0])
+const llift2 = func => lst => func(lst[0])(lst[1])
+const llift3 = func => lst => func(lst[0])(lst[1])(lst[2])
+const llift4 = func => lst => func(lst[0])(lst[1])(lst[2])(lst[3])
 
 // Expander
 const lprepend = lst1 => lst2 => lst2.concat(lst1) // prepend lst2 to lst1
@@ -85,12 +89,11 @@ const lsliceTail = lst => lst.slice(0, lst.length - 1) // slice tail
 const lslice = start => end => lst = lst.slice(start, end) // slicer
 const lfilter = func => lst => lst.reduce( (cat, val ) => func(val) ? lappend([val])(cat) : cat , [])
 const lzip = lst => lst[0].map((val, index) => [val, lst[1][index]]) // zip 2 column list 2 one column
-const lflat = lst => lst.reduce((acc, val) => val.reduce( (acc2, val) => lappend(acc2)([val]) , acc),[]) // flats one level
-// returns the index of the join of 2 list - List of List
-const ljoinindex = lst2 => lst => {
+const ljoinIndex = lst2 => lst => { // returns the matched indices [1,3] [2,3] => [1,1]
     const $join = map => lfoldrA([])(cat => index => val =>  map[val] ? lappend(lapply([index])(map[val]))(cat) : cat )
     return $($join(l2indexMap(lst2)))(lst)
 }
+const lflat = lst => lst.reduce((acc, val) => val.reduce( (acc2, val) => lappend(acc2)([val]) , acc),[]) // flats one level
 
 
 // Category Changers - Generic
@@ -145,6 +148,7 @@ const mdelete = key => map => { map.delete(key); return map}
 // Category Changers
 const m2valList = map => { const lst = [];  Object.keys(map).forEach( key => lst.push(map[key]));  return lst} // Map to List (values)
 const m2keyList = map => Object.keys(map) // Map to List (values)
+const m2List = map => Object.keys(map).reduce( (cat, key ) => lappend(lapply(map[key])([ (isFinite(key) ? Number.isInteger(key) ? parseInt(key) : parseFloat(key) : key) ]))(cat),[])
 
 /** Monads */
 
@@ -209,11 +213,12 @@ module.exports = {
     lcreate,                                                     // List : Creator
     leqEmpty,                                                    // List : Boolean
     lhead, ltail, lat, llen,                                     // List : Positional
+    llift, llift2, llift3, llift4,
     lsort, lreverse, lswap ,                                     // List : Modifiers
     lmap, lmapA,                                                 // List : Mapper & Presets
     lremove, lprepend, lappend, lapply,                          // List : Expander
-    lsliceHead, lsliceTail, lslice, lfilter, lzip, lflat,        // List : Collapsers    
-    ljoinindex,                  
+    lsliceHead, lsliceTail, lslice, lfilter, lzip,               // List : Collapsers    
+    ljoinIndex, lflat,                  
     lfold, lfoldA, lfoldr, lfoldrA, lfoldZ,                      // List : Folders & Presets
     l2String, l2countMap, l2indexMap,                            // List : Category Changers
     
@@ -221,7 +226,7 @@ module.exports = {
     mget, mgettwo, mlen, mheadKey, 
     mset, mincr,
     mdelete,
-    m2valList, m2keyList,
+    m2valList, m2keyList, m2List,
 
     //************* Monads *******************
     // Generic

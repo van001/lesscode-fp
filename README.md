@@ -25,7 +25,7 @@ In functional programming language :
 
 - you either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects ( writing to logs / screen, reading from file, making a database call , etc). 
 
-- you compose solution / functions by composing with other function(s).
+- you compose solution / functions by composing other function(s).
 
 - you treat function as a 1st class citizen and pass / return a function to / from another function.
 

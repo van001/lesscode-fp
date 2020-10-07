@@ -293,7 +293,7 @@ This is the beauty of functional programming. Once you build a domain specific l
 
 Many of the real-world problems involve :
 - processing data sequentially / concurrently.
-- processing continious stream of data.
+- feeding bulk / continious stream of data.
 
 ### Sequential 
 Doing bunch of things one after another, like copying content of one file to another.

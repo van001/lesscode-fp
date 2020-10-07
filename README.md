@@ -285,7 +285,8 @@ const subList = lmap(sub(target))(nums)
 // [3,3] / 6 =>  [1,1]
 $M(lflat, ldropSelf, lcollapse, ljoinIndex(subList))(nums) 
 ```
-The above solution will work for more than 1 too.
+The above solution will work for more than 1 too. The time complexity is still the same O(N), but the solution is neat and fully composable.
+This is the beauty of functional programming. Once you build a domain specific library, it is all about simple composing.
 
 ## Real-world 
 

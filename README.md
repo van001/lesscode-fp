@@ -233,13 +233,13 @@ Lesscode implements stream as **$3**. $ means it's still a composition but 3 den
 
 # Examples
 
-## Algorithms
+## Coding questions
 Even though FP langauge libraries provide implementation of many of the high level abstractions like sort, 
 linked list etc, they do not provide all the abstractions.
 
-Algorithms span many domains and hence it becomes tricky to provide a single generic library. 
+Coding questions span many domains and hence it becomes tricky to provide a single generic library. 
 
-Lesscode libarary provide generefic functions to solve many such common algorithms.
+Lesscode libarary provide generefic functions to solve many such coding problems. 
 
 ### List 
 [Twosum](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/algorithms/2sum.js)

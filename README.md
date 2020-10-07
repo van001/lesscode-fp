@@ -147,9 +147,8 @@ Lesscode library provide funtions to manipulate / transform the following catego
 These categories are quiet popular in many programming languages.
 List,  allows easier work distribution; Map / Object,  allows faster retrieval; String, is a preffered way of storing data. 
 
-Lesscode libraray prefixes the name of category for all the category specific functions. This design is by choice. 
-This allows you to easily spot which ctagory a function belongs.
-
+Lesscode libraray prefixes the 1st letter of the category (s, l, m) for all the category specific functions. 
+This design is by choice. It allows you to easily spot which catagory a function belongs.
 ```
 // slices String at the specified position
 const sslice  = start => end => str => str.slice(start,end)

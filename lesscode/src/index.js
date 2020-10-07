@@ -22,6 +22,7 @@ const eq = a => b => {
     if (eqType('object')(a)&& eqType('object')(b)) return a.toString() === b.toString()
     return (a === b)
 }
+const eqNot = a => b => !eq(a)(b)
 
 // Mathematical functions
 const max = a => b => Math.max(a,b) // max of 2 numbers
@@ -195,7 +196,7 @@ module.exports = {
     $, $M, $E, $3, 
     
     // Equality
-    eq, eqNull, eqType, 
+    eq, eqNull, eqType, eqNot, 
     
     // Math
     max, min, sum, sub, hash,                                    // Math : Calculations

@@ -246,11 +246,11 @@ You can return the answer in any order.
 examples
 ```
 nums = [2,7,11,15], target = 9 => [0,1]
-nums[0] + nums[1] == 9, so we return [0, 1].
+nums = [3,3], target = 6 => [0,1]
 ```
 
+Solution
 ```
-
 /**
  * Solution includes FP approach/ styling - composition, data last, pure functions (as much), point free, currying.
  * 

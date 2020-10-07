@@ -27,4 +27,4 @@ const ldropSelf = lfilter(llift2(eqNot))
 const subList = lmap(sub(target))(nums)
 
 // [3,3] / 6 =>  [1,1]
-$M(lflat, ldropSelf, lcollapse, ljoinIndex(subList))(nums) 
+$M(Print, lflat, ldropSelf, lcollapse, ljoinIndex(subList))(nums) 

@@ -285,6 +285,7 @@ const subList = lmap(sub(target))(nums)
 // [3,3] / 6 =>  [1,1]
 $M(lflat, ldropSelf, lcollapse, ljoinIndex(subList))(nums) 
 ```
+The above solution will work for more than 1 too.
 
 ## Real-world 
 

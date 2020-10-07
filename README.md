@@ -25,9 +25,9 @@ In functional programming language :
 
 - you either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects ( writing to logs / screen, reading from file, making a database call , etc). 
 
-- you compose functions to produce a desired outcome.
+- you compose solution / functions by composing with other function(s).
 
-- you treat functions as a 1st class citizen and pass / return a function to / from another function.
+- you treat function as a 1st class citizen and pass / return a function to / from another function.
 
 
 [lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic javascript functional library, which define functions to manipulate  String, List & Map / Object categories.

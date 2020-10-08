@@ -100,17 +100,16 @@ space2List('This is cool') // ['This','is','cool']
 ```
 
 ### Data-Last ###
-Functions that take more than one parameter,  should accept data as a last parameter. If you are coming from imperative programming paradigm, this might be new to you.
-In imperative programming you pass data 1st & options (default values - ring the bell?) later.  Or in the case of object oriented programming (still imperative), 
+Functions that take more than one parameter should accept data as the last parameter. If you are coming from an imperative programming paradigm, this might be new to you.
+In imperative programming, you pass data 1st & options (default values - ring the bell?) later. Or in the case of object-oriented programming (still imperative), 
 you manipulate the encapsulated data with function(s), which take additional options. 
 
-In FP, data and functions are separate, hence you build library of functions to work with your data.  
+In FP, data and functions are separate; hence you build a library of functions to work with your data. 
 
 Data last principle makes function [composition](https://github.com/van001/lesscode-fp#Composition), easier (builder pattern). Also, it allows for a point-free style of composition.
 
 ```
-// l2String converts, List to String. 
-// it takes List (which it will convert to String) as a last parameter.
+// takes List as the last parameter (point-free)
 const l2String = sep => lst => lst.join(sep)
 ```
 

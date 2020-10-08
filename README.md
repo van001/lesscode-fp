@@ -81,8 +81,8 @@ const sappend = str1 => str2 => str1 + str2
 
 ### Currying ### 
 [Currying](https://en.wikipedia.org/wiki/Currying) (f(a, b) => f(a)(b)), allows function with multiple parameters to be written as sequence of functions that each take a single parameter. 
-Currying allows you to partially apply other options (initializion) and dependencies (injection) on multi-parameter functions.
-Currying also allows you to create your own DSL (domain specific language) by partially applying many generic functions and creating a new domain specfic one.
+Currying allows you to partially apply other options (initialization) and dependencies (injection) on multi-parameter functions.
+Currying also allows you to create domain-specific language (DSL) by partially applying many generic functions.
 
 Every function in lesscode library is curried and [point-free](https://en.wikipedia.org/wiki/Tacit_programming) (where possible).
 
@@ -92,7 +92,7 @@ Every function in lesscode library is curried and [point-free](https://en.wikipe
 const s2List = ptrn => async str => str.split(ptrn)
 
 // suppose your domain breaks Sting into List based on space.
-// partially apply s2List, with space and create a new function.
+// partially apply s2List, with space and, create a new function.
 const space2List = s2List(space)
 
 // will break String into List on every whitespace.

@@ -1,3 +1,4 @@
+![fp.png](fp.png)
 # Motivation
 
 ![Lego Kids](lego-kid.jpeg) Going back in time, when Alan Turing built 

@@ -9,7 +9,7 @@ const {
     sub,
     eqNot,
     comma, s2List, 
-    lcollapse, llift2, llift3, lmap, lfilter, ljoinIndex, lfoldA, lappend, 
+    lcollapse, llift2, llift3, lmap, lfilter, ljoinIndex, lfoldA, lappend,
     Print,
 } = require('lesscode-fp')
 
@@ -36,4 +36,5 @@ const threeSum = nums => target =>{
     return $(Print, ldropSelf, lcollapse, all2Sum)(subList)
 } 
 
-threeSum( [-1,0,1,2,-1,-4])(0)
+threeSum(nums)(target)
+

@@ -250,7 +250,7 @@ Algorithm questions span many domains and hence it becomes tricky to provide a s
 Lesscode libarary provide generefic functions to solve many such coding problems. 
 
 ### List 
-[Twosum](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/algorithms/2sum.js)
+[2sum](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/algorithms/2sum.js)
 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.

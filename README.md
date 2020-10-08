@@ -265,17 +265,17 @@ Lesscode implements stream as **$3**. $ means it's still a composition, but 3 de
 # Examples
 
 ## Algorithms
-Even though FP langauge libraries provide implementation of many of the high level abstractions like sort, 
-linked list etc, they do not provide all the abstractions.
+Even though FP language libraries provide an implementation of many of the high-level abstractions like sort, 
+linked List, etc., they do not offer all.
 
-Algorithm questions span many domains and hence it becomes tricky to provide a single generic library. 
+Algorithms span many domains, and hence it becomes tricky to provide a single generic library. 
 
-Lesscode libarary provide generefic functions to solve many such coding problems. 
+Lesscode library provides generic functions to solve many such coding problems. 
 
 ### List 
 [2sum](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/algorithms/2sum.js)
 
-Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+Given an array of integers nums and an integer target, return indices of the two numbers add up to the target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order.
 
@@ -297,48 +297,49 @@ Solution
 **/
 
 const {
-    $M, 
-    sub, 
-    eqNot,
-    comma, s2List, 
-    lcollapse, llift2, lmap, lflat, lfilter, ljoinIndex, 
-    Print,
+ $M, 
+ sub, 
+ eqNot,
+ comma, s2List, 
+ lcollapse, llift2, lmap, lflat, lfilter, ljoinIndex, 
+ Print,
 } = require('lesscode-fp')
 
 const target = process.argv[3]
 const nums = s2List(comma)(process.argv[2].slice(1,-1))
 
-// [3,3] / 6 =>  [[1,1]]
+// [3,3] / 6 => [[1,1]]
 const twoSum = nums => target => {
 
-    // Remove self : [ [ 0, 0 ], [ 1, 2 ], [ 2, 1 ] ] => [ [ 1, 2 ], [ 2, 1 ] ]
-    const ldropSelf = lfilter(llift2(eqNot))
+ // Remove self : [ [ 0, 0 ], [ 1, 2 ], [ 2, 1 ] ] => [ [ 1, 2 ], [ 2, 1 ] ]
+ const ldropSelf = lfilter(llift2(eqNot))
 
-    // Transform List to sublist with subtraction
-    const subList = lmap(sub(target))(nums)
+ // Transform List to sublist with subtraction
+ const subList = lmap(sub(target))(nums)
 
-    return $(ldropSelf, lcollapse, ljoinIndex(subList))(nums) 
+ return $(ldropSelf, lcollapse, ljoinIndex(subList))(nums) 
 }
 ```
-The above solution will work for more than 1 too. The time complexity is still the same O(N), but the solution is neat and fully composable.
-This is the beauty of functional programming. Once you build a domain specific library, it is all about simple composing.
+The above solution will work for more than one too. 
+
+This is the beauty of functional programming. Once you build a domain-specific library, it is all about simple composing.
 
 [3Sum](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/algorithms/3sum.js)
 
-Instead of 2 numbers, if we ask for the sum of 3 numbers be equal to the target, the above code can be easily extended to find the 3sum.
+Instead of 2 numbers, if we ask for the sum of 3 numbers to be equal to the target, the above code can be easily extended to find the 3sum.
 
 ```
 /**
- * Logic is very self explanatory :
- * 1. Making every item in the List as target find 2sum that satify the criteria for 3sum
+ * Logic is very self-explanatory:
+ * 1. Making every item in the List as target find 2sum that satisfy the criteria for 3sum
 **/
 
 const threeSum = nums => target =>{
-    const subList = Print(lmap(sub(target))(nums))
-    //  [[ 3, 3, 5 ]] => []
-    const ldropSelf = lfilter(llift3( a => b => c => a != b  && a != c && b != c))
-    const all2Sum = lfoldA([])(cat => index => val => $(lappend(cat),lmap(lappend([index])),twoSum(nums))(val))
-    return $(Print, ldropSelf, lcollapse, all2Sum)(subList)
+ const subList = Print(lmap(sub(target))(nums))
+ // [[ 3, 3, 5 ]] => []
+ const ldropSelf = lfilter(llift3( a => b => c => a != b && a != c && b != c))
+ const all2Sum = lfoldA([])(cat => index => val => $(lappend(cat),lmap(lappend([index])),twoSum(nums))(val))
+ return $(Print, ldropSelf, lcollapse, all2Sum)(subList)
 } 
 ```
 
@@ -347,10 +348,10 @@ const threeSum = nums => target =>{
 Many of the real-world problems involve :
 - processing data sequentially / concurrently.
 - processing synchronously / asynchronously. 
-- processing bulk / continious stream of data.
+- processing bulk / continuous stream of data.
 
 ### Sequential
-Doing bunch of things one after another, like reading content of one file, converting it to uppercase and writing back to another file.
+Doing things one after another, like reading the file, converting it to uppercase, and writing back to another file.
 
 input.txt 
 ```
@@ -364,9 +365,9 @@ writing less-code is cool...
 
 ```
 const {
-    suppercase,
-    $M,                       // Composition
-    FileRead, FileWrite,      // IO Monad
+ suppercase,
+ $M, // Composition
+ FileRead, FileWrite, // IO Monad
 } = require('lesscode-fp')
 
 const In = process.argv[2]
@@ -376,11 +377,11 @@ $M(FileWrite(utf8)(Out), suppercase, FileRead(utf8))(In)
 
 ### Concurrent 
 
-Doing bunch of things concurrently, also tolerating failures instead of aborting on error (if a file download fails it is ok, just write the error).
+Doing things concurrently, also tolerating failures instead of aborting on error (if a file download fails, it is ok, write the error).
 
 **[Image Download](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/image-download)**
 
-Download list of images specified in a file and write metadata(url, size, hash) to the specified output file.
+Download the List of images specified in a file and write metadata(URL, size, hash) to the specified output file.
 
 input.txt
 ```
@@ -392,7 +393,7 @@ http://i.imgur.com/cz0yhtx.jpg
 
 output.txt
 ```
-http://i.imgur.com/c2z0yhtx.jpg 0  Error%3A%20Request%20failed%20with%20status%20code%20404
+http://i.imgur.com/c2z0yhtx.jpg 0 Error%3A%20Request%20failed%20with%20status%20code%20404
 http://i.imgur.com/KxyEGOn.jpg 470489 cc042826ed386d4247aca63cb7aff54b37acb1f89ce8f4549ac96a9e8683360c
 http://i.imgur.com/vPae8qL.jpg 69085 bde0a62bb35dffe66cebf6cfd9ca3841ca1419fb323281bd67c86145f2173207
 http://i.imgur.com/cz0yhtx.jpg 2464218 ed9f8c1e95d58e02fcf576f64ec064a64bc628852bc3b298cda15f3e47dfe251
@@ -401,18 +402,18 @@ http://i.imgur.com/cz0yhtx.jpg 2464218 ed9f8c1e95d58e02fcf576f64ec064a64bc628852
 ```
 // Lesscode-fp
 const {
-    linebreak, utf8, newline, // Strings
-    hash,                     // math
-    l2String, s2List,         // List
-    mget, mgettwo,            // Map
-    $M, $E,                   // Composition
-    Print,                    // Monad 
-    FileRead, FileWrite,      // IO Monad
-    HttpGET                   // IO Monad
+ linebreak, utf8, newline, // Strings
+ hash, // math
+ l2String, s2List, // List
+ mget, mgettwo, // Map
+ $M, $E, // Composition
+ Print, // Monad 
+ FileRead, FileWrite, // IO Monad
+ HttpGET // IO Monad
 } = require('lesscode-fp')
 
 const LogData = name => async data => `${name} ${mgettwo('headers')('content-length')} ${hash('sha256')(mget('data'))}`
-const LogErorr = name => async err => `${name} 0  ${escape(err)}`
+const LogErorr = name => async err => `${name} 0 ${escape(err)}`
 
 // processURL :: String -> String
 const ProcessURL = name => $M(LogData(name), HttpGET())(name).catch(LogErorr(name))
@@ -424,13 +425,13 @@ $M(FileWrite(utf8)(Out),l2String(newline), $E(ProcessURL), s2List(linebreak), Fi
 ```
 ### Stream ###
 
-Sometimes, input is a continious **stream** of data or needs to be handled as stream coz of size. 
+Sometimes, the input is a continuous **stream** of data, which needs to be processed forever.
 
 **[File Streaming](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/file-streaming)**
 
-Stream content of a text file, convert to uppercase then write back to another stream (output file).
+Stream content of a text file, convert to uppercase, then write back to another stream (output file).
 
-input.txt (the real file may be huge...)
+input.txt (the real file may be enormous)
 ```
 this text is all lowercase. please turn it into to uppercase.
 ```
@@ -442,10 +443,10 @@ THIS TEXT IS ALL LOWERCASE. PLEASE TURN IT INTO TO UPPERCASE.
 
 ```
 const { 
-    utf8, 
-    suppercase,
-    $3, 
-    FileStreamIn, FileStreamOut
+ utf8, 
+ suppercase,
+ $3, 
+ FileStreamIn, FileStreamOut
 } = require('lesscode-fp')
 
 const is = FileStreamIn(utf8)(process.argv[2])
@@ -453,9 +454,9 @@ const os = FileStreamOut(utf8)(process.argv[3])
 
 /**
 Streaming pipeline. 
-Classic example of doing pure function composition inside 2 im-pure (Monads),
-which also happens to be stream.
-Stream, also allows monadic composition, since it converts pure to moand, internally.
+A classic example of doing pure function composition inside two im-pure (Monads),
+which also happens to be the stream.
+Stream also allows monadic composition, since it converts pure to moand, internally.
 **/
 $3(os)(suppercase)(is)
 ```

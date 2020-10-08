@@ -33,7 +33,15 @@ In functional programming :
 - You use fewer categories ( String, List, Object) and provide functions to manipulate/transform those categories.
 
 [lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic javascript functional library, which define functions to manipulate String, List & Map / Object categories.
-You can implement these functions in any multi-paradigm language that supports functional programming.
+You can implement these functions in any multi-paradigm language that supports functional programming. 
+```
+// to install and play with javascript library
+yarn add lesscode-fp
+
+//or
+npm install lesscode-fp
+```
+
 The library follows the following functional programming principles :
 
 ### Pure functions ### 

@@ -20,10 +20,11 @@ So begin the journey of [Functional Thinking](https://github.com/van001/lesscode
 This repo is about my learning of functional programming and coming up with a language-agnostic library of functions, which
 can be applied to solve many real-world problems.
 
-In functional programming language :
+In functional programming :
+
 - You compute a new value using pure/impure functions; data is immutable.
 
-- You either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects ( writing to logs / screen, reading from file, making a database call , etc). 
+- You either write functions with no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) (pure) or functions with side-effects ( writing to logs / screen, reading from file, making a database call , etc). 
 
 - You compose solution/functions by composing other function(s).
 

@@ -188,11 +188,11 @@ print(readyCoconut) // ['strawed sliced coconut', 'strawed sliced coconut']
 ```
 
 ### Catamorphism ###
-While functor allows structure preserving morphism, catamorphism allows non-structure preserving morphism, like transforming List into a Map,
-or a List into a Tree. The other thing about this transformation is that each of those category may apply different algebra, so 1+1 can be 2 in one
-category but it can be 11 in another.
+While Functor allows structure-preserving morphism, catamorphism allows non-structure preserving morphism, like transforming List into a Map,
+or a List into a Tree. The other thing about this transformation is that each category may apply different algebra, so 1+1 can be 2 in one
+category, but it can be 11 in another.
 
-Lesscode library provide **lfold** for List catamorphism.
+Lesscode library provides **lfold** for List catamorphism.
 
 - lfold - folds left to right
 - lfoldr - folds right to left
@@ -204,13 +204,13 @@ list2String = lfold(0)(sum)
 Lesscode provide many built-in catamorphisms :
 
 ```
-- s2String                     // '12' => [1,2]
-- l2String,                    // [1,2,3] => '12'
-- l2countMap (histogram),      // [1,1,3] => { '1' : , '3' : 0}
-- l2indexMap,                  // [1,1,3] => { '1' : [0,1]. '3' : 2}
-- m2List                       // { '1' : [0,1]. '3' : 2} => [[0,1][1,1][2,3]]
-- m2valList,                   // { '1' : [0,1]. '3' : 2} => [[0,1],[2]]
-- m2keyList                    // { '1' : [0,1]. '3' : 2} => [1,3]
+- s2String // '12' => [1,2]
+- l2String, // [1,2,3] => '12'
+- l2countMap (histogram), // [1,1,3] => { '1' : , '3' : 0}
+- l2indexMap, // [1,1,3] => { '1' : [0,1]. '3' : 2}
+- m2List // { '1' : [0,1]. '3' : 2} => [[0,1][1,1][2,3]]
+- m2valList, // { '1' : [0,1]. '3' : 2} => [[0,1],[2]]
+- m2keyList // { '1' : [0,1]. '3' : 2} => [1,3]
 ```
 
 ### Monad (endofunctor) ### 

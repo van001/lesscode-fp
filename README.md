@@ -54,10 +54,9 @@ const max = a => b => Math.max(a,b)
 ```
 
 ### Immutable ###
-In functional programming you do not mutate data, instead you compute a new. Also, most FP languages support lazy evaluation,
- which means your function is executed only when it's needed. Isn't it sweet...
+In functional programming, you do not mutate data; instead, you compute a new. 
 
- Lesscode adheres to the principle, unless it's a Monad ([see below](https://github.com/van001/lesscode-fp#monad-endofunctor))
+Lesscode adheres to the principle unless it's a Monad ([see below](https://github.com/van001/lesscode-fp#monad-endofunctor))
 
 ```
 // appends String to another String and returns a new String

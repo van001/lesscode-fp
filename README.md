@@ -172,7 +172,8 @@ Lesscode library provide List as a functor & **'lmap'** to accept a function for
 Using lmap you can transform one List into another. **lmap**, essentially lifts each item from the List, apply the function, then puts back the result into the new List.
 
 ```
-// Map over List to tranform into another List, while preserving the structure (Functor - borrowed from category theory). 
+// Map over List to tranform into another List, 
+// while preserving the structure (Functor - borrowed from category theory). 
 const lmap = func => lst => lst.map(func)
 
 // convert the List of Strings to uppercase

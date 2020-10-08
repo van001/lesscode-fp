@@ -214,24 +214,24 @@ Lesscode provide many built-in catamorphisms :
 ```
 
 ### Monad (endofunctor) ### 
-Uptill now we only talked about pure functions but real-world functions have side-effects (hidden data, wrapped context), are in-predictable (fail or different result), need sequential execution (one after another) or just too complex.
+Until now, we only talked about pure functions, but real-world functions have side-effects (hidden data, wrapped context), are in-predictable (fail or different result), need sequential execution (one after another), or just too complicated.
 
-Monads, let you do all that. Monads let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence, hide complexity.
+Monads, let you do all that. Monads let you write functions that can separate concerns (decorator pattern), allow side effects (IO), introduce sequence, hide complexity.
 
-Think of monad as a function that wraps all the side-effects and make it a pure and allow composition by passing the value from one to another. In category
-theroy jargon, Monads are just a [Monoid](https://en.wikipedia.org/wiki/Monoid_(category_theory)) (Category with single element that can be joined). 
+Think of Monad as a function that wraps all the side effects and makes it a pure and allow composition by passing the value from one to another. In category
+theory jargon, Monads are just a [Monoid](https://en.wikipedia.org/wiki/Monoid_(category_theory)) (Category with a single element that can join). 
 
-***Monad is just a monoid in the category of endofunctors - Saunders Mac Lane***
+*** Monad is just a monoid in the category of endofunctors - Saunders Mac Lane***
 
-Lesscode  provide some built-in Monads using javascript async (promise). 
+Lesscode provides some built-in Monads using javascript async (promise). 
 
 **$M(...)** supports [monadic composition](https://github.com/van001/lesscode-fp#Composition) (instead of a >==> operator or kliesli arrow , as it's called in category theory). 
 
-$ indicates composition, M denotes monad or sequence.
+$ indicates composition, M denotes Monad, or sequence.
 
 ```
-// Read content of a file. 
-const FileRead = option =>  name => fs.promises.readFile(name, option);
+// Read the content of a file. 
+const FileRead = option => name => fs.promises.readFile(name, option);
 
 // mondaic composition : copy the content of one file to another (point-free)
 const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))

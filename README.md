@@ -314,7 +314,8 @@ const threeSum = nums => target =>{
     const subList = Print(lmap(sub(target))(nums))
     //  [[ 3, 3, 5 ]] => []
     const ldropSelf = lfilter(llift3( a => b => c => a != b  && a != c && b != c))
-    return $(ldropSelf, lcollapse, lfoldA([])(cat => index => val => $(lappend(cat),lmap(lappend([index])),twoSum(nums))(val)))(subList)
+    const all2Sum = lfoldA([])(cat => index => val => $(lappend(cat),lmap(lappend([index])),twoSum(nums))(val))
+    return $(Print, ldropSelf, lcollapse, all2Sum)(subList)
 } 
 ```
 

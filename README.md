@@ -190,8 +190,9 @@ print(readyCoconut) // ['strawed sliced coconut', 'strawed sliced coconut']
 ```
 
 ### Catamorphism ###
-While functor allows structure preserving morphism, catamorphism allows non-structure preserving morphism, like transformint List into a Map,
-or a List into a Tree. The other thig about this transformation is that eack of those category applies differnt algebra, so 1+1 can be 2 in other
+While functor allows structure preserving morphism, catamorphism allows non-structure preserving morphism, like transforming List into a Map,
+or a List into a Tree. The other thing about this transformation is that each of those category may apply differnt algebra, so 1+1 can be 2 in one
+
 category but it can be 11 in another.
 
 Lesscode library provide **lfold** for catamorphism.

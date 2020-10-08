@@ -200,12 +200,13 @@ Lesscode library provide **lfold** for List catamorphism.
 - lfoldr - folds right to left
 
 Lesscode provide many built-in catamorphisms like : 
- - l2String,                    // [1,2,3] => '12'
- - l2countMap (histogram),      // [1,1,3] => { '1' : , '3' : 0}
- - l2indexMap,                  // [1,1,3] => { '1' : [0,1]. '3' : 2}
- - m2List                       // { '1' : [0,1]. '3' : 2} => [[0,1][1,1][2,3]]
- - m2valList,                   // { '1' : [0,1]. '3' : 2} => [[0,1],[2]]
- - m2keyList                    // { '1' : [0,1]. '3' : 2} => [1,3]
+- s2String                     // '12' => [1,2]
+- l2String,                    // [1,2,3] => '12'
+- l2countMap (histogram),      // [1,1,3] => { '1' : , '3' : 0}
+- l2indexMap,                  // [1,1,3] => { '1' : [0,1]. '3' : 2}
+- m2List                       // { '1' : [0,1]. '3' : 2} => [[0,1][1,1][2,3]]
+- m2valList,                   // { '1' : [0,1]. '3' : 2} => [[0,1],[2]]
+- m2keyList                    // { '1' : [0,1]. '3' : 2} => [1,3]
  
 ```
 // [1,2,3,4] => 1234

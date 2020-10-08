@@ -2,35 +2,34 @@
 # Motivation
 
 Going back in time, when Alan Turing built 
-[Turing machine](https://en.wikipedia.org/wiki/Turing_machine) to perform computation, Alanzo Chruch designed 
-[Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus) to mathematically compute anything by composing lambda functions (world's smallest programming langauage). 
-Soon world got filled with programming languages in both the paradigms and many languages start borrowing each other's concept (sounds familiar?) to only become bloated and un-manageable. 
+the [Turing machine](https://en.wikipedia.org/wiki/Turing_machine) to perform computation, Alanzo Chruch designed 
+[Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus) to mathematically compute anything by composing lambda functions (world's smallest programming language). 
+The soon world flooded with programming languages in both paradigms and many languages start borrowing each other's concepts (sounds familiar?) only to become bloated and unmanageable. 
 
-Fast forward 1977...John Bakus's paper, ["Can programming be liberated from von nuemann style?"](https://github.com/van001/lesscode/blob/master/can-programming-be-liberated.pdf) put it very rightly.
+Fast forward, 1977, John Bakus's paper, ["Can programming be liberated from Von Neumann style?"](https://github.com/van001/lesscode/blob/master/can-programming-be-liberated.pdf) put it very rightly.
 
-The above article influenced me to dive deep into programming paradigm concepts, specially functional programming and really understand it from the work of those 2 greats.
-So begin the journey of [Functional Thinking](https://github.com/van001/lesscode), with few very simple goals in mind - 
+The above article influenced me to dive deep into programming paradigm concepts, mostly functional programming, and understand it from the work of those two greats.
+So begin the journey of [Functional Thinking](https://github.com/van001/lesscode), with few straightforward goals in mind :
 
-- Seek deep understanding of motivation and concepts behind the functional programming, 
-without being caught in the programming lanugages nuances / jargon, syntax or even nomenclature. 
+- Seek a deep understanding of the functional programming's motivation and concepts, without being caught in the programming languages nuances/jargon, syntax, or even nomenclature. 
 
-- Come up with a language agnostic list of real-world functions (library), which can be implemented in any multi-paradigm language that supports functional programming. 
+- Come up with a language-agnostic list of real-world functions (library), and implement it in a multi-paradigm language that supports functional programming. 
 
 # Overview
 
-This repo is about my learning of functional programming and coming up with a language agnostic library of functions, which
+This repo is about my learning of functional programming and coming up with a language-agnostic library of functions, which
 can be applied to solve many real-world problems.
 
 In functional programming language :
-- data is immutable. You compute a new value using pure / im-pure functions.
+- Data is immutable. You compute a new value using pure/impure functions.
 
-- you either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects ( writing to logs / screen, reading from file, making a database call , etc). 
+- You either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects ( writing to logs / screen, reading from file, making a database call , etc). 
 
-- you compose solution / functions by composing other function(s).
+- You compose solution/functions by composing other function(s).
 
-- you treat function as a 1st class citizen and pass / return a function to / from another function.
+- You treat the function as a 1st class citizen and pass/return a function to/from another function.
 
-- you use fewer category ( String, List, Object) and provide functions to manipulate / transform those categories.
+- You use fewer categories ( String, List, Object) and provide functions to manipulate/transform those categories.
 
 [lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic javascript functional library, which define functions to manipulate  String, List & Map / Object categories.
 You can implement these functions in any multi-paradigm language that supports functional programming.

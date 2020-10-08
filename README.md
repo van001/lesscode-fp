@@ -191,7 +191,7 @@ print(readyCoconut) // ['strawed sliced coconut', 'strawed sliced coconut']
 ### Monad (endofunctor) ### 
 Uptill now we only talked about pure functions but real-world functions have side-effects (hidden data, wrapped context), are in-predictable (fail or different result), need sequential execution (one after another) or just too complex.
 
-Monads, let you do all that. Monads let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence. 
+Monads, let you do all that. Monads let you write functions that can separate concerns (decorator pattern), allow side effect (IO), introduce sequence, hide complexity.
 
 Think of monad as a function that wraps all the side-effects and make it a pure and allow composition by passing the value from one to another. In category
 theroy jargon, Monads are just a [Monoid](https://en.wikipedia.org/wiki/Monoid_(category_theory)) (Category with single element that can be joined). 

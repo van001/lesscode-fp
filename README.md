@@ -1,4 +1,4 @@
-![fp.png](fp.png)
+![assets/fp.png](assets/fp.png)
 # Motivation
 
 Going back in time, when Alan Turing built 

@@ -139,7 +139,8 @@ const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 ***'$' has a tiny footprint and can be easily spotted to show the composition.***
 
 ### Fewer Categories ### 
-Unlike Object Oriented programming, where every class is a new category, functional programming has fewer categories, domain-specific abstractions & algebra, to solve them generically.
+Unlike Object Oriented programming, where every class is a new category, functional programming has fewer categories. 
+Each category then has its domain-specific abstractions/functions & algebra.
 
 Lesscode library provides functions to manipulate/transform the following categories: String, List, Map / Object (non-mutable). 
 These categories are quite popular in many programming languages.

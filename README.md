@@ -31,16 +31,16 @@ In functional programming language :
 
 - You use fewer categories ( String, List, Object) and provide functions to manipulate/transform those categories.
 
-[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic javascript functional library, which define functions to manipulate  String, List & Map / Object categories.
+[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic javascript functional library, which define functions to manipulate String, List & Map / Object categories.
 You can implement these functions in any multi-paradigm language that supports functional programming.
-It's built using the following functional programming principles :
+The library follows the following functional programming principles :
 
 ### Pure functions ### 
-Pure functions have no side-effects, are time independent & maintain [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), which means, for a given input, you can replace the function with it's output, anytime. 
-Think of them as a mathematical function, which for a given input will awlays return the same output.
-This also means, a pure function can easily cache ([memoize](https://en.wikipedia.org/wiki/Memoization)) the value it returns after the execution. This is huge, now that memory / storage is cheap and computation is expensive.
+Pure functions have no side-effects, are time-independent & maintain [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), which means, for a given input, you can replace the function with its output, anytime. 
+Think of them as a mathematical function, which will always return the same output for a given input.
+It also means a pure function can easily cache ([memoize](https://en.wikipedia.org/wiki/Memoization)) the value it returns after the execution. 
 
-All the functions in lesscode library are pure, unless they are not. Pure functions are named starting with lowercase; uppercase for impure.
+Lesscode library functions are pure, unless they are not. Pure functions are named starting with lowercase; uppercase for impure.
 
 ```
 // appends String to another String and returns a new String

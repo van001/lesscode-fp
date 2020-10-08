@@ -199,6 +199,10 @@ Lesscode library provide **lfold** for List catamorphism.
 - lfold - folds left to right
 - lfoldr - folds right to left
 
+```
+// [1,2,3,4] => 1234
+list2String = lfold(0)(sum)
+```
 Lesscode provide many built-in catamorphisms :
 
 ```
@@ -209,11 +213,6 @@ Lesscode provide many built-in catamorphisms :
 - m2List                       // { '1' : [0,1]. '3' : 2} => [[0,1][1,1][2,3]]
 - m2valList,                   // { '1' : [0,1]. '3' : 2} => [[0,1],[2]]
 - m2keyList                    // { '1' : [0,1]. '3' : 2} => [1,3]
-```
- 
-```
-// [1,2,3,4] => 1234
-list2String = lfold(0)(sum)
 ```
 
 ### Monad (endofunctor) ### 

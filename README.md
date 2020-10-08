@@ -21,7 +21,7 @@ This repo is about my learning of functional programming and coming up with a la
 can be applied to solve many real-world problems.
 
 In functional programming language :
-- Data is immutable. You compute a new value using pure/impure functions.
+- You compute a new value using pure/impure functions; data is immutable.
 
 - You either write pure functions (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) or functions with side-effects ( writing to logs / screen, reading from file, making a database call , etc). 
 

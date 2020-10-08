@@ -238,12 +238,12 @@ const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 ```
 
 ### Applicative ###
-While monadic composition execute functions (with side-effects) sequentially, applicatives execute them concurrently. 
+While monadic composition executes functions (with side-effects) sequentially, applicatives run them concurrently. 
 
 Lesscode implements applicative composition using **$E(...)** and accept Primitive / Object / List as a parameter. 
-If the paramter is a List, then all the functions are concurrently applied to all the items in the List to produce another List .
+If the parameter is a List, all the functions are concurrently applied to all the items to produce another List.
 
-$ indicates compostion and E denotes concurrency.
+$ indicates composition, and E denotes concurrency.
 
 ```
 // apply max, min concurrently to the list os 2 numbers

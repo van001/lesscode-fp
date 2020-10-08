@@ -197,8 +197,8 @@ category but it can be 11 in another.
 Lesscode library provide **lfold** for catamorphism.
 
 ```
-// list2List([1,2,3,4])  => 1234
-list2List = lfold(0)(sum)
+// [1,2,3,4] => 1234
+list2String = lfold(0)(sum)
 ```
 
 ### Monad (endofunctor) ### 

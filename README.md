@@ -194,7 +194,10 @@ While functor allows structure preserving morphism, catamorphism allows non-stru
 or a List into a Tree. The other thing about this transformation is that each of those category may apply different algebra, so 1+1 can be 2 in one
 category but it can be 11 in another.
 
-Lesscode library provide **lfold** for catamorphism.
+Lesscode library provide **lfold** for List catamorphism.
+
+- lfold - folds left to right
+- lfoldr - folds right to left
 
 ```
 // [1,2,3,4] => 1234

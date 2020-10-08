@@ -40,7 +40,7 @@ Pure functions have no side-effects, are time-independent & maintain [referentia
 Think of them as a mathematical function, which will always return the same output for a given input.
 It also means a pure function can easily cache ([memoize](https://en.wikipedia.org/wiki/Memoization)) the value it returns after the execution. 
 
-Lesscode library functions are pure, unless they are not. Pure functions are named starting with lowercase; uppercase for impure.
+Lesscode library functions are pure unless they are not. Pure functions are named starting with lowercase; uppercase for impure.
 
 ```
 // appends String to another String and returns a new String
@@ -92,7 +92,7 @@ Every function in lesscode library is curried and [point-free](https://en.wikipe
 const s2List = ptrn => async str => str.split(ptrn)
 
 // suppose your domain breaks Sting into List based on space.
-// partially apply s2List, with space and, create a new function.
+// partially apply s2List, with space, and create a new function.
 const space2List = s2List(space)
 
 // will break String into List on every whitespace.
@@ -120,7 +120,7 @@ In functional programming there is no assignment, you just compose functions to 
 has infix composition operator like '.' (for pure function) and '>>= / >>' (for [monadic composition](https://github.com/van001/lesscode-fp#monad-endofunctor)). Other multi-paradigm languages like javascript, java etc do not have any such 
 operators nor they support infix styling.
 
-Lesscode library provide :
+Lesscode library provides :
 - **$(...)** for pure function composition.
 - **$M(...)** for [monadic](https://github.com/van001/lesscode-fp#monad-endofunctor) composition. 
 - **$E(...)** for [applicative](https://github.com/van001/lesscode-fp#Applicative) compostion.
@@ -163,7 +163,7 @@ Many of the real-world problems are about :
 - transforming one category of things to another,
 - achieving those transformations sequentially or concurrently.
 
-In category theory, Functor is a structure-preserving transformation from one category to another. Since Functor always produces another functor, the composition is trivial.
+In category theory, the Functor is a structure-preserving transformation from one category to another. Since Functor always produces another functor, the composition is trivial.
 
 E.g., transforming List of lowercase text to List of uppercase, transforming List of Strings to List of Hash of Strings.
 
@@ -201,7 +201,7 @@ Lesscode library provides **lfold** for List catamorphism.
 // [1,2,3,4] => 1234
 list2String = lfold(0)(sum)
 ```
-Lesscode provide many built-in catamorphisms :
+Lesscode provides many built-in catamorphisms :
 
 ```
 - s2String // '12' => [1,2]
@@ -246,7 +246,7 @@ If the parameter is a List, all the functions are concurrently applied to all th
 $ indicates composition, and E denotes concurrency.
 
 ```
-// apply max, min concurrently to the list os 2 numbers
+// apply max, min concurrently to the list of two numbers
 $E(sum(3), sum(2))([1,2,4]).then(Print) // [ 3, 4, 6, 4, 5, 7 ]
 
 // make 2 Http call concurrently and return the result as a List
@@ -288,7 +288,7 @@ nums = [3,3], target = 6 => [0,1]
 Solution
 ```
 /**
- * Logic is very self explanatory :
+ * Logic is very self-explanatory :
  * 1. Transform List to another List by subracting it from the target : lmap(sub)
  * 2. Join the 2 List to obtain matching indices : ljoinIndex
  * 3. Remove dupes - [[1,2], [2,1]] => [[1,2]] : lcollapse

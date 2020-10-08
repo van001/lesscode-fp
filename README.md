@@ -201,6 +201,7 @@ theroy jargon, Monads are just a [Monoid](https://en.wikipedia.org/wiki/Monoid_(
 Lesscode  provide some built-in Monads using javascript async (promise). 
 
 **$M(...)** supports [monadic composition](https://github.com/van001/lesscode-fp#Composition) (instead of a >==> operator or kliesli arrow , as it's called in category theory). 
+
 $ indicates composition, M denotes monad or sequence.
 
 ```

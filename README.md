@@ -285,7 +285,7 @@ const {
 const target = process.argv[3]
 const nums = s2List(comma)(process.argv[2].slice(1,-1))
 
-// [3,3] / 6 =>  [1,1]
+// [3,3] / 6 =>  [[1,1]]
 const twoSum = nums => target => {
 
     // Remove self : [ [ 0, 0 ], [ 1, 2 ], [ 2, 1 ] ] => [ [ 1, 2 ], [ 2, 1 ] ]

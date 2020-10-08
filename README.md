@@ -189,6 +189,18 @@ const readyCoconut = lmap(coconutMachine)['full coconut', 'full coconut']
 print(readyCoconut) // ['strawed sliced coconut', 'strawed sliced coconut']
 ```
 
+### Catamorphism ###
+While functor allows structure preserving morphism, catamorphism allows non-structure preserving morphism, like transformint List into a Map,
+or a List into a Tree. The other thig about this transformation is that eack of those category applies differnt algebra, so 1+1 can be 2 in other
+category but it can be 11 in another.
+
+Lesscode library provide **lfold** for catamorphism.
+
+```
+// list2List([1,2,3,4])  => 1234
+list2List = lfold(0)(sum)
+```
+
 ### Monad (endofunctor) ### 
 Uptill now we only talked about pure functions but real-world functions have side-effects (hidden data, wrapped context), are in-predictable (fail or different result), need sequential execution (one after another) or just too complex.
 

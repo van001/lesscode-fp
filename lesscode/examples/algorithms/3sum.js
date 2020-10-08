@@ -6,10 +6,10 @@
 
 const {
     $, 
-    sub, 
+    sub,
     eqNot,
     comma, s2List, 
-    lcollapse, llift2, llift3, lmap, lfilter, ljoinIndex, lfoldA, lappend,
+    lcollapse, llift2, llift3, lmap, lfilter, ljoinIndex, lfoldA, lappend, 
     Print,
 } = require('lesscode-fp')
 

@@ -304,7 +304,7 @@ Many of the real-world problems involve :
 - feeding bulk / continious stream of data.
 
 ### Sequential
-Doing bunch of things one after another, like copying content of one file to another.
+Doing bunch of things one after another, like reading content of one file, converting it to uppercase and writing back to another file.
 
 input.txt 
 ```
@@ -318,13 +318,14 @@ writing less-code is cool...
 
 ```
 const {
+    suppercase,
     $M,                       // Composition
     FileRead, FileWrite,      // IO Monad
 } = require('lesscode-fp')
 
 const In = process.argv[2]
 const Out = process.argv[3]
-$M(FileWrite(utf8)(Out), FileRead(utf8))(In)
+$M(FileWrite(utf8)(Out), suppercase, FileRead(utf8))(In)
 ```
 
 ### Concurrent 

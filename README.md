@@ -67,7 +67,7 @@ const sappend = str1 => str2 => str1 + str2
 ### Single input / output ### 
 The origin of functional programming, ***[lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus)***, only allowed single input/ output. While it may not seem practical, currying ([see below](https://github.com/van001/lesscode-fp#Currying)) allows you to do so. Functional programming treats functions as a 1st class citizen, so you can pass and return a function to/from another function.
 
-Lesscode functions accept a single parameter; multi-parameter functions are curried.
+Lesscode functions accept a single parameter (whereever possible); multi-parameter functions are curried.
 
 ```
 // reverses a List, point-free (see [Data-Last](https://github.com/van001/lesscode-fp#Data-Last)).

@@ -168,7 +168,7 @@ In category theory, the Functor is a structure-preserving transformation from on
 
 E.g., transforming List of lowercase text to List of uppercase, transforming List of Strings to List of Hash of Strings.
 
-Lesscode library provides List as a functor & **'lmap'** to accept a function for transformation. 
+Lesscode library implements  **'lmap'** for List functor.  
 Using lmap, you can transform one List into another. **lmap** essentially lifts each item from the List, apply the function, then puts back the result into the new List.
 
 ```

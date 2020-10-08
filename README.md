@@ -157,18 +157,18 @@ const s2List = ptrn => str => str.split(ptrn)
 ```
 
 ### Functor ###
-Since functional programming is already about abstraction ( what to do, not, how to do), the proliferation of  [Category Theory](https://en.wikipedia.org/wiki/Category_theory) took it to the next level.
+Since functional programming is already about abstraction ( what to do, not, how to do), the proliferation of [Category Theory](https://en.wikipedia.org/wiki/Category_theory) took it to the next level.
 
 Many of the real-world problems are about :
 - transforming one category of things to another,
-- achieiving those transformation sequentially or concurrently.
+- achieving those transformations sequentially or concurrently.
 
-In category theory, Functor is a structure preserving transformation from one category to another. Since functor always produces another functor, composition is trivial.
+In category theory, Functor is a structure-preserving transformation from one category to another. Since Functor always produces another functor, the composition is trivial.
 
-For e.g : Transforming List of lowercase text to List of uppercase. Transforming List of Strings to List of Hash of Strings.
+E.g., transforming List of lowercase text to List of uppercase, transforming List of Strings to List of Hash of Strings.
 
-Lesscode library provide List as a functor & **'lmap'** to accept a function for transformation. 
-Using lmap you can transform one List into another. **lmap**, essentially lifts each item from the List, apply the function, then puts back the result into the new List.
+Lesscode library provides List as a functor & **'lmap'** to accept a function for transformation. 
+Using lmap, you can transform one List into another. **lmap** essentially lifts each item from the List, apply the function, then puts back the result into the new List.
 
 ```
 // Map over List to tranform into another List, 
@@ -182,7 +182,7 @@ print(strUpper) // ['NEELESH' , 'VAIKHARY']
 
 // Applying the cocununt machine logic to slice & straw, list of coconuts
 const readyCoconut = lmap(coconutMachine)['full coconut', 'full coconut']
-// or                lmap($(DropStraw ,SliceFromTop))['full coconut', 'full coconut'] 
+// or lmap($(DropStraw ,SliceFromTop))['full coconut', 'full coconut'] 
 
 print(readyCoconut) // ['strawed sliced coconut', 'strawed sliced coconut']
 ```

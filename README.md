@@ -58,7 +58,7 @@ const max = a => b => Math.max(a,b)
 In functional programming you do not mutate data, instead you compute a new. Also, most FP languages support lazy evaluation,
  which means your function is executed only when it's needed. Isn't it sweet...
 
- Lesscode adheres to the principle, unless it's a Monad ([see below](https://github.com/van001/lesscode-fp#Monad))
+ Lesscode adheres to the principle, unless it's a Monad ([see below](https://github.com/van001/lesscode-fp#monad-endofunctor))
 
 ```
 // appends String to another String and returns a new String
@@ -120,12 +120,12 @@ const l2String = sep => lst => lst.join(sep)
 Crux of any programming paradigm is composition. Composition, allows you to re-use the code (less code ;-))
 
 In functional programming there is no assignment, you just compose functions to produce more specific functions/ solutions. Haskell
-has infix composition operator like '.' (for pure function) and '>>= / >>' (for [monadic composition](https://github.com/van001/lesscode-fp#Monad)). Other multi-paradigm languages like javascript, java etc do not have any such 
+has infix composition operator like '.' (for pure function) and '>>= / >>' (for [monadic composition](https://github.com/van001/lesscode-fp#monad-endofunctor)). Other multi-paradigm languages like javascript, java etc do not have any such 
 operators nor they support infix styling.
 
 Lesscode library provide :
 - **$(...)** for pure function composition.
-- **$M(...)** for [monadic](https://github.com/van001/lesscode-fp#Monad) composition. 
+- **$M(...)** for [monadic](https://github.com/van001/lesscode-fp#monad-endofunctor) composition. 
 - **$E(...)** for [applicative](https://github.com/van001/lesscode-fp#Applicative) compostion.
 - **$3(...)** for [stream](https://github.com/van001/lesscode-fp#Stream) compition.
 
@@ -241,11 +241,11 @@ Lesscode implements stream as **$3**. $ means it's still a composition but 3 den
 
 # Examples
 
-## Coding questions
+## Algorithms
 Even though FP langauge libraries provide implementation of many of the high level abstractions like sort, 
 linked list etc, they do not provide all the abstractions.
 
-Coding questions span many domains and hence it becomes tricky to provide a single generic library. 
+Algorithm questions span many domains and hence it becomes tricky to provide a single generic library. 
 
 Lesscode libarary provide generefic functions to solve many such coding problems. 
 
@@ -285,17 +285,38 @@ const {
 const target = process.argv[3]
 const nums = s2List(comma)(process.argv[2].slice(1,-1))
 
-// Remove self : [ [ 0, 0 ], [ 1, 2 ], [ 2, 1 ] ] => [ [ 1, 2 ], [ 2, 1 ] ]
-const ldropSelf = lfilter(llift2(eqNot))
-
-// Transform List to sublist with subtraction
-const subList = lmap(sub(target))(nums)
-
 // [3,3] / 6 =>  [1,1]
-$M(lflat, ldropSelf, lcollapse, ljoinIndex(subList))(nums) 
+const twoSum = nums => target => {
+
+    // Remove self : [ [ 0, 0 ], [ 1, 2 ], [ 2, 1 ] ] => [ [ 1, 2 ], [ 2, 1 ] ]
+    const ldropSelf = lfilter(llift2(eqNot))
+
+    // Transform List to sublist with subtraction
+    const subList = lmap(sub(target))(nums)
+
+    return $(ldropSelf, lcollapse, ljoinIndex(subList))(nums) 
+}
 ```
 The above solution will work for more than 1 too. The time complexity is still the same O(N), but the solution is neat and fully composable.
 This is the beauty of functional programming. Once you build a domain specific library, it is all about simple composing.
+
+[3Sum](https://github.com/van001/lesscode-fp/tree/master/lesscode/examples/algorithms/3sum.js)
+
+Instead of 2 numbers, if we ask for the sum of 3 numbers be equal to the target, the above code can be easily extended to find the 3sum.
+
+```
+/**
+ * Logic is very self explanatory :
+ * 1. Making every item in the List as target find 2sum that satify the criteria for 3sum
+**/
+
+const threeSum = nums => target =>{
+    const subList = Print(lmap(sub(target))(nums))
+    //  [[ 3, 3, 5 ]] => []
+    const ldropSelf = lfilter(llift3( a => b => c => a != b  && a != c && b != c))
+    return $(ldropSelf, lcollapse, lfoldA([])(cat => index => val => $(lappend(cat),lmap(lappend([index])),twoSum(nums))(val)))(subList)
+} 
+```
 
 ## Real-world 
 

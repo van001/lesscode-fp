@@ -221,7 +221,7 @@ Lesscode library provides **lfold** for List catamorphism.
 
 ```
 // ['1','2','3','4'] => 1234
-list2String = lfold(0)(sum)
+list2String = lfold([])(sum)
 ```
 Lesscode provides many built-in catamorphisms :
 

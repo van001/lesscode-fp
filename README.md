@@ -65,7 +65,6 @@ const max = a => b => Math.max(a,b)
 
 ### Immutable ###
 In functional programming, you do not mutate data; instead, you compute a new. 
-
 Now that memory/storage is cheap, this is one of the major advantages of functional programming.
 
 Lesscode adheres to the principle unless it's a Monad ([see below](https://github.com/van001/lesscode-fp#monad-endofunctor))

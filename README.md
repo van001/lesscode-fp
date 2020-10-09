@@ -150,7 +150,7 @@ Lesscode library provides :
 
 ```
 /** 
-coconut machine will take List of coconuts, then slice the top & put a straw.
+Coconut machine will take List of coconuts, then slice the top & put a straw.
 coconutMachine = DropStraw . SliceFromTop
 **/
 const coconutMachine = $(DropStraw ,SliceFromTop)
@@ -204,10 +204,9 @@ const strUpper = lmap(supper)(str)
 print(strUpper) // ['NEELESH' , 'VAIKHARY']
 
 // Applying the cocununt machine logic to slice & straw, list of coconuts
-const readyCoconut = lmap(coconutMachine)['full coconut', 'full coconut']
-// or lmap($(DropStraw ,SliceFromTop))['full coconut', 'full coconut'] 
-
-print(readyCoconut) // ['strawed sliced coconut', 'strawed sliced coconut']
+const readyCoconut = lmap($(DropStraw ,SliceFromTop))
+// ['strawed sliced coconut', 'strawed sliced coconut']
+print(readyCoconut['full coconut', 'full coconut']) 
 ```
 
 ### Catamorphism ###

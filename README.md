@@ -149,8 +149,10 @@ Lesscode library provides :
 - **$3(...)** for [stream](https://github.com/van001/lesscode-fp#Stream) composition.
 
 ```
-// coconut machine will take List of coconuts, then slice the top & put a straw.
-// same as : coconutMachine = DropStraw . SliceFromTop 
+/** 
+coconut machine will take List of coconuts, then slice the top & put a straw.
+coconutMachine = DropStraw . SliceFromTop
+**/
 const coconutMachine = $(DropStraw ,SliceFromTop)
 
 // to copy the content of one file to another (point-free)

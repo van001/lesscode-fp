@@ -128,16 +128,19 @@ Data last principle makes function [composition](https://github.com/van001/lessc
 All the functions in lesscode library accept data as the last parameter.
 
 ```
-// takes List as the last parameter (point-free)
+// takes List as the last parameter 
 const l2String = sep => lst => lst.join(sep)
+
+// coverts List of Strings to uppercase; point free
+twoUpper = lmap(suppercase)
 ```
 
 ### Composition ### 
 The crux of any programming paradigm is composition. Composition allows you to re-use the code (less code ;-))
 
-In functional programming there is no assignment, you just compose functions to produce more specific functions/ solutions. Haskell
-has infix composition operator like '.' (for pure function) and '>>= / >>' (for [monadic composition](https://github.com/van001/lesscode-fp#monad-endofunctor)). Other multi-paradigm languages like javascript, java etc do not have any such 
-operators nor they support infix styling.
+In functional programming there is no assignment, you just compose functions to produce more specific functions/ solutions. 
+
+Functional programming language like Haskell has infix composition operator like '.' (for pure function) and '>>= / >>' (for [monadic composition](https://github.com/van001/lesscode-fp#monad-endofunctor)). Other multi-paradigm languages like javascript, java, etc do not have any such operators nor they support infix styling.
 
 Lesscode library provides :
 - **$(...)** for pure function composition.

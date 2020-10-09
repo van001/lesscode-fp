@@ -125,6 +125,8 @@ In FP, data and functions are separate; hence you build a library of functions t
 
 Data last principle makes function [composition](https://github.com/van001/lesscode-fp#Composition), easier (builder pattern). Also, it allows for a point-free style of writing functions.
 
+All the functions in lesscode library accept data as the last parameter.
+
 ```
 // takes List as the last parameter (point-free)
 const l2String = sep => lst => lst.join(sep)

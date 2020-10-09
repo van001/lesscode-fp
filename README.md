@@ -160,6 +160,8 @@ const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 ```
 ***'$' has a tiny footprint and can be easily spotted to show the composition.***
 
+# Categories 
+
 ### Fewer Categories ### 
 Unlike Object Oriented programming, where every class is a new category, functional programming has fewer categories. 
 Each category then has its domain-specific abstractions, functions & algebra.

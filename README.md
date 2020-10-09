@@ -43,7 +43,7 @@ npm install lesscode-fp
 ```
 It is still an experimental library, so use at your discretion.
 
-The library follows the following functional programming principles :
+# Fundementals
 
 ### Pure functions ### 
 Pure functions have no side-effects, are time-independent & maintain [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), which means, for a given input, you can replace the function with its output, anytime. 

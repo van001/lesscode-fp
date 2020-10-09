@@ -145,8 +145,8 @@ Functional programming language like Haskell has infix composition operator like
 Lesscode library provides :
 - **$(...)** for pure function composition.
 - **$M(...)** for [monadic](https://github.com/van001/lesscode-fp#monad-endofunctor) composition. 
-- **$E(...)** for [applicative](https://github.com/van001/lesscode-fp#Applicative) compostion.
-- **$3(...)** for [stream](https://github.com/van001/lesscode-fp#Stream) compition.
+- **$E(...)** for [applicative](https://github.com/van001/lesscode-fp#Applicative) composition.
+- **$3(...)** for [stream](https://github.com/van001/lesscode-fp#Stream) composition.
 
 So the only time you write a multi-parameter function is when you are composing it with $.
 

@@ -180,6 +180,7 @@ const sslice = start => end => str => str.slice(start,end)
 // converts String to List, by breaking it with supplied pattern
 const s2List = ptrn => str => str.split(ptrn)
 ```
+# Morphism
 
 ### Functor ###
 Since functional programming is already about abstraction ( what to do, not, how to do), the proliferation of [Category Theory](https://en.wikipedia.org/wiki/Category_theory) took it to the next level.

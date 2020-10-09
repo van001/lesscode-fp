@@ -13,6 +13,7 @@ const {
     Print,
 } = require('lesscode-fp')
 
+const lift3 = func => a => b=> c => func(a)(b)(c)
 const target = process.argv[3]
 const nums = s2List(comma)(process.argv[2].slice(1,-1))
 
@@ -33,7 +34,7 @@ const threeSum = nums => target =>{
     //  [[ 3, 3, 5 ]] => []
     const ldropSelf = lfilter(llift3( a => b => c => a != b  && a != c && b != c))
     const all2Sum = lfoldA()(cat => index => val => $(lappend(cat),lmap(lappend([index])),twoSum(nums))(val))
-    return $(Print, lmap(lsublist(nums)),ldropSelf, lcollapse, all2Sum)(subList)
+    return $(Print, ldropSelf, lcollapse, all2Sum)(subList)
 } 
 
 threeSum(nums)(target)

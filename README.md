@@ -148,8 +148,6 @@ Lesscode library provides :
 - **$E(...)** for [applicative](https://github.com/van001/lesscode-fp#Applicative) composition.
 - **$3(...)** for [stream](https://github.com/van001/lesscode-fp#Stream) composition.
 
-So the only time you write a multi-parameter function is when you are composing it with $.
-
 ```
 // coconut machine will take List of coconuts, then slice the top & put a straw.
 // same as : coconutMachine = DropStraw . SliceFromTop 

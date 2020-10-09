@@ -233,6 +233,7 @@ Lesscode provides many built-in catamorphisms :
 - m2valList, // { '1' : [0,1]. '3' : 2} => [[0,1],[2]]
 - m2keyList // { '1' : [0,1]. '3' : 2} => [1,3]
 ```
+# Side-effects 
 
 ### Monad (endofunctor) ### 
 Until now, we only talked about pure functions, but real-world functions have side-effects (hidden data, wrapped context), are in-predictable (fail or different result), need sequential execution (one after another), or just too complicated.

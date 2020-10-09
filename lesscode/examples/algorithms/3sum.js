@@ -9,7 +9,7 @@ const {
     sub,
     eqNot,
     comma, s2List, 
-    lcollapse, llift2, llift3, lmap, lfilter, ljoinIndex, lfoldA, lappend,
+    lcollapse, llift2, llift3, lmap, lfilter, ljoinIndex, lfoldA, lappend, lsublist,
     Print,
 } = require('lesscode-fp')
 
@@ -33,7 +33,7 @@ const threeSum = nums => target =>{
     //  [[ 3, 3, 5 ]] => []
     const ldropSelf = lfilter(llift3( a => b => c => a != b  && a != c && b != c))
     const all2Sum = lfoldA()(cat => index => val => $(lappend(cat),lmap(lappend([index])),twoSum(nums))(val))
-    return $(Print, ldropSelf, lcollapse, all2Sum)(subList)
+    return $(Print, lmap(lsublist(nums)),ldropSelf, lcollapse, all2Sum)(subList)
 } 
 
 threeSum(nums)(target)

@@ -66,6 +66,8 @@ const max = a => b => Math.max(a,b)
 ### Immutable ###
 In functional programming, you do not mutate data; instead, you compute a new. 
 
+Now that memory/storage is cheap, this is one of the major advantages of functional programming.
+
 Lesscode adheres to the principle unless it's a Monad ([see below](https://github.com/van001/lesscode-fp#monad-endofunctor))
 
 ```
@@ -75,6 +77,8 @@ const sappend = str1 => str2 => str1 + str2
 
 ### Single input / output ### 
 The origin of functional programming, ***[lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus)***, only allowed single input/ output. While it may not seem practical, currying ([see below](https://github.com/van001/lesscode-fp#Currying)) allows you to do so. Functional programming treats functions as a 1st class citizen, so you can pass and return a function to/from another function.
+
+Also, single input/output makes function composition (see below) trivial.
 
 Lesscode functions accept a single parameter (whereever possible); multi-parameter functions are curried.
 
@@ -99,7 +103,7 @@ Every function in lesscode library is curried and [point-free](https://en.wikipe
 ```
 // it splits a String into List based on pattern matching.
 // s2List is a curried function. 
-const s2List = ptrn => async str => str.split(ptrn)
+const s2List = ptrn => str => str.split(ptrn)
 
 // suppose your domain breaks Sting into List based on space.
 // partially apply s2List, with space, and create a new function.

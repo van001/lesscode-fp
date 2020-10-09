@@ -95,8 +95,12 @@ const sappend = str1 => str2 => str1 + str2
 
 ### Currying ### 
 [Currying](https://en.wikipedia.org/wiki/Currying) (f(a, b) => f(a)(b)), allows function with multiple parameters to be written as sequence of functions that each take a single parameter. 
+
 Currying allows you to partially apply other options (initialization) and dependencies (injection) on multi-parameter functions.
+
 Currying also allows you to create domain-specific language (DSL) by partially applying many generic functions.
+
+So, if you are writing a multi-parameter function, please curry it.
 
 Every function in lesscode library is curried and [point-free](https://en.wikipedia.org/wiki/Tacit_programming) (where possible).
 

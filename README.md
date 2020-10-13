@@ -98,6 +98,8 @@ const sappend = str1 => str2 => str1 + str2
 ```
 
 ### Currying ### 
+![currying](assets/currying.png)
+
 [Currying](https://en.wikipedia.org/wiki/Currying) (f(a, b) => f(a)(b)), allows function with multiple parameters to be written as sequence of functions that each take a single parameter. 
 
 Currying allows you to partially apply other options (initialization) and dependencies (injection) on multi-parameter functions.

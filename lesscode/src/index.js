@@ -71,7 +71,7 @@ const leqEmpty = lst => lst.length == 0
 // Positional
 const lhead = lst => lst[0] // return the head element of the List
 const ltail = lst => lst[lst.length-1]
-const lat = index => lst[index]
+const lat = index => lst => lst[index]
 const llen = lst => lst.length
 const llift = func => lst => eqType('object')(func)? [lst[0]] : func(lst[0])
 const llift2 = func => lst => eqType('object')(func)? [lst[0], lst[1]] : func(lst[0])(lst[1])
@@ -156,10 +156,10 @@ const m2List = map => Object.keys(map).reduce( (cat, key ) => lappend(lapply(map
 /** Monads */
 
 // Generics
-const Print =  val => { console.log(val); return val } //print
-const Trace = label =>  val => { Print(label); Print(val); Print(' '); return val } // trace with label
-const Hint = label =>  val => { Print(label); return val }
-const Assert = input => output => msg => console.assert((typeof output === 'object' && output != null) ? input.join('') === output.join('') : input === output, msg)
+const Print =  async val => { console.log(val); return val } //print
+const Trace = abel =>  async val => { Print(label); Print(val); Print(' '); return val } // trace with label
+const Hint = label =>  async val => { Print(label); return val }
+const Assert = input => output => async msg => console.assert((typeof output === 'object' && output != null) ? input.join('') === output.join('') : input === output, msg)
 const Memoize = f => { const cache = {}; return (...args) => { const argStr = args.join(''); return cache[argStr] = cache[argStr] || f(...args); } }
 const M = f => async a => f(a) // convert single parameter pure function into monad
 const M2 = f => a => async b =>  f(a)(b) // convert 2 parameter pure function into monad
@@ -174,7 +174,7 @@ const Lift = lst => async func => {const $lift = func => lst => count => (count 
  - 2nd parameter is name. (if any). 
  - 3rd paramter is function, if any.
 **/
-
+// Arg
 // File
 const fs = require('fs')
 const FileRead = option =>  name => fs.promises.readFile(name, option);

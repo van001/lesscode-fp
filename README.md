@@ -357,11 +357,10 @@ Instead of 2 numbers, if we ask for the sum of 3 numbers to be equal to the targ
 **/
 
 const threeSum = nums => target =>{
- const subList = Print(lmap(sub(target))(nums))
- // [[ 3, 3, 5 ]] => []
- const ldropSelf = lfilter(llift3( a => b => c => a != b && a != c && b != c))
- const all2Sum = lfoldA([])(cat => index => val => $(lappend(cat),lmap(lappend([index])),twoSum(nums))(val))
- return $(Print, ldropSelf, lcollapse, all2Sum)(subList)
+    //  [[ 3, 3, 5 ]] => []
+    const ldropSelf = lfilter(llift3( a => b => c => a != b  && a != c && b != c))
+    const all2Sum = lfoldA()(cat => index => val => $(lappend(cat),lmap(lappend([index])),twoSum(nums))(val))
+    return $(Print, ldropSelf, lcollapse, all2Sum,lmap(sub(target)))(nums)
 } 
 ```
 

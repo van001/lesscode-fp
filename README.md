@@ -47,6 +47,7 @@ It is still an experimental library, so use at your discretion.
 
 ### Pure functions ### 
 ![function.jpg](assets/function.jpg)
+
 Pure functions have no side-effects, are time-independent & maintain [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency), which means, for a given input, you can replace the function with its output, anytime. 
 Think of them as a mathematical function, which will always return the same output for a given input.
 It also means a pure function can easily cache ([memoize](https://en.wikipedia.org/wiki/Memoization)) the value it returns after the execution. 

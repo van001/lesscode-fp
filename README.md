@@ -66,7 +66,6 @@ const max = a => b => Math.max(a,b)
 ```
 
 ### Immutable ###
-![inputoutput.png](assets/inputoutput.png)
 
 In functional programming, you do not mutate data; instead, you compute a new. 
 Now that memory/storage is cheap, this is one of the major advantages of functional programming.
@@ -79,6 +78,8 @@ const sappend = str1 => str2 => str1 + str2
 ```
 
 ### Single input / output ### 
+![inputoutput.png](assets/inputoutput.png)
+
 The origin of functional programming, ***[lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus)***, only allowed single input/ output. While it may not seem practical, currying ([see below](https://github.com/van001/lesscode-fp#Currying)) allows you to do so. Functional programming treats functions as a 1st class citizen, so you can pass and return a function to/from another function.
 
 Also, single input/output makes function composition (see below) trivial.

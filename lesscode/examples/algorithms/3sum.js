@@ -14,9 +14,8 @@ const {
     $E,
 } = require('lesscode-fp')
 
-const lift3 = func => a => b=> c => func(a)(b)(c)
-const target = process.argv[3]
-const nums = s2List(comma)(process.argv[2].slice(1,-1))
+const Argv =  index =>  async process => { if(process.argv[index])  return eval(process.argv[index]); else  throw `400 : missing parameter ${index-1}` }
+
 
 // [3,3] / 6 =>  [1,1]
 const twoSum = nums => target => {
@@ -31,12 +30,14 @@ const twoSum = nums => target => {
 }
 
 const threeSum = nums => target =>{
-    const subList = Print(lmap(sub(target))(nums))
+
     //  [[ 3, 3, 5 ]] => []
     const ldropSelf = lfilter(llift3( a => b => c => a != b  && a != c && b != c))
     const all2Sum = lfoldA()(cat => index => val => $(lappend(cat),lmap(lappend([index])),twoSum(nums))(val))
-    return $(Print, ldropSelf, lcollapse, all2Sum,lmap(sub(target)))(nums)
+    return $(ldropSelf, lcollapse, all2Sum,lmap(sub(target)))(nums)
 } 
 
-$M(Print,threeSum(nums))(target).catch(Print)
+// Use applicatve to read arguments form command-line and pass it to
+// threeSum by lifting the parameters form List
+$M(Print,llift2(threeSum),$E(Argv(3),Argv(2)))(process).catch(Print)
 

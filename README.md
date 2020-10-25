@@ -43,6 +43,15 @@ npm install lesscode-fp
 ```
 It is still an experimental library, so use at your discretion.
 
+# Functional Programming
+The learnings are divided into the following categories :
+- Fundemetals : talks about core concepts require in declaring and composing pure functions.
+- Categories : talks about generic data-types and why fewer is better.
+- Morphism : talks about data transformations.
+- Side-effects : talks about the real-world functions, which are not pure.
+
+-
+
 # Fundementals
 
 ### Pure functions ### 

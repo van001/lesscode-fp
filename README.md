@@ -22,7 +22,7 @@ can be applied to solve many real-world problems. I will also compare it to obje
 
 In functional programming :
 
-- You compute a new value using pure/impure functions; data is immutable.
+- You compute a new value using pure/impure functions; data is immutable, unlike imperative programming.
 
 - You either write functions with no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) (pure) or functions with side-effects (impure), such as writing to logs / screen, reading from file, making a database call , etc. 
 

@@ -46,9 +46,9 @@ It is still an experimental library, so use at your discretion.
 # Functional Programming
 Functional programming is all about generalization, so the learnings are divided into four categories :
 - [Fundemetals](https://github.com/van001/lesscode-fp#fundementals) : talks about core concepts require in declaring and composing pure functions.
-- Categories : talks about generic data-types and why fewer is better.
-- Morphism : talks about data transformations.
-- Side-effects : talks about the real-world functions, which are not pure.
+- [Categories](https://github.com/van001/lesscode-fp#categories) : talks about generic data-types and why fewer is better.
+- [Morphism](https://github.com/van001/lesscode-fp#morphism) : talks about data transformations.
+- [Side-effects](https://github.com/van001/lesscode-fp#side-effects) : talks about the real-world functions, which are not pure.
 
 -
 

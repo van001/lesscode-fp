@@ -168,6 +168,9 @@ const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 
 # Categories 
 
+Primitive data-type like numbers, charachers, bytes are great but real world data is better repeesented using composition. 
+By composing primitive data-types you could build strings, lists, maps / objects, sets etc.
+
 ### Fewer Categories ### 
 Unlike Object Oriented programming, where every class is a new category, functional programming has fewer categories. 
 Each category then has its domain-specific abstractions, functions & algebra.

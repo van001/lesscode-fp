@@ -170,11 +170,14 @@ const Lift = lst => async func => {const $lift = func => lst => count => (count 
 
 /** 
  All IO Mondas follow a simple rule : 
- - 1st parameter is option. Option let's you configure the monad.
+ - 1st parameter is option (if any). Option let's you configure the monad.
  - 2nd parameter is name. (if any). 
  - 3rd paramter is function, if any.
 **/
-// Arg
+
+// Arg - command line argument monad
+const Argv =  name =>  async process => { if(process.argv[name])  return eval(process.argv[name]); else  throw `400 : missing parameter ${name-1}` }
+
 // File
 const fs = require('fs')
 const FileRead = option =>  name => fs.promises.readFile(name, option);
@@ -235,6 +238,9 @@ module.exports = {
     // Generic
     Print, Hint, Trace, Assert, Memoize, M, M2,
     M3, M4, Wait, Lift,
+
+    // Argv
+    Argv, 
     
     //File
     FileStreamIn, FileStreamOut, FileRead, FileWrite,

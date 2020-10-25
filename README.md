@@ -50,8 +50,6 @@ Functional programming is all about generalization, so the learnings are divided
 - [Morphism](https://github.com/van001/lesscode-fp#morphism) : talks about data transformations.
 - [Side-effects](https://github.com/van001/lesscode-fp#side-effects) : talks about the real-world functions, which are not pure.
 
--
-
 # Fundementals
 
 ### Pure functions ### 

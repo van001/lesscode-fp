@@ -18,7 +18,7 @@ So begin the journey of [Functional Thinking](https://github.com/van001/lesscode
 # Overview
 
 This repo is about my learning of functional programming and coming up with a language-agnostic library of functions, which
-can be applied to solve many real-world problems. I will also compare it to object-oriented (imperative) programming, where the difference is fundemenatal.
+can be applied to solve many real-world problems. I will also compare it to object-oriented (imperative) programming, where the difference is fundemental.
 
 In functional programming :
 

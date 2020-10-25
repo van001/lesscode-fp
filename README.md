@@ -28,6 +28,7 @@ In functional programming :
 
 - Solutions are composed using functions.
 
+---
 [lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic javascript functional library, which define functions to manipulate String, List & Map / Object categories.
 You can implement these functions in any multi-paradigm language that supports functional programming. 
 ```
@@ -38,6 +39,7 @@ yarn add lesscode-fp
 npm install lesscode-fp
 ```
 It is still an experimental library, so use at your discretion.
+---
 
 # Functional Programming
 Functional programming is all about generalization, so even the learnings are divided into fewer categories :

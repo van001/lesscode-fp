@@ -53,6 +53,8 @@ Functional programming is all about generalization, so even the learnings are di
 ---
 ***Object-oriented programming thrives in broader categorization of complexities (using multiple classes), functional programming thrives in generalization of complexities into few categories.***
 
+---
+
 # Fundementals
 
 ### Pure functions ### 

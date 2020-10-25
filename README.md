@@ -168,7 +168,7 @@ const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 
 # Categories 
 
-Primitive data-type like numbers, charachers, bytes are great but real world data is better represented using many of they together. 
+Primitive data-types like numbers, characters, bytes are great but real world data is better represented using many of them together. 
 By composing primitive data-types you could build strings, lists, maps / objects, sets etc.
 
 ### Fewer Categories ### 

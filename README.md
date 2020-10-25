@@ -22,15 +22,11 @@ can be applied to solve many real-world problems. I will also compare it to obje
 
 In functional programming :
 
-- You compute a new value using pure/impure functions; data is immutable, unlike imperative programming.
+- Data is immutable. You compute a new value using pure/impure functions.
 
-- You either write functions with no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) (pure) or functions with side-effects (impure), such as writing to logs / screen, reading from file, making a database call , etc. 
+- Functions are pure (no [side-effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))) but you are allowed to write impure functions.
 
-- You compose solutions/functions by composing other function(s).
-
-- You treat the function as a 1st class citizen and pass/return a function to/from another function.
-
-- You use fewer categories ( String, List, Object) and provide functions to manipulate/transform those categories.
+- Solutions are composed using functions.
 
 [lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic javascript functional library, which define functions to manipulate String, List & Map / Object categories.
 You can implement these functions in any multi-paradigm language that supports functional programming. 

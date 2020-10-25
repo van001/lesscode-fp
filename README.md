@@ -39,6 +39,7 @@ yarn add lesscode-fp
 npm install lesscode-fp
 ```
 It is still an experimental library, so use at your discretion.
+
 ---
 
 # Functional Programming

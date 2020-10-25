@@ -29,7 +29,7 @@ In functional programming :
 - Solutions are composed using functions.
 
 ---
-[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic javascript functional library, which define and implement functions to comose both pure and impure functions along with the functions to manipulate String, List & Object categories.
+[lesscode-fp](https://github.com/van001/lesscode-fp/blob/master/lesscode/src/index.js), is a language agnostic javascript functional library, which define and implement functions to comose both pure and impure functions along with the functions to manipulate String, List & Map / Object categories.
 You can implement these functions in any multi-paradigm language that supports functional programming. 
 ```
 // to install and play with javascript library

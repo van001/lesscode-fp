@@ -50,7 +50,7 @@ Functional programming is all about generalization, so even the learnings are di
 - [Morphism](https://github.com/van001/lesscode-fp#morphism) : talks about data transformations.
 - [Side-effects](https://github.com/van001/lesscode-fp#side-effects) : talks about declaring and composing real-world functions, which are not pure.
 
-***Object-oriented programming thrives in categorizing the complexities using multiple classes, functional programming thrives in generalizing the complexities into few categories.***
+***Object-oriented programming thrives in braoder categorization of complexities (using multiple classes), functional programming thrives in generalization of complexities into few categories.***
 
 # Fundementals
 

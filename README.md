@@ -169,7 +169,7 @@ const FileCopy = to => $M(FileWrite(utf8)(to), FileRead(utf8))
 # Categories 
 
 While primitive data-types like numbers, characters, bytes are great for mathematical functions, real-world functions require complex 
-data-types like strings or lists or maps of something. Again, they are all composed from primitives.
+data-types like strings / lists / maps of something. 
 
 ### Fewer Categories ### 
 Unlike Object Oriented programming, where every class is a new category, functional programming has fewer categories. 

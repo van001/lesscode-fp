@@ -122,7 +122,7 @@ const lfoldZ = cat => move => func => lst => {
 const lmapA = func => lst => lst.map((val, index, lst ) => func(lst)(index)(val)) //with arity
 const lmap = func => lst => lst.map(func)
 const lsort = lst => lst.sort()
-const lreverse = lfold([])(lprepend)
+const lreverse = lst => lfoldr([])(lappend)(lst)
 const lswap = pos1 => pos2 => lst => lst.slice(0, pos1). //slice to pos1
                                     concat(lst.slice(pos2, pos2 + 1)). // concat pos2
                                     concat(lst.slice(pos1 + 1, pos2)). // concat pos1+1 to pos2
@@ -195,6 +195,8 @@ const DirStream = option =>  name  => async func => {
 // Http
 const axios = require('axios')
 const HttpGET = option => url => axios.get((option) ? {...option, method : 'get', url} : {method : 'get', url})
+const HttpPOST = option => url => axios.get((option) ? {...option, method : 'post', url} : {method : 'post', url})
+const ExtractData = async data => data.data
 
 module.exports = { 
     // Composition
@@ -249,6 +251,6 @@ module.exports = {
     DirStream,
     
     // Http
-    HttpGET,
+    HttpGET, HttpPOST, ExtractData
     
 }

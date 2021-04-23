@@ -194,8 +194,8 @@ const DirStream = option =>  name  => async func => {
 
 // Http
 const axios = require('axios')
-const HttpGET = option => url => axios.get((option) ? {...option, method : 'get', url} : {method : 'get', url})
-const HttpPOST = option => url => axios.get((option) ? {...option, method : 'post', url} : {method : 'post', url})
+const HttpGET = option => url => axios((option) ? {...option, method : 'get', url} : {method : 'get', url})
+const HttpPOST = option => url => axios((option) ? {...option, method : 'post', url} : {method : 'post', url})
 const ExtractData = async data => data.data
 
 module.exports = { 

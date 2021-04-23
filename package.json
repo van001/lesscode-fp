@@ -1,6 +1,6 @@
 {
   "name": "lesscode-fp",
-  "version": "1.0.38",
+  "version": "1.0.39",
   "description": "lc core functions",
   "main": "./lesscode/src/index.js",
   "scripts": {

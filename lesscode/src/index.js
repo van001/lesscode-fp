@@ -198,6 +198,17 @@ const HttpGET = option => url => axios((option) ? {...option, method : 'get', ur
 const HttpPOST = option => url => axios((option) ? {...option, method : 'post', url} : {method : 'post', url})
 const ExtractData = async data => data.data
 
+//Encode/ Decode
+const Decode = enc => async data => Buffer.from(data , enc)
+const Encode = enc => async data => Buffer.to(data , enc)
+
+//Zip / Unzip
+const zlib = require("zlib")
+const Unzip = enc => async data => zlib.gunzipSync(data).toString(enc)
+
+// JSON
+const ToJSON = async data => JSON.parse(data)
+
 module.exports = { 
     // Composition
     $, $M, $E, $3, 
@@ -251,6 +262,14 @@ module.exports = {
     DirStream,
     
     // Http
-    HttpGET, HttpPOST, ExtractData
-    
+    HttpGET, HttpPOST, ExtractData,
+
+    // Encode / Decode
+    Encode, Decode,
+
+    // Zip
+    Unzip,
+
+    //JSON
+    ToJSON
 }

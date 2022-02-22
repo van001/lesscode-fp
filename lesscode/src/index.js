@@ -97,7 +97,18 @@ const ljoinIndex = lst2 => lst => { // returns the matched indices [1,3] [2,3] =
 const lflat = lst => lst.reduce((acc, val) => val.reduce( (acc2, val) => lappend(acc2)([val]) , acc),[]) // flats one level
 const lsublist = indexLst => lst =>  lmap(index => lst[index])(indexLst) // given a sublist index, returns th sublist
 const lcollapse = lst => lsublist($(lflat, lmap(llift([])), m2valList, l2indexMap, lmap(lsort))(lst))(lst) // removes the duplicates
-
+const lbatch = batch => lst => {
+    let res = lst.reduce((cat, val, index) => { 
+      if (index > 0 && (index % batch == 0) ){ 
+        cat.batch.push([])
+        cat.size++
+      }
+      cat.batch[cat.size].push(val)
+      return cat
+    } ,{size :0, batch :[[]]})
+    return res.batch
+  }
+  
 
 // Category Changers - Generic
 const lfold = cat => func => lst => lst.reduce((cat, val) => func(cat)(val), (cat)? cat : []) // left reducer
@@ -237,7 +248,7 @@ module.exports = {
     lmap, lmapA,                                                 // List : Mapper & Presets
     lremove, lprepend, lappend, lapply,                          // List : Expander
     lsliceHead, lsliceTail, lslice, lfilter, lzip,               // List : Collapsers    
-    ljoinIndex, lflat, lsublist, lcollapse,                
+    ljoinIndex, lflat, lsublist, lcollapse, lbatch,               
     lfold, lfoldA, lfoldr, lfoldrA, lfoldZ,                      // List : Folders & Presets
     l2String, l2countMap, l2indexMap,                            // List : Category Changers
     

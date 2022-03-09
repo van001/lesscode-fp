@@ -158,6 +158,7 @@ const mincr = key => map => (map[key] == null)? mset(key)(1)(map) : mset(key)(mv
 
 // Compacters
 const mdelete = key => map => { map.delete(key); return map}
+const mshrink = keys => map => keys.reduce((cat, val) => { cat[val] = map[val]; return cat }, {})
 
 // Category Changers
 const m2valList = map => { const lst = [];  Object.keys(map).forEach( key => lst.push(map[key]));  return lst} // Map to List (values)
@@ -255,7 +256,7 @@ module.exports = {
     // Map
     mget, mgettwo, mlen, mheadKey, 
     mset, mincr,
-    mdelete,
+    mdelete,mshrink,
     m2valList, m2keyList, m2List,
 
     //************* Monads *******************

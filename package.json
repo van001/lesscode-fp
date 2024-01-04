@@ -23,7 +23,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "axios": "^0.26.1",
+    "axios": "^1.6.4",
     "follow-redirects": "^1.14.9"
   }
 }

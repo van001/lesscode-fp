@@ -9,14 +9,27 @@ axios@^0.20.0:
   dependencies:
     follow-redirects "^1.10.0"
 
+axios@^0.26.1:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.26.1.tgz#1ede41c51fcf51bbbd6fd43669caaa4f0495aaa9"
+  integrity sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==
+  dependencies:
+    follow-redirects "^1.14.8"
+
 follow-redirects@^1.10.0:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
 
-lesscode-fp@^1.0.22:
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/lesscode-fp/-/lesscode-fp-1.0.22.tgz#8609de749d9dfc3d54577ee24f410aaa0b959f0a"
-  integrity sha512-p8C9DCk0nxZSd+V6JVl9nypgCluhJFGy57QBTAHg1nBxIUM5fxOD4nEq0UtYIhCO1mSPWJBKyGkroCwNmsc/kA==
+follow-redirects@^1.14.8, follow-redirects@^1.14.9:
+  version "1.15.5"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.5.tgz#54d4d6d062c0fa7d9d17feb008461550e3ba8020"
+  integrity sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==
+
+lesscode-fp@^1.0.46:
+  version "1.0.46"
+  resolved "https://registry.yarnpkg.com/lesscode-fp/-/lesscode-fp-1.0.46.tgz#a6a6c5a4c925f50c23069aa54334e18096b4898a"
+  integrity sha512-6Q7y0QY2x2AeMFptbnkXo41KVQAeyVaE3wOhxvWYzr6H7dflg6FKUu00efL85RhggWEYsKUQC1DEQWiuOzr7cA==
   dependencies:
-    axios "^0.20.0"
+    axios "^0.26.1"
+    follow-redirects "^1.14.9"
